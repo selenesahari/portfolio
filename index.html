@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Selene Sahari – Portfolio</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="https://raw.githubusercontent.com/michellechen202212/portfolio/main/favicon.ico" type="image/x-icon" />  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body {
@@ -16,159 +15,101 @@
       line-height: 1.6;
     }
     .container {
-      max-width: 760px;
+      max-width: 960px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
-    h1 {
+    h1, h2, h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+    }
+    .hero {
       text-align: center;
+      padding: 3rem 1rem;
     }
-    .subtitle {
-      font-size: 1rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #555;
-    }
-    a {
-      color: #0071e3;
-      text-decoration: none;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 3rem;
-      font-weight: 600;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 0.3rem;
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 1rem auto;
     }
     .section {
-      margin-top: 2rem;
+      margin: 3rem 0;
     }
-    .photo-grid {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
     }
-    .photo-grid img {
+    .gallery-item {
+      position: relative;
+    }
+    .gallery-item img {
       width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
-    blockquote {
+    .caption {
+      margin-top: 0.5rem;
       font-style: italic;
-      margin: 1.5rem 0;
-      padding-left: 1rem;
-      border-left: 3px solid #ddd;
-      color: #555;
     }
     footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
       text-align: center;
-      color: #888;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="hero">
     <h1>Selene Sahari</h1>
-    <div class="subtitle">Interdisciplinary Creator · Staff Software Engineer · Visual Artist · Founder, DreamWeaver AI</div>
-    <p style="text-align:center;"><a href="mailto:selenesahari@gmail.com">selenesahari@gmail.com</a></p>
-
-    <h2>The Sovereign Path (2024–2025)</h2>
-    <p>A cinematic photo essay exploring authorship, presence, and psychological sovereignty through architectural symbolism and spatial storytelling.</p>
-    <ul>
-      <li><strong>Submitted to:</strong> ND Awards 2025, International Photography Awards (IPA) 2025</li>
-      <li><strong>Visual storytelling across:</strong> Morocco, Asia, Europe, and North America - each location woven into the project’s symbolic grammar.</li>
-    </ul>
-    <p>This ongoing series challenges inherited scripts of femininity and visibility. Through framing, gesture, and atmosphere, <em>The Sovereign Path</em> redefines what it means to move through space unperformed — not as object, but as author.</p>
-    
-<section style="
-  max-width: 100%;
-  padding: 60px 24px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  color: #111;
-">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="font-size: 28px; text-align: center; margin-bottom: 48px; font-weight: 500;">
-      Visual Triptych · Signals of Sovereignty
-    </h2>
-
-    <div style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    ">
-
-      <!-- Image 1 -->
-      <div style="flex: 0 1 300px; text-align: center;">
-        <img src="tile.jpg" alt="Selene before Moroccan tilework" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);" />
-        <p style="margin-top: 16px; font-size: 15px; font-style: italic;">
-          “Selene stands before Moroccan tilework in red — poised, composed, and uncontained.”<br>
-          <span style="font-style: normal; font-weight: 300;">Presence within inherited structure.</span>
-        </p>
-      </div>
-
-      <!-- Image 2 -->
-      <div style="flex: 0 1 300px; text-align: center;">
-        <img src="desert.jpg" alt="Selene in the Sahara with camels" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);" />
-        <p style="margin-top: 16px; font-size: 15px; font-style: italic;">
-          “Crossing the Sahara at dusk — camels in motion, sovereignty in stillness.”<br>
-          <span style="font-style: normal; font-weight: 300;">Refusal to be swept by inherited momentum.</span>
-        </p>
-      </div>
-
-      <!-- Image 3 -->
-      <div style="flex: 0 1 300px; text-align: center;">
-        <img src="gallary_bw.jpg" alt="Selene amid calligraphy and light" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);" />
-        <p style="margin-top: 16px; font-size: 15px; font-style: italic;">
-          “Amid calligraphy and light — authorship without noise.”<br>
-          <span style="font-style: normal; font-weight: 300;">Authorship beyond visibility.</span>
-        </p>
-      </div>
-
-    </div>
+    <h3>Interdisciplinary Creator · Visual Artist · Staff Software Engineer · Founder, DreamWeaver AI</h3>
+    <p>Selene Sahari is a narrative visual artist whose work explores presence, sovereignty, and self-authorship through image. Her visual language blends global textures with symbolic solitude, creating spaces where a woman arrives not to be seen — but to see.</p>
+    <p>With roots in systems engineering and introspective storytelling, her practice investigates how women navigate environments historically shaped to contain them. Her work is not performative. It is declarative.</p>
   </div>
-</section>
 
-
-
-    
-
-    <div class="section">
-      <h2>Professional Background</h2>
-      <h3>Staff Software Engineer — Tech Industry (Current)</h3>
+  <div class="container">
+    <section class="section">
+      <h2>The Sovereign Path (2024–2025)</h2>
+      <p>A cinematic photo essay exploring authorship, presence, and psychological sovereignty through architectural symbolism and spatial storytelling. Submitted to ND Awards 2025, IPA 2025. Shot across Morocco, Asia, Europe, and North America.</p>
       <ul>
-        <li>Leads enterprise data architecture and secure systems design</li>
-        <li>Specializes in behavioral pattern modeling, anomaly detection, and ethical AI</li>
+        <li><strong>Selene before Moroccan tilework</strong> — "Poised, composed, and uncontained."</li>
+        <li><strong>Selene in the Sahara with camels</strong> — "Sovereignty in stillness."</li>
+        <li><strong>Selene amid calligraphy and light</strong> — "Authorship beyond visibility."</li>
       </ul>
+    </section>
 
-      <h3>Founder & President, DreamWeaver AI</h3>
-      <ul>
-        <li>Launched nonprofit combining AI, narrative psychology, and mindset transformation</li>
-        <li>Projects include: <em>Sovereign Systems Psychology™</em> and AI for identity autonomy and mindset design</li>
-      </ul>
-    </div>
+    <section class="section">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="tile.jpg" alt="Moroccan Tilework">
+          <div class="caption">Selene before Moroccan tilework — poised, composed, and uncontained.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="desert.jpg" alt="Sahara Camels">
+          <div class="caption">Crossing the Sahara at dusk — sovereignty in stillness.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gallary_bw.jpg" alt="Calligraphy Light">
+          <div class="caption">Amid calligraphy and light — authorship beyond visibility.</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="section">
-      <h2>Upcoming Presentation</h2>
-      <p><strong>SciDataCon 2025 / International Data Week (Brisbane, Australia)</strong><br/>
-      Peer-reviewed presentation on AI systems resilience, focusing on ethical architectures for enterprise-scale data systems.</p>
-    </div>
+    <section class="section">
+      <h2>Professional & Technical Background</h2>
+      <p><strong>Staff Software Engineer</strong> – Leads enterprise data architecture and secure systems design. Specializes in behavioral modeling, anomaly detection, and ethical AI.</p>
+      <p><strong>Founder & President, DreamWeaver AI</strong> – Launched nonprofit integrating AI, narrative psychology, and cognitive transformation. Creator of Sovereign Systems Psychology™.</p>
+      <p><strong>Upcoming:</strong> SciDataCon 2025 (Brisbane) – Peer-reviewed presentation on resilient AI systems.</p>
+    </section>
 
-    
-  <p style="margin-top: 1.5em;"><em>Additional work and technical documentation available upon request.</em></p>
-
-    
-    <footer>
-      <p><a href="mailto:selenesahari@gmail.com">selenesahari@gmail.com</a></p>
-      <p>© 2025 Selene Sahari — All works authored, designed, and curated with intention.</p>
-    </footer>
+    <section class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:selenesahari@gmail.com">selenesahari@gmail.com</a></p>
+    </section>
   </div>
+
+  <footer>
+    &copy; 2025 Selene Sahari · Portfolio site by Selene · All rights reserved
+  </footer>
 </body>
 </html>
