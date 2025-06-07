@@ -7,75 +7,132 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1c1c1e;
+      --caption: #444;
+      --footer: #666;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eeeeee;
+      --caption: #aaaaaa;
+      --footer: #888888;
+    }
+
     body {
       margin: 0;
-      background: #fafafa;
-      color: #1c1c1e;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
+      opacity: 0;
+      transition: background 0.3s ease, color 0.3s ease, opacity 0.6s ease;
     }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
     .container {
       max-width: 960px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
+
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
     }
+
     .hero {
       text-align: center;
       padding: 3rem 1rem;
     }
+
     .hero p {
       font-size: 1.1rem;
       max-width: 700px;
       margin: 1rem auto;
     }
+
     .section {
       margin: 3rem 0;
     }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
     }
+
     .gallery-item {
       position: relative;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s ease forwards;
     }
-    .gallery-item:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    .gallery-item:nth-child(3) {
-      animation-delay: 0.4s;
-    }
+
+    .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.4s; }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .gallery-item img {
       width: 100%;
       border-radius: 8px;
     }
+
     .caption {
       margin-top: 0.5rem;
       font-style: italic;
-      color: #444;
       font-size: 0.9rem;
+      color: var(--caption);
+      transition: color 0.3s ease;
     }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
-      color: #666;
+      color: var(--footer);
       padding: 2rem 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    a {
+      color: inherit;
     }
   </style>
 </head>
+
 <body>
+  <!-- 🌙/☀️ Toggle Button -->
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+
   <div class="hero">
     <h1>Selene Sahari</h1>
     <h3>Interdisciplinary Creator · Visual Artist · Staff Software Engineer · Founder, DreamWeaver AI</h3>
@@ -113,7 +170,7 @@
     </section>
 
     <p style="text-align: center; margin-top: 1.5rem;">
-    <a href="sovereign_path.html" style="font-weight: bold; font-size: 1rem; text-decoration: none; border-bottom: 1px solid #999;">
+      <a href="sovereign_path.html" style="font-weight: bold; font-size: 1rem; text-decoration: none; border-bottom: 1px solid #999;">
         → View Full Sovereign Path Series
       </a>
     </p>
@@ -134,5 +191,26 @@
   <footer>
     &copy; 2025 Selene Sahari · Portfolio site by Selene · All rights reserved
   </footer>
+
+  <script>
+    // 🌙 Persist theme preference and animate in
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode");
+      const prefersDark = saved === "true";
+      if (prefersDark) {
+        document.body.classList.add("dark");
+        document.getElementById("modeToggle").textContent = "☀️";
+      }
+      requestAnimationFrame(() => {
+        document.body.classList.add("fade-in");
+      });
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+  </script>
 </body>
 </html>
