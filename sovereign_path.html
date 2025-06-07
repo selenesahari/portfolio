@@ -1,62 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sovereign Gallery – Selene Sahari</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Visual Folio: Signals of Sovereignty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #111111;
+      --bg-dark: #111111;
+      --text-dark: #eeeeee;
+      --accent: #b71c1c;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #fefefe;
-      color: #1c1c1e;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
       font-family: 'Playfair Display', serif;
-      text-align: center;
-      font-size: 2.5rem;
-      padding: 2rem 1rem 1rem;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-top: 2rem;
+      letter-spacing: -0.5px;
+    }
+
+    .toggle-bar {
+      text-align: center;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .toggle-bar button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Source Sans Pro', sans-serif;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-bar button:hover {
+      background: #444;
+    }
+
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 48px;
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    .photo-card img {
-      width: 100%;
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      font-family: 'Source Sans Pro', sans-serif;
     }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.02);
+    }
+
     .caption {
-      margin-top: 1rem;
+      padding: 1rem;
     }
+
     .caption h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      margin: 0 0 0.3rem;
+      font-weight: 600;
     }
+
     .caption .meta {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #666;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
+
     .caption .quote {
       font-style: italic;
-      font-size: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
       color: #333;
+    }
+
+    /* Museum Mode */
+    .museum .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 90%);
+      color: #fff;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+    }
+
+    .museum .photo-card:hover .caption {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .museum .caption .meta {
+      color: #ddd;
+    }
+
+    .museum .caption .quote {
+      color: #eee;
+    }
+
+    body.dark .caption .quote {
+      color: #ccc;
+    }
+
+    body.dark .caption .meta {
+      color: #999;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.95rem;
+      font-style: italic;
+      margin: 3rem auto 2rem;
+      padding: 0 2rem;
+      max-width: 900px;
+      color: #444;
+    }
+
+    body.dark .footer-note {
+      color: #aaa;
     }
   </style>
 </head>
+
 <body>
   <h1>Visual Folio: Signals of Sovereignty</h1>
-  <div class="gallery">
 
-    <div class="photo-card">
+  <div class="toggle-bar">
+    <button onclick="toggleMode()">🖼️ Toggle Museum / Editorial Mode</button>
+    <button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
+  </div>
+
+  <div id="folio" class="gallery">
+
+    <!-- Start of image blocks -->
+    <div class="photo-card" tabindex="0">
       <img src="1_Selene_Sovereign_Path_Garden.jpg" alt="Marrakesh Garden Arrival">
       <div class="caption">
         <h3>Marrakesh Garden Arrival</h3>
@@ -65,7 +180,7 @@
       </div>
     </div>
 
-    <div class="photo-card">
+    <div class="photo-card" tabindex="0">
       <img src="2_Selene_Sovereign_Path_Mosaic.jpg" alt="Fountain of Lineage">
       <div class="caption">
         <h3>Fountain of Lineage</h3>
@@ -74,7 +189,7 @@
       </div>
     </div>
 
-    <div class="photo-card">
+    <div class="photo-card" tabindex="0">
       <img src="3_Selene_Sovereign_Path_Threshold.jpg" alt="Threshold of Knowledge">
       <div class="caption">
         <h3>Threshold of Knowledge</h3>
@@ -83,7 +198,7 @@
       </div>
     </div>
 
-    <div class="photo-card">
+    <div class="photo-card" tabindex="0">
       <img src="4_Selene_Sovereign_Path_Vastness.jpg" alt="Desert Invocation">
       <div class="caption">
         <h3>Desert Invocation</h3>
@@ -92,24 +207,38 @@
       </div>
     </div>
 
-    <div class="photo-card">
+    <div class="photo-card" tabindex="0">
       <img src="5_Selene_Sovereign_Path_Liberation.jpg" alt="Camel Lineage">
       <div class="caption">
         <h3>Camel Lineage</h3>
         <p class="meta">Merzouga, Morocco · March 2025</p>
-        <p class="quote">She stands beside the lineage of traders and travelers. No longer passing through — she becomes the still point, the axis, the sovereign witness to all crossings.</p>
+        <p class="quote">She stands beside the lineage of traders and travelers. No longer passing through — she becomes the still point, the axis of her own journey.</p>
       </div>
     </div>
 
-    <div class="photo-card">
+    <div class="photo-card" tabindex="0">
       <img src="7_Selene_Sovereign_Path_Coastline.jpg" alt="Rabat Coastline">
       <div class="caption">
         <h3>Rabat Coastline</h3>
         <p class="meta">Rabat, Morocco · March 2025</p>
-        <p class="quote">Wind and sea at her back, she stands where continent meets ocean — a boundary both literal and internal, where voice meets volume.</p>
+        <p class="quote">Wind and sea at her back, she stands where continent meets ocean — a boundary both literal and internal, where voice meets silence and becomes signal.</p>
       </div>
     </div>
+    <!-- End of image blocks -->
 
   </div>
+
+  <div class="footer-note">
+    This series explores authorship, presence, and psychological sovereignty through spatial narrative. Each image is a threshold — not of spectacle, but of becoming.
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.getElementById('folio').classList.toggle('museum');
+    }
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
