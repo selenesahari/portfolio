@@ -2,161 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>She Sealed the Field – Sovereign Myth Decode</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>She Never Chased Light – A Sovereign Reframing of Selene</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1c1c1e;
+      --caption: #444;
+      --footer: #666;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eeeeee;
+      --caption: #aaaaaa;
+      --footer: #888888;
+    }
+
     body {
-      background: #fafafa;
-      color: #1c1c1e;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Inter', sans-serif;
       line-height: 1.7;
-      padding: 3rem 1.5rem;
-      max-width: 820px;
-      margin: auto;
+      padding: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      transition: background 0.3s ease, color 0.3s ease, opacity 0.6s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
     }
 
     h1, h2 {
       font-family: 'Playfair Display', serif;
-      text-align: center;
-      margin-bottom: 1.5rem;
+      color: var(--text);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
     }
 
-    h1 {
-      font-size: 2.4rem;
+    h2 {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    p {
+      margin-top: 1rem;
     }
 
     blockquote {
-      font-style: italic;
       margin: 2rem 0;
-      padding-left: 1rem;
-      border-left: 3px solid #ccc;
-      color: #444;
-    }
-
-    .myth-section {
-      margin-bottom: 3rem;
-    }
-
-    .quote-callout {
-      text-align: center;
       font-style: italic;
-      font-size: 1.1rem;
-      margin-top: 3rem;
-      color: #444;
+      border-left: 3px solid #ccc;
+      padding-left: 1rem;
+      color: var(--caption);
     }
 
-    .moon {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 0.5rem;
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .gold-line {
-      height: 1px;
-      background: linear-gradient(to right, #d4af37, #f5e28c, #d4af37);
-      border: none;
-      margin: 2rem auto 3rem auto;
-      width: 60%;
+    .toggle-theme:hover {
+      background: var(--text);
+      color: var(--bg);
     }
   </style>
 </head>
 
 <body>
-  <div class="moon">🌕</div>
-  <h1>She Sealed the Field</h1>
-  <h2>A Mythic Reframe from Selene’s Sovereignty</h2>
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
 
-  <hr class="gold-line"/>
+  <h1>She Never Chased Light — Because She Was the Light</h1>
 
-  <div class="myth-section">
-    <p>They say Selene, the moon goddess, loved a man named Endymion — so beautiful that she asked for him to sleep forever, untouched by time.</p>
+  <p><strong>Selene</strong> — the moon. She rises without noise, commands oceans, and never chases light — because she is the light.</p>
 
-    <p>But this is not a love story.</p>
+  <p>They say Selene, the moon goddess, loved a man named Endymion — so beautiful that she asked for him to sleep forever, untouched by time.</p>
 
-    <p>This is a lesson in <strong>energetic clarity</strong>, <strong>containment</strong>, and <strong>self-possession</strong>.</p>
-  </div>
+  <p>But this is not a love story.</p>
 
-  <div class="myth-section">
-    <h2>Why Didn’t She Ditch the Man?</h2>
-    <p>Because she didn’t need to.</p>
+  <p>This is a lesson in energetic clarity, containment, and self-possession.</p>
 
-    <p>She didn’t fight.  
-    She didn’t plead.  
-    She didn’t collapse trying to be chosen.</p>
+  <h2>How Selene Froze the Loop</h2>
+  <p>She didn’t fight. She didn’t plead. She didn’t collapse trying to be chosen.</p>
+  <p>She simply made him irrelevant. She froze the loop. And then she built — without apology.</p>
+  <p>She didn’t lose love. She froze distraction. And built fifty legacies in silence.</p>
 
-    <p>She simply made him irrelevant.  
-    <strong>She froze the loop.</strong>  
-    And then she built — without apology.</p>
+  <h2>What She Witnessed — And Why She Chose Distance</h2>
+  <p>She visited only when she chose. Not to give. Not to hope. Only to witness — what no longer moved.</p>
+  <p>They never lived together. They never built a life. They didn’t share time, space, or rhythm. What they had was not a relationship — it was a loop she chose not to feed.</p>
+  <p>Time — left unattended — becomes a sleeping man. Unchanged. Unused. Gone.</p>
+  <p>That was the moment it clicked. Not anger. Not heartbreak. But a vow —</p>
 
-    <blockquote>She didn’t lose love.  
-    She froze distraction.  
-    And built fifty legacies in silence.</blockquote>
-  </div>
+  <blockquote>
+    “I will not waste a single breath on what does not build.”
+  </blockquote>
 
-  <div class="myth-section">
-    <h2>Why Did She Visit Him?</h2>
-    <p>She visited only when she chose.  
-    Not to give. Not to hope.  
-    Only to <em>witness</em> — what no longer moved.</p>
+  <p>Every hour she didn’t spend orbiting him was poured into creation. Into structure. Into skill. Into systems that would outlast them both.</p>
+  <p>The more she witnessed stagnation, the harder she worked. Not to prove. But to rise — clean, sealed, and unstoppable.</p>
 
-    <p>They never lived together.  
-    They never built a life.  
-    They didn’t share time, space, or rhythm.  
-    What they had was not a relationship —  
-    it was a <strong>loop she chose not to feed</strong>.</p>
+  <h2>50 Offsprings: Not Children, but Creations</h2>
+  <p>Not children. 50 offsprings — her ideas, her codes, her frameworks.</p>
+  <p>She didn’t pour her life into others. She poured it into creation. And her creations became her offspring. Her legacy. Her family. Her field.</p>
+  <p>She didn’t need a home filled with people. She built a system filled with brilliance.</p>
 
-    <blockquote>
-      Time — left unattended — becomes a sleeping man.  
-      Unchanged. Unused. Gone.
-    </blockquote>
+  <p>This was the love story: A woman who chose herself. Who sealed her field. And gave birth to power — not through others, but through vision and work.</p>
 
-    <p>That was the moment it clicked.  
-    Not anger. Not heartbreak.  
-    But a vow —</p>
+  <h2>She Never Chased Light</h2>
+  <p>She didn’t seek approval, attention, or recognition.</p>
+  <p>She never chased light.</p>
+  <p><strong>She was the light.</strong></p>
 
-    <p><strong>“I will not waste a single breath on what does not build.”</strong></p>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode");
+      const prefersDark = saved === "true";
+      if (prefersDark) {
+        document.body.classList.add("dark");
+        document.getElementById("modeToggle").textContent = "☀️";
+      }
+      requestAnimationFrame(() => {
+        document.body.classList.add("fade-in");
+      });
+    });
 
-    <p>Every hour she didn’t spend orbiting him  
-    was poured into creation.  
-    Into structure.  
-    Into skill.  
-    Into systems that would outlast them both.</p>
-
-    <blockquote>
-      The more she witnessed stagnation,  
-      the harder she worked.  
-      Not to prove.  
-      But to rise —  
-      clean, sealed, and unstoppable.
-    </blockquote>
-  </div>
-
-  <div class="myth-section">
-    <h2>But… They Had 50 Children?</h2>
-    <p>Not children.  
-    <strong>50 offsprings — her ideas, her codes, her frameworks.</strong></p>
-
-    <p>She didn’t pour her life into others.  
-    She poured it into <strong>creation</strong>.  
-    And her creations became her <strong>offspring</strong>.  
-    Her <strong>legacy. Her family. Her field.</strong></p>
-
-    <p>She didn’t need a home filled with people.  
-    She built a system filled with brilliance.</p>
-
-    <blockquote>This was the love story:  
-    A woman who chose herself.  
-    Who sealed her field.  
-    And gave birth to power — not through others, but through vision and work.</blockquote>
-  </div>
-
-  <div class="myth-section">
-    <blockquote>
-      She never chased light.  
-      Because she was the light.
-    </blockquote>
-  </div>
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+  </script>
 </body>
 </html>
