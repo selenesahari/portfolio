@@ -13,17 +13,12 @@
       --caption: #444;
       --footer: #666;
     }
-
     body.dark {
       --bg: #121212;
       --text: #eeeeee;
       --caption: #aaaaaa;
       --footer: #888888;
     }
-    .cta p {
-  margin-top: 1rem;
-}
-
     body {
       margin: 0;
       background: var(--bg);
@@ -33,22 +28,17 @@
       opacity: 0;
       transition: background 0.3s ease, color 0.3s ease, opacity 0.6s ease;
     }
-
     body.fade-in {
       opacity: 1;
     }
-
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
     }
-
     nav {
       text-align: center;
-      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       padding: 1rem 0;
     }
-
     nav a {
       color: var(--text);
       text-decoration: none;
@@ -56,28 +46,17 @@
       border-bottom: 1px solid transparent;
       transition: border-bottom 0.3s ease, color 0.3s ease;
     }
-
-    body.dark nav a {
-      color: var(--text);
-    }
-
     nav a:hover {
       border-bottom: 1px solid currentColor;
     }
-
-
-
-nav a.active {
-  font-weight: bold;
-  border-bottom: 1px solid currentColor;
-}
-
-
+    nav a.active {
+      font-weight: bold;
+      border-bottom: 1px solid currentColor;
+    }
     .hero-container {
       position: relative;
       overflow: hidden;
     }
-
     .hero {
       text-align: center;
       padding: 4rem 1rem 2rem;
@@ -86,14 +65,12 @@ nav a.active {
       transform: translateY(20px);
       --scrollY: 0px;
     }
-
     @keyframes fadeSlideUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
     .hero::before {
       content: "";
       position: absolute;
@@ -107,7 +84,6 @@ nav a.active {
       transition: transform 0.6s ease-out;
       will-change: transform;
     }
-
     .hero p {
       font-size: 1rem;
       max-width: 700px;
@@ -115,12 +91,10 @@ nav a.active {
       font-style: italic;
       color: var(--caption);
     }
-
     .cta {
       text-align: center;
       margin-top: 2rem;
     }
-
     .cta a {
       display: block;
       margin: 0.5rem auto;
@@ -129,7 +103,12 @@ nav a.active {
       border-bottom: 1px solid #999;
       max-width: fit-content;
     }
-
+    .footer-note {
+      font-size: 0.85rem;
+      color: var(--footer);
+      text-align: center;
+      margin-top: 3rem;
+    }
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -137,7 +116,6 @@ nav a.active {
       padding: 2rem 1rem;
       transition: color 0.3s ease;
     }
-
     .toggle-theme {
       position: fixed;
       top: 1rem;
@@ -151,23 +129,17 @@ nav a.active {
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
     .toggle-theme:hover {
       background: var(--text);
       color: var(--bg);
     }
-
     a {
       color: inherit;
     }
   </style>
 </head>
-
 <body>
-  <!-- 🌙/☀️ Toggle Button -->
   <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
-
-  <!-- 🔗 Navigation Bar -->
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="sovereign_path.html">The Sovereign Path</a>
@@ -178,10 +150,8 @@ nav a.active {
     <div class="hero">
       <h1>Selene Sahari</h1>
       <h3>Interdisciplinary Creator · Visual Artist · Staff Software Engineer · Founder, DreamWeaver AI</h3>
-
       <p><strong>Selene</strong> — the moon. She rises in silence, pulls tides, and never chases light — because she is the light.<br>
       <strong>Sahari</strong> — of the desert. Vast, clear, and unbothered. Where illusions end and sovereignty begins.</p>
-
       <p style="margin-top: 1rem;">
         Together, <strong>Selene Sahari</strong> is not a name. It’s a frequency.<br>
         A symbol of stillness, clarity, and quiet creation.<br>
@@ -191,28 +161,20 @@ nav a.active {
   </div>
 
   <div class="cta">
-    <a href="sovereign_path.html">→ View Visual Portfolio</a>
-    <a href="selene.html">→ Myth Decode: Selene Sahari</a>
-    <a href="about.html">→ Learn More About the Artist</a>
-<p style="margin-top: 1rem; font-size: 0.95rem; color: var(--caption);">
-  🛰️ Set to present at <strong>SciDataCon 2025</strong> (Brisbane)<br>
-  — part of <strong>International Data Week</strong> —<br>
-  on resilient AI systems and behavioral detection architecture.
-</p>
+    <a href="sovereign_path.html">↠ View Visual Portfolio</a>
+    <a href="crossings.html">↠ Thresholds of Her: Arles 2025 Submission</a>
+    <a href="sovereign_vogue.html">↠ PhotoVogue Global Call Submission</a>
   </div>
 
-<p style="text-align: center; font-size: 0.9rem; margin-top: 1.5rem; color: var(--caption);">
-  ✦ View the <a href="sovereign_vogue.html" style="border-bottom: 1px solid #999;">PhotoVogue 2025 Submission</a><br>
-  ✦ View the <a href="crossings.html">“Thresholds of Her” submission for Rencontres de la Photographie Marrakech 5ᵗʰ Edition + Festival OFF Arles 2025</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;(Theme: Crossings)<br>
-</p>
+  <div class="footer-note">
+    Currently presenting at <strong>SciDataCon 2025</strong> (Brisbane) — part of International Data Week — on resilient AI systems and behavioral detection architecture.
+  </div>
 
   <footer>
     &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
   </footer>
 
   <script>
-    // 🌙 Persist theme preference and animate in
     document.addEventListener("DOMContentLoaded", () => {
       const saved = localStorage.getItem("darkMode");
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -224,14 +186,11 @@ nav a.active {
         document.body.classList.add("fade-in");
       });
     });
-    
     function toggleDarkMode() {
       const isDark = document.body.classList.toggle("dark");
       document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
       localStorage.setItem("darkMode", isDark);
     }
-
-    // Parallax background movement
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
       const hero = document.querySelector(".hero");
