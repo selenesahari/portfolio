@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Folio: Signals of Sovereignty</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #111111;
+      --bg-dark: #111111;
+      --text-dark: #eeeeee;
+      --caption-light: #333;
+      --caption-dark: #ccc;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      opacity: 0;
+    }
+
+    body.fade-in {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    nav {
+      text-align: center;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.95rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark nav a {
+      color: var(--text-dark);
+    }
+
+    nav a:hover {
+      border-bottom: 1px solid currentColor;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      border-bottom: 1px solid currentColor;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-top: 2rem;
+      letter-spacing: -0.5px;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 1px solid;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .toggle-theme:hover {
+      background: currentColor;
+      color: var(--bg-light);
+    }
+
+    body.dark .toggle-theme:hover {
+      color: var(--bg-dark);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #fff;
+    }
+
+    body.dark .photo-card {
+      background-color: #1a1a1a;
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.02);
+    }
+
+    .caption {
+      padding: 1rem;
+    }
+
+    .caption h3 {
+      font-size: 1.2rem;
+      margin: 0 0 0.3rem;
+      font-weight: 600;
+    }
+
+    .caption .meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    body.dark .caption .meta {
+      color: #aaa;
+    }
+
+    .caption .quote {
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: var(--caption-light);
+    }
+
+    body.dark .caption .quote {
+      color: var(--caption-dark);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.95rem;
+      font-style: italic;
+      margin: 3rem auto 2rem;
+      padding: 0 2rem;
+      max-width: 900px;
+      color: #444;
+    }
+
+    body.dark .footer-note {
+      color: #aaa;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 2rem 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    body.dark footer {
+      color: #aaa;
+      border-top: 1px solid #444;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sovereign_path.html" class="active">The Sovereign Path</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>Visual Folio: Signals of Sovereignty</h1>
+
+
+
+  <!-- Gallery content remains unchanged below -->
+<div id="folio" class="gallery">
+
+     <div class="photo-card" tabindex="0">
+      <img src="14_CodeOfNothing.jpg" alt="After the Gaze">
+      <div class="caption">
+        <h3>After the Gaze</h3>
+        <p class="meta">San Jose (GTC Conference), California, March 2025</p>
+        <p class="quote">She stands where posture was once dictated: the podium, the platform, the frame.
+She does not pitch. She does not please. She no longer seeks the lens — and in doing so, reclaims it.
+Her presence offers only stance, not spectacle.</p>
+      </div>
+    </div>
+  
+    <!-- Start of image blocks -->
+    <div class="photo-card" tabindex="0">
+      <img src="1_Selene_Sovereign_Path_Garden.jpg" alt="The Garden Opens First">
+      <div class="caption">
+        <h3>The Garden Opens First</h3>
+        <p class="meta">Jardin Majorelle, Morocco · March 2025</p>
+        <p class="quote">Before the lens begins, the garden receives her.
+She moves without spectacle — unclaimed by the gaze.
+She does not enter the frame. She enters her field.
+This is not where the story begins — this is where it becomes hers.</p>
+      </div>
+    </div>
+
+    <div class="photo-card" tabindex="0">
+      <img src="2_Selene_Sovereign_Path_Mosaic.jpg" alt="Mosaic Memory, Unbent">
+      <div class="caption">
+        <h3>Mosaic Memory, Unbent</h3>
+        <p class="meta">Hassan II Mosque, Morocco · March 2025</p>
+        <p class="quote">She does not echo the mosaic — she holds against it.
+In upright stillness, she resists ornamental roles.
+Her difference is not to be softened.
+It is declaration.</p>
+      </div>
+    </div>
+
+    <div class="photo-card" tabindex="0">
+      <img src="3_Selene_Sovereign_Path_Threshold.jpg" alt="Threshold of Knowledge">
+      <div class="caption">
+        <h3>Threshold of Knowledge</h3>
+        <p class="meta">Fez, Morocco (Al Quaraouiyine University), March 2025</p>
+        <p class="quote">At the gate of the world’s oldest university, she does not knock.
+She claims.
+In a place where access was once withheld, she authors a new chapter.
+She does not enter history — she redefines it.</p>
+      </div>
+    </div>
+
+    <div class="photo-card" tabindex="0">
+      <img src="4_Selene_Sovereign_Path_Vastness.jpg" alt="Desert Uprising">
+      <div class="caption">
+        <h3>Desert Uprising</h3>
+        <p class="meta">Sahara, Morocco · March 2025</p>
+        <p class="quote">She lifts into the light, arms freed from performance.
+The dunes do not curve around her — they answer her.
+This is not joy as reaction.
+This is breath and body reclaimed./p>
+      </div>
+    </div>
+
+    <div class="photo-card" tabindex="0">
+      <img src="5_Selene_Sovereign_Path_Liberation.jpg" alt="She Commands Dusk">
+      <div class="caption">
+        <h3>She Commands Dusk</h3>
+        <p class="meta">Sahara Caravan Route, Morocco · March 2025</p>
+        <p class="quote">A procession unfolds behind her, indifferent.
+She does not wait to be seen.
+She steadies herself in silence.
+Dusk reshapes around her.
+She holds shadow like a question.</p>
+      </div>
+    </div>
+
+  
+     <div class="photo-card" tabindex="0">
+      <img src="11_MistWalker.jpg" alt="Signal in the White">
+      <div class="caption">
+        <h3>Signal in the White</h3>
+        <p class="meta">Grouse Mountain, Canada, Dec 2024</p>
+        <p class="quote">Surrounded by erasure, she remains vivid, deliberate.
+Snow sharpens her.
+In a world that polices presence, she leaves no trace —
+except her signal.
+Her yellow is not for attention.
+It is for sovereignty.</p>
+      </div>
+    </div>
+
+      <div class="photo-card" tabindex="0">
+      <img src="7_Selene_Sovereign_Path_Arles.jpg" alt="No One Watches Here">
+      <div class="caption">
+        <h3>No One Watches Here</h3>
+        <p class="meta">Arles, France · May 2024</p>
+        <p class="quote">She walks alone — not unseen.
+Her back is a refusal. Her stride, a sovereign line.
+This is not retreat. It is revision.
+Without a gaze to define her, she authors her absence.</p>
+      </div>
+    </div>
+  
+  
+    <div class="photo-card" tabindex="0">
+      <img src="6_Selene_Sovereign_Path_Coastline.jpg" alt="She Leans on the Edge of Empire">
+      <div class="caption">
+        <h3>She Leans on the Edge of Empire</h3>
+        <p class="meta">Rabat, Morocco · March 2025</p>
+        <p class="quote">Ocean stretches behind her — not as backdrop, but as witness.
+She does not soften. She does not shrink.
+The empire is not in the architecture.
+It is in her refusal to be small against it.</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- End of image blocks -->
+
+  </div>
+
+  <footer>
+    © 2025 Selene Sahari · Portfolio site by Selene · All rights reserved
+  </footer>
+
+  <script>
+
+      // Apply fade-in and check saved preference
+      document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode");
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === "true" || (!saved && prefersDark)) {
+        document.body.classList.add("dark");
+        document.getElementById("modeToggle").textContent = "☀️";
+      }
+      requestAnimationFrame(() => {
+        document.body.classList.add("fade-in");
+      });
+    });
+    
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+  </script>
+</body>
+</html>
