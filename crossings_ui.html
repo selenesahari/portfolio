@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Folio: Signals of Sovereignty</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #1c1c1e;
+      --bg-dark: #1c1c1e;
+      --text-dark: #f2f2f7;
+      --caption-light: #3a3a3c;
+      --caption-dark: #ccc;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      opacity: 0;
+      transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    nav {
+      text-align: center;
+      font-size: 1rem;
+      padding: 1.5rem 0;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s ease, color 0.3s ease;
+    }
+
+    nav a.active, nav a:hover {
+      border-bottom: 2px solid currentColor;
+    }
+
+    body.dark nav a {
+      color: var(--text-dark);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-top: 2.5rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      color: #1c1c1e;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #f2f2f7;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      z-index: 100;
+      font-weight: 500;
+    }
+
+    .toggle-theme:hover {
+      background-color: #e5e5ea;
+    }
+
+    .submission-description {
+      padding: 3rem 1.5rem;
+      max-width: 960px;
+      margin: auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #1f1f1f;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1280px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark .photo-card {
+      background-color: #2c2c2e;
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      padding: 1rem 1.2rem;
+    }
+
+    .caption h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #1c1c1e;
+    }
+
+    .caption .meta {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 0.4rem;
+    }
+
+    .caption .quote {
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--caption-light);
+    }
+
+    body.dark .caption .quote {
+      color: var(--caption-dark);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 3rem 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    body.dark footer {
+      color: #aaa;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sovereign_path.html" class="active">The Sovereign Path</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>Visual Folio: Signals of Sovereignty</h1>
+
+  <section class="submission-description">
+    <p><strong>Thresholds of Her: A Sovereign Cartography of Crossing</strong> is a curated submission to the <em>Rencontres de la Photographie Marrakech + Festival OFF Arles 2025</em>, exploring the theme of <strong>Crossings</strong>.</p>
+    <p>This photographic series was created in response to the theme — mapping physical, emotional, and epistemological thresholds across gardens, deserts, snowfields, city walls, and machine corridors. It traces a sovereign arc: not to be seen, but to arrive.</p>
+    <p>Spanning Morocco, France, Canada, and the United States, the work documents neither tourism nor retreat — but a movement of return. Through stance, silence, and gaze, the woman resists performance and renders the external gaze obsolete. She walks not into view, but into form. Her body becomes structure. Her presence: signal.</p>
+    <p>Each frame is a threshold — not just crossed, but re-authored.<br>
+    The desert becomes mirror. The snow becomes veil. The city becomes witness.<br>
+    This is not a document of her crossing — it is her becoming.</p>
+    <p>What began as a visual inquiry has become a cartography:<br>
+    A map of how sovereignty moves through space, silence, refusal — and remains intact.</p>
+  </section>
+
+  <!-- Insert gallery content here -->
+
+  <footer>
+    © 2025 Selene Sahari · Portfolio site by Selene · All rights reserved
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode");
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === "true" || (!saved && prefersDark)) {
+        document.body.classList.add("dark");
+        document.getElementById("modeToggle").textContent = "☀️";
+      }
+      requestAnimationFrame(() => {
+        document.body.classList.add("fade-in");
+      });
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+  </script>
+</body>
+</html>
