@@ -35,65 +35,88 @@
       opacity: 1;
     }
 
-    .container {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
     }
 
+    nav {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark nav a {
+      color: var(--text);
+    }
+
+    nav a:hover {
+      border-bottom: 1px solid currentColor;
+    }
+
+    .hero-container {
+      position: relative;
+      overflow: hidden;
+    }
+
     .hero {
       text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 1rem auto;
-    }
-
-    .section {
-      margin: 3rem 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      position: relative;
+      padding: 4rem 1rem 2rem;
+      animation: fadeSlideUp 1.2s ease forwards;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
+      --scrollY: 0px;
     }
 
-    .gallery-item:nth-child(2) { animation-delay: 0.2s; }
-    .gallery-item:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes fadeInUp {
+    @keyframes fadeSlideUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    .gallery-item img {
-      width: 100%;
-      border-radius: 8px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 120%;
+      z-index: -1;
+      background: url('hero_bg.jpg') center/cover no-repeat;
+      transform: scale(1.05) translateY(calc(var(--scrollY) * 0.2));
+      opacity: 0.06;
+      pointer-events: none;
+      transition: transform 0.6s ease-out;
+      will-change: transform;
     }
 
-    .caption {
-      margin-top: 0.5rem;
+    .hero p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 1rem auto;
       font-style: italic;
-      font-size: 0.9rem;
       color: var(--caption);
-      transition: color 0.3s ease;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      display: block;
+      margin: 0.5rem auto;
+      font-size: 1.05rem;
+      text-decoration: none;
+      border-bottom: 1px solid #999;
+      max-width: fit-content;
     }
 
     footer {
@@ -133,93 +156,44 @@
   <!-- 🌙/☀️ Toggle Button -->
   <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
 
-    <!-- 🔗 Navigation Bar -->
-  <nav style="text-align: center; font-family: 'Inter', sans-serif; font-size: 0.95rem; padding: 1rem 0;">
-    <a href="index.html" style="margin: 0 1.5rem; text-decoration: none; border-bottom: 1px solid transparent;">Home</a>
-    <a href="sovereign_path.html" style="margin: 0 1.5rem; text-decoration: none; border-bottom: 1px solid transparent;">The Sovereign Path</a>
-    <a href="about.html" style="margin: 0 1.5rem; text-decoration: none; border-bottom: 1px solid transparent;">About</a>
+  <!-- 🔗 Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sovereign_path.html">The Sovereign Path</a>
+    <a href="about.html">About</a>
   </nav>
-  
-  <div class="hero">
-    <h1>Selene Sahari</h1>
-    <h3>Interdisciplinary Creator · Visual Artist · Staff Software Engineer · Founder, DreamWeaver AI</h3>
-    
-      <p style="font-style: italic; font-size: 1rem; max-width: 700px; margin: 1rem auto; color: var(--caption);">
-    <strong>Selene</strong> — the moon. She rises in silence, pulls tides, and never chases light - because she is the light.<br>
-    <strong>Sahari</strong> — of the desert. Vast, clear, and unbothered. Where illusions end and sovereignty begins.<br><br>
-    Together, <strong>Selene Sahari</strong> is not a name. It’s a frequency.<br>
-    A symbol of stillness, clarity, and quiet creation.<br>
-    She doesn’t orbit the world. She builds her own sky.
-  </p>
 
-    <p style="margin-top: 1rem;">
-  <a href="selene.html" style="font-weight: bold; text-decoration: none; border-bottom: 1px solid #999;">
-    → Myth Decode: Selene Sahari
-  </a>
-</p>
+  <div class="hero-container">
+    <div class="hero">
+      <h1>Selene Sahari</h1>
+      <h3>Interdisciplinary Creator · Visual Artist · Staff Software Engineer · Founder, DreamWeaver AI</h3>
 
-    <p>Selene Sahari is a narrative visual artist whose work explores presence, sovereignty, and self-authorship through image. Her visual language blends global textures with symbolic solitude, creating spaces where a woman arrives not to be seen — but to see.</p>
-    <p>With roots in systems engineering and introspective storytelling, her practice investigates how women navigate environments historically shaped to contain them. Her work is not performative. It is declarative.</p>
+      <p><strong>Selene</strong> — the moon. She rises in silence, pulls tides, and never chases light — because she is the light.<br>
+      <strong>Sahari</strong> — of the desert. Vast, clear, and unbothered. Where illusions end and sovereignty begins.</p>
+
+      <p style="margin-top: 1rem;">
+        Together, <strong>Selene Sahari</strong> is not a name. It’s a frequency.<br>
+        A symbol of stillness, clarity, and quiet creation.<br>
+        She doesn’t orbit the world. She builds her own sky.
+      </p>
+    </div>
   </div>
 
-  <div class="container">
-    <section class="section">
-      <h2>The Sovereign Path (2024–2025)</h2>
-      <p>A cinematic photo essay exploring authorship, presence, and psychological sovereignty through architectural symbolism and spatial storytelling. Submitted to ND Awards 2025, IPA 2025. Shot across Morocco, Asia, Europe, and North America.</p>
-      <ul>
-        <li><strong>Selene before the threshold of return</strong> — "Poised, composed, and uncontained."</li>
-        <li><strong>Selene in the Sahara with camels</strong> — "Sovereignty in stillness."</li>
-        <li><strong>Selene amid calligraphy and light</strong> — "Authorship beyond visibility."</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="tile.jpg" loading="lazy" alt="Moroccan Tilework">
-          <div class="caption">Selene before the threshold of return — poised, composed, and uncontained.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="desert.jpg" loading="lazy" alt="Sahara Camels">
-          <div class="caption">Crossing the Sahara at dusk — sovereignty in stillness.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="gallary_bw.jpg" loading="lazy" alt="Calligraphy Light">
-          <div class="caption">Amid calligraphy and light — authorship beyond visibility.</div>
-        </div>
-      </div>
-    </section>
-
-    <p style="text-align: center; margin-top: 1.5rem;">
-      <a href="sovereign_path.html" style="font-weight: bold; font-size: 1rem; text-decoration: none; border-bottom: 1px solid #999;">
-        → View Full Sovereign Path Series
-      </a>
-    </p>
-
-    <section class="section">
-      <h2>Professional & Technical Background</h2>
-      <p><strong>Staff Software Engineer</strong> – Leads enterprise data architecture and secure systems design. Specializes in behavioral modeling, anomaly detection, and ethical AI.</p>
-      <p><strong>Founder & President, DreamWeaver AI</strong> – Launched nonprofit integrating AI, narrative psychology, and cognitive transformation. Creator of Sovereign Systems Psychology™.</p>
-      <p><strong>Upcoming:</strong> SciDataCon 2025 (Brisbane) – Peer-reviewed presentation on resilient AI systems.</p>
-    </section>
-
-    <section class="section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:selenesahari@gmail.com">selenesahari@gmail.com</a></p>
-    </section>
+  <div class="cta">
+    <a href="sovereign_path.html">→ View Visual Portfolio</a>
+    <a href="selene.html">→ Myth Decode: Selene Sahari</a>
+    <a href="about.html">→ Learn More About the Artist</a>
   </div>
 
   <footer>
-     &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
+    &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
   </footer>
 
   <script>
     // 🌙 Persist theme preference and animate in
     document.addEventListener("DOMContentLoaded", () => {
       const saved = localStorage.getItem("darkMode");
-      const prefersDark = saved === "true";
-      if (prefersDark) {
+      if (saved === "true") {
         document.body.classList.add("dark");
         document.getElementById("modeToggle").textContent = "☀️";
       }
@@ -233,6 +207,16 @@
       document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
       localStorage.setItem("darkMode", isDark);
     }
+
+    // Parallax background movement
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const hero = document.querySelector(".hero");
+      if (hero) {
+        const offset = scrollY * 0.2;
+        hero.style.setProperty("--scrollY", `${offset}px`);
+      }
+    });
   </script>
 </body>
 </html>
