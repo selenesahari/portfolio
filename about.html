@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – Selene Sahari</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1c1c1e;
+      --caption: #444;
+      --footer: #666;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eeeeee;
+      --caption: #aaaaaa;
+      --footer: #888888;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    nav {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      margin: 0 1.5rem;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      color: inherit;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--footer);
+      padding: 2rem 1rem;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sovereign_path.html">The Sovereign Path</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <div class="container">
+    <h1>About the Artist</h1>
+
+    <p><strong>Selene Sahari</strong> is a narrative visual artist whose work explores presence, sovereignty, and self-authorship through image. Her lens is not performative — it is declarative. Whether framed in thresholds, ruins, gardens, or ancestral alleys, she creates not to be seen — but to see.</p>
+
+    <p>In <em>The Sovereign Path</em>, each image is a fragment of an unwritten mythology. Her work moves between continents and centuries — from the oldest university in the world to forgotten palaces — reclaiming visual spaces historically designed to silence or adorn. The subject is not the woman — it is the moment she decides to no longer perform.</p>
+
+    <p>With roots in systems engineering and introspective storytelling, Selene blends architectural symbolism, solitude, and cinematic framing into a grammar of psychological sovereignty. Her visual language is slow, intentional, and alive with refusal. She invites the viewer not to interpret, but to deconstruct — and to re-author.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Selene Sahari · Portfolio by Selene · All rights reserved
+  </footer>
+
+  <script>
+    // 🌙 Theme persistence
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode");
+      const prefersDark = saved === "true";
+      if (prefersDark) {
+        document.body.classList.add("dark");
+        document.getElementById("modeToggle").textContent = "☀️";
+      }
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+  </script>
+</body>
+</html>
