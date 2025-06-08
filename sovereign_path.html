@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Visual Folio: Signals of Sovereignty</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -66,9 +66,9 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1280px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -78,6 +78,11 @@
       border-radius: 12px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       font-family: 'Source Sans Pro', sans-serif;
+      background-color: #fff;
+    }
+
+    body.dark .photo-card {
+      background-color: #1a1a1a;
     }
 
     .photo-card img {
@@ -153,6 +158,8 @@
 <body>
   <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
   <h1>Visual Folio: Signals of Sovereignty</h1>
+
+  <div id="folio" class="gallery">
 
     <!-- Start of image blocks -->
     <div class="photo-card" tabindex="0">
@@ -344,6 +351,7 @@
 
   </div>
 
+
   <div class="footer-note">
     This series explores authorship, presence, and psychological sovereignty through spatial narrative. Each image is a threshold — not of spectacle, but of becoming.
   </div>
@@ -353,7 +361,6 @@
   </footer>
 
   <script>
-    // Fade-in and apply saved preference
     document.addEventListener("DOMContentLoaded", () => {
       const saved = localStorage.getItem("darkMode");
       if (saved === "true") {
@@ -373,4 +380,3 @@
   </script>
 </body>
 </html>
-
