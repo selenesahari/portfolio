@@ -10,7 +10,8 @@
       --text-light: #111111;
       --bg-dark: #111111;
       --text-dark: #eeeeee;
-      --accent: #b71c1c;
+      --caption-light: #333;
+      --caption-dark: #ccc;
     }
 
     body {
@@ -33,28 +34,34 @@
       letter-spacing: -0.5px;
     }
 
-    .toggle-bar {
-      text-align: center;
-      margin-top: 0.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .toggle-bar button {
-      background: #111;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 1px solid var(--text-light);
+      color: var(--text-light);
+      padding: 0.4rem 0.8rem;
       font-size: 0.9rem;
       border-radius: 20px;
       cursor: pointer;
-      font-family: 'Source Sans Pro', sans-serif;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      z-index: 100;
     }
 
-    .toggle-bar button:hover {
-      background: #444;
+    body.dark .toggle-theme {
+      border-color: var(--text-dark);
+      color: var(--text-dark);
+    }
+
+    .toggle-theme:hover {
+      background: var(--text-light);
+      color: var(--bg-light);
+    }
+
+    body.dark .toggle-theme:hover {
+      background: var(--text-dark);
+      color: var(--bg-dark);
     }
 
     .gallery {
@@ -67,7 +74,6 @@
     }
 
     .photo-card {
-      position: relative;
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -78,11 +84,6 @@
       display: block;
       width: 100%;
       height: auto;
-      transition: transform 0.4s ease;
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.02);
     }
 
     .caption {
@@ -101,47 +102,19 @@
       margin-bottom: 0.3rem;
     }
 
+    body.dark .caption .meta {
+      color: #aaa;
+    }
+
     .caption .quote {
       font-style: italic;
       font-size: 0.95rem;
       line-height: 1.4;
-      color: #333;
-    }
-
-    /* Museum Mode */
-    .museum .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 90%);
-      color: #fff;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      pointer-events: none;
-    }
-
-    .museum .photo-card:hover .caption {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .museum .caption .meta {
-      color: #ddd;
-    }
-
-    .museum .caption .quote {
-      color: #eee;
+      color: var(--caption-light);
     }
 
     body.dark .caption .quote {
-      color: #ccc;
-    }
-
-    body.dark .caption .meta {
-      color: #999;
+      color: var(--caption-dark);
     }
 
     .footer-note {
@@ -157,18 +130,28 @@
     body.dark .footer-note {
       color: #aaa;
     }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 2rem 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    body.dark footer {
+      color: #aaa;
+      border-top: 1px solid #444;
+    }
   </style>
 </head>
 
 <body>
+  <button class="toggle-theme" onclick="toggleDark()">🌙</button>
+
   <h1>Visual Folio: Signals of Sovereignty</h1>
 
-  <div class="toggle-bar">
-    <button onclick="toggleMode()">🖼️ Toggle Museum / Editorial Mode</button>
-    <button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
-  </div>
-
-  <div id="folio" class="gallery">
+    <div id="folio" class="gallery">
 
     <!-- Start of image blocks -->
     <div class="photo-card" tabindex="0">
@@ -290,7 +273,7 @@
     </div>
 
 
-        <div class="photo-card" tabindex="0">
+    <div class="photo-card" tabindex="0">
       <img src="14_CodeOfNothing.jpg" alt="Code of Nothing">
       <div class="caption">
         <h3>Code of Nothing</h3>
@@ -328,7 +311,7 @@
       </div>
     </div>
 
-        <div class="photo-card" tabindex="0">
+    <div class="photo-card" tabindex="0">
       <img src="18_Bay_Horizon.jpg" alt="Bay Horizon">
       <div class="caption">
         <h3>Bay Horizon</h3>
@@ -338,7 +321,7 @@
     </div>
 
 
-            <div class="photo-card" tabindex="0">
+    <div class="photo-card" tabindex="0">
       <img src="19_Ink_Gallary_Walk.jpg" alt="Ink Gallery Walk">
       <div class="caption">
         <h3>Ink Gallery Walk</h3>
@@ -348,7 +331,7 @@
     </div>
 
 
-              <div class="photo-card" tabindex="0">
+    <div class="photo-card" tabindex="0">
       <img src="20_Carcassonne_Citadel.jpg" alt="Carcassonne Citadel">
       <div class="caption">
         <h3>Carcassonne Citadel</h3>
@@ -364,10 +347,11 @@
     This series explores authorship, presence, and psychological sovereignty through spatial narrative. Each image is a threshold — not of spectacle, but of becoming.
   </div>
 
+  <footer>
+    © 2025 Selene Sahari · Portfolio site by Selene · All rights reserved
+  </footer>
+
   <script>
-    function toggleMode() {
-      document.getElementById('folio').classList.toggle('museum');
-    }
     function toggleDark() {
       document.body.classList.toggle('dark');
     }
