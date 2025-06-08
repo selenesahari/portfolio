@@ -397,9 +397,12 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+
+      // Apply fade-in and check saved preference
+      document.addEventListener("DOMContentLoaded", () => {
       const saved = localStorage.getItem("darkMode");
-      if (saved === "true") {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === "true" || (!saved && prefersDark)) {
         document.body.classList.add("dark");
         document.getElementById("modeToggle").textContent = "☀️";
       }
@@ -407,7 +410,7 @@
         document.body.classList.add("fade-in");
       });
     });
-
+    
     function toggleDarkMode() {
       const isDark = document.body.classList.toggle("dark");
       document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
