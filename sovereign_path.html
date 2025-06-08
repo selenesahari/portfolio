@@ -34,6 +34,34 @@
       color: var(--text-dark);
     }
 
+    nav {
+      text-align: center;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.95rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark nav a {
+      color: var(--text-dark);
+    }
+
+    nav a:hover {
+      border-bottom: 1px solid currentColor;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      border-bottom: 1px solid currentColor;
+    }
+
     h1 {
       text-align: center;
       font-size: 2.6rem;
@@ -155,19 +183,20 @@
     }
   </style>
 </head>
+
 <body>
   <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
 
-    <!-- 🔗 Navigation Bar -->
-  <nav style="text-align: center; font-family: 'Inter', sans-serif; font-size: 0.95rem; padding: 1rem 0;">
-    <a href="index.html" style="margin: 0 1.5rem; text-decoration: none; border-bottom: 1px solid transparent;">Home</a>
-    <a href="sovereign_path.html" style="margin: 0 1.5rem; text-decoration: none; border-bottom: 1px solid transparent;">The Sovereign Path</a>
-    <a href="about.html" style="margin: 0 1.5rem; text-decoration: none; border-bottom: 1px solid transparent;">About</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sovereign_path.html" class="active">The Sovereign Path</a>
+    <a href="about.html">About</a>
   </nav>
-  
+
   <h1>Visual Folio: Signals of Sovereignty</h1>
 
-  <div id="folio" class="gallery">
+  <!-- Gallery content remains unchanged below -->
+<div id="folio" class="gallery">
 
     <!-- Start of image blocks -->
     <div class="photo-card" tabindex="0">
@@ -358,7 +387,6 @@
     <!-- End of image blocks -->
 
   </div>
-
 
   <div class="footer-note">
     This series explores authorship, presence, and psychological sovereignty through spatial narrative. Each image is a threshold — not of spectacle, but of becoming.
