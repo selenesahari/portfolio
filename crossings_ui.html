@@ -12,7 +12,7 @@
       --bg-dark: #1c1c1e;
       --text-dark: #f2f2f7;
       --caption-light: #3a3a3c;
-      --caption-dark: #ccc;
+      --caption-dark: #e0e0e0;
     }
 
     body {
@@ -62,7 +62,7 @@
       margin-top: 2.5rem;
       font-weight: 500;
       letter-spacing: -0.3px;
-      color: #1c1c1e;
+      color: inherit;
     }
 
     .toggle-theme {
@@ -90,17 +90,12 @@
       margin: auto;
       font-size: 1.05rem;
       line-height: 1.7;
-      color: #1f1f1f;
+      color: var(--text-light);
     }
 
     body.dark .submission-description {
-  color: #f2f2f7;  /* Or a slightly softer light gray like #e5e5ea */
-}
-
-    body.dark {
-  background-color: #1c1c1e;
-  color: #f2f2f7;
-}
+      color: var(--text-dark);
+    }
 
     .gallery {
       display: grid;
@@ -142,13 +137,16 @@
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
       font-weight: 600;
-      color: #1c1c1e;
+      color: inherit;
     }
 
     .caption .meta {
       font-size: 0.82rem;
       color: #888;
-      margin-bottom: 0.4rem;
+    }
+
+    body.dark .caption .meta {
+      color: #ccc;
     }
 
     .caption .quote {
@@ -196,8 +194,6 @@
     <p>What began as a visual inquiry has become a cartography:<br>
     A map of how sovereignty moves through space, silence, refusal — and remains intact.</p>
   </section>
-
-  <!-- Insert gallery content here -->
 
   <footer>
     © 2025 Selene Sahari · Portfolio site by Selene · All rights reserved
