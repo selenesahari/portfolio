@@ -6,93 +6,43 @@
   <title>She Never Chased Light – A Sovereign Reframing of Selene</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #fafafa;
-      --text: #1c1c1e;
-      --caption: #444;
-      --footer: #666;
-    }
-
-    body.dark {
-      --bg: #121212;
-      --text: #eeeeee;
-      --caption: #aaaaaa;
-      --footer: #888888;
-    }
-
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
+      background: #fafafa;
+      color: #1c1c1e;
       font-family: 'Inter', sans-serif;
       line-height: 1.7;
       padding: 2rem;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
-      opacity: 0;
-      transition: background 0.3s ease, color 0.3s ease, opacity 0.6s ease;
     }
-
-    body.fade-in {
-      opacity: 1;
-    }
-
     h1, h2 {
       font-family: 'Playfair Display', serif;
-      color: var(--text);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
+      color: #111;
     }
-
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
     h2 {
-      animation-delay: 0.2s;
+      margin-top: 2.5rem;
+      font-size: 1.25rem;
     }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     p {
       margin-top: 1rem;
     }
-
     blockquote {
       margin: 2rem 0;
       font-style: italic;
       border-left: 3px solid #ccc;
       padding-left: 1rem;
-      color: var(--caption);
-    }
-
-    .toggle-theme {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: 1px solid var(--text);
-      color: var(--text);
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .toggle-theme:hover {
-      background: var(--text);
-      color: var(--bg);
+      color: #555;
     }
   </style>
 </head>
 
 <body>
-  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
-
   <h1>She Never Chased Light — Because She Was the Light</h1>
 
   <p><strong>Selene</strong> — the moon. She rises without noise, commands oceans, and never chases light — because she is the light.</p>
@@ -118,8 +68,8 @@
     “I will not waste a single breath on what does not build.”
   </blockquote>
 
-  <p>Every hour she didn’t spend orbiting him was poured into creation. Into structure. Into skill. Into systems that would outlast them both.</p>
-  <p>The more she witnessed stagnation, the harder she worked. Not to prove. But to rise — clean, sealed, and unstoppable.</p>
+  <p>Every hour she didn’t spend orbiting him was poured into creation. Into structure. Into skill. Into systems meant to endure.</p>
+  <p>The more she witnessed stagnation, the harder she worked. Not to prove. But to rise — sealed, focused, and unstoppable. To make every moment count. To build what matters.</p>
 
   <h2>50 Offsprings: Not Children, but Creations</h2>
   <p>Not children. 50 offsprings — her ideas, her codes, her frameworks.</p>
@@ -132,25 +82,5 @@
   <p>She didn’t seek approval, attention, or recognition.</p>
   <p>She never chased light.</p>
   <p><strong>She was the light.</strong></p>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("darkMode");
-      const prefersDark = saved === "true";
-      if (prefersDark) {
-        document.body.classList.add("dark");
-        document.getElementById("modeToggle").textContent = "☀️";
-      }
-      requestAnimationFrame(() => {
-        document.body.classList.add("fade-in");
-      });
-    });
-
-    function toggleDarkMode() {
-      const isDark = document.body.classList.toggle("dark");
-      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("darkMode", isDark);
-    }
-  </script>
 </body>
 </html>
