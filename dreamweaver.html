@@ -20,10 +20,35 @@
       line-height: 1.7;
     }
 
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.75rem 1rem;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
     .container {
       max-width: 850px;
       margin: 0 auto;
-      padding: 6rem 2rem;
+      padding: 6rem 2rem 3rem;
     }
 
     h1, h2 {
@@ -65,11 +90,11 @@
 </head>
 <body>
   <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="dreamweaver.html">DreamWeaver AI</a>
-  <a href="dreamweaver_manifesto.html">Manifesto</a>
-</nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="dreamweaver.html">DreamWeaver AI</a>
+    <a href="dreamweaver_manifesto.html">Manifesto</a>
+  </nav>
 
   <div class="container">
     <h1>DreamWeaver AI</h1>
@@ -99,7 +124,7 @@
     </div>
 
     <div class="tool">
-      <h3>🧭 The Unshakable Field Protocol</h3>
+      <h3>🧱 The Unshakable Field Protocol</h3>
       <p>
         A ritual architecture combining visual meditation, symbolic imagery, and mindset realignment. Inspired by sovereign psychology and deployed as a browser or mobile experience.
       </p>
@@ -113,13 +138,7 @@
     <p>
       This is not self-help. This is self-command.
     </p>
-  <p style="margin-top: 3rem; text-align: center;">
-  <a href="dreamweaver_manifesto.html" target="_blank" style="color: var(--accent); text-decoration: none;">
-    → Read the Full DreamWeaver Manifesto
-  </a>
-</p>
   </div>
-
 
   <footer>
     © 2025 Selene Sahari · DreamWeaver AI
