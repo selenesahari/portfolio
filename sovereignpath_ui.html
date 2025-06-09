@@ -46,24 +46,38 @@
       color: var(--text-dark);
     }
 
-    nav {
-      text-align: center;
-      font-size: 1rem;
-      padding: 1.5rem 0;
-    }
+
+
 
     nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin: 0 1.5rem;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: border-bottom 0.3s ease, color 0.3s ease;
-    }
+  position: relative;
+  display: inline-block;
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  transition: color 0.3s ease;
+}
 
-    nav a.active, nav a:hover {
-      border-bottom: 2px solid currentColor;
-    }
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
     body.dark nav a {
       color: var(--text-dark);
