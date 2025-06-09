@@ -405,17 +405,10 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("darkMode");
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === "true" || (!saved && prefersDark)) {
-        document.body.classList.add("dark");
-        document.getElementById("modeToggle").textContent = "☀️";
-      }
-      requestAnimationFrame(() => {
-        document.body.classList.add("fade-in");
-      });
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("dark", "fade-in");
+  document.getElementById("modeToggle").textContent = "☀️";
+});
 
     function toggleDarkMode() {
       const isDark = document.body.classList.toggle("dark");
