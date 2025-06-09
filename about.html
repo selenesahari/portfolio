@@ -1,140 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About – Selene Sahari</title>
-  <meta name="description" content="The Sovereign Path by Selene Sahari is a long-form visual narrative exploring feminine authorship, psychological sovereignty, and symbolic storytelling through the lens of Sovereign Systems Psychology.">
-<meta name="keywords" content="Selene Sahari, The Sovereign Path, sovereign women, visual narrative, DreamWeaver AI, authorship, Sovereign Systems Psychology, identity, Morocco photography, symbolic space, psychological clarity, cinematic storytelling">
-<meta name="author" content="Selene Sahari">
-
-<!-- Open Graph Meta Tags for Social Sharing -->
-<meta property="og:title" content="The Sovereign Path – A Cinematic Visual Narrative by Selene Sahari">
-<meta property="og:description" content="A DreamWeaver AI visual narrative exploring presence and authorship through the lens of Sovereign Systems Psychology — where image becomes signal, not spectacle.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://selenesahari.github.io/portfolio/sovereignpath_ui.html">
-<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #1c1c1e;
-      --caption: #3a3a3c;
-      --footer: #666;
+      --bg-dark: #0c0c0c;
+      --text-dark: #eeeeee;
+      --accent: #b71c1c;
     }
-    body.dark {
-      --bg: #1c1c1e;
-      --text: #f2f2f7;
-      --caption: #cccccc;
-      --footer: #aaaaaa;
+
+    html[data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
     }
+
     body {
       margin: 0;
-      background: var(--bg);
+      background-color: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.7;
-      opacity: 0;
-      transition: background 0.3s ease, color 0.3s ease, opacity 0.6s ease;
     }
-    body.fade-in {
-      opacity: 1;
-    }
-    nav {
-      text-align: center;
-      font-size: 1rem;
-      padding: 1.5rem 0;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin: 0 1.5rem;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: border-bottom 0.3s ease, color 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      border-bottom: 2px solid currentColor;
-    }
+
     .container {
-      max-width: 860px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
     }
+
     h1, h2 {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
       margin-bottom: 1rem;
     }
-    p {
-      font-size: 1.05rem;
-      margin-bottom: 1.6rem;
-      color: var(--caption);
+
+    h1 {
+      font-size: 2.5rem;
     }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    ul.timeline {
+      list-style: none;
+      padding-left: 1rem;
+      border-left: 2px solid var(--accent);
+    }
+
+    ul.timeline li {
+      margin-bottom: 1.2rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    ul.timeline li::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: -8px;
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
-      color: var(--footer);
-      padding: 3rem 1rem;
-      border-top: 1px solid #e0e0e0;
-    }
-    body.dark footer {
-      border-top: 1px solid #333;
-    }
-    .toggle-theme {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: 1px solid var(--text);
-      color: var(--text);
-      padding: 0.4rem 0.8rem;
-      font-size: 0.95rem;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .toggle-theme:hover {
-      background: var(--text);
-      color: var(--bg);
+      color: #777;
+      padding: 2rem;
+      background: #111;
     }
   </style>
 </head>
 <body>
-  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="sovereignpath_ui.html">The Sovereign Path</a>
-    <a href="about.html" class="active">About</a>
-  </nav>
   <div class="container">
-    <h1>About the Artist</h1>
-    <p><strong>Selene Sahari</strong> is a narrative visual artist whose work explores presence, sovereignty, and self-authorship through image. Her lens is not performative — it is declarative. Whether framed in thresholds, ruins, gardens, or ancestral alleys, she creates not to be seen — but to see.</p>
-    <p>In <em>The Sovereign Path</em>, each image is a fragment of an unwritten mythology. Her work moves between continents and centuries — from the oldest university in the world to forgotten palaces — reclaiming visual spaces historically designed to silence or adorn. The subject is not the woman — it is the moment she decides to no longer perform.</p>
-    <p>With roots in systems engineering and introspective storytelling, Selene blends architectural symbolism, solitude, and cinematic framing into a grammar of psychological sovereignty. Her visual language is slow, intentional, and alive with refusal. She invites the viewer not to interpret, but to deconstruct — and to re-author.</p>
+    <h1>About Selene Sahari</h1>
+    <p>
+      Selene Sahari is an interdisciplinary creator whose work weaves together systems architecture, sovereign psychology, and visual storytelling. Her portfolio moves across continents and disciplines — from software engineering and AI ethics to photographic narratives grounded in presence, silence, and symbolic refusal.
+    </p>
+    <p>
+      Through <strong>DreamWeaver AI</strong>, she builds tools for inner clarity — designing systems not only for enterprises but for the inner world. Her current project, <em>The Sovereign Path</em>, is both a visual journey and an evolving theory of authorship beyond visibility.
+    </p>
+
+    <h2>Milestones</h2>
+    <ul class="timeline">
+      <li><strong>2023–2024:</strong> Earned UC Berkeley Professional Certificate in AI/ML (Top 5% of cohort)</li>
+      <li><strong>2024:</strong> Founded DreamWeaver AI – focused on Sovereign Systems Psychology</li>
+      <li><strong>2024–2025:</strong> Created "The Sovereign Path" photo essay across Morocco, France, Asia, and North America</li>
+      <li><strong>2025:</strong> Participated in GTC Hackathon (AI for Identity)</li>
+      <li><strong>2025:</strong> Selected to present at SciDataCon 2025 (Brisbane)</li>
+    </ul>
+
+    <h2>Ongoing Focus</h2>
+    <p>
+      Selene continues to explore how women reclaim narrative space — not through spectacle, but through structure, design, and deliberate authorship. She believes sovereignty is a design system, and clarity is a form of power.
+    </p>
   </div>
+
   <footer>
-    &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
+    © 2025 Selene Sahari · Portfolio site by Selene
   </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("darkMode");
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === "true" || (!saved && prefersDark)) {
-        document.body.classList.add("dark");
-        document.getElementById("modeToggle").textContent = "☀️";
-      }
-      requestAnimationFrame(() => {
-        document.body.classList.add("fade-in");
-      });
-    });
-    function toggleDarkMode() {
-      const isDark = document.body.classList.toggle("dark");
-      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("darkMode", isDark);
-    }
-  </script>
 </body>
 </html>
