@@ -252,16 +252,23 @@
   <footer>
     &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
   </footer>
+<script>
+  function toggleLanguage() {
+    const btn = document.getElementById("langToggle");
+    const isFR = btn.textContent === "EN";
 
-  <script>
-    function toggleLanguage() {
-      const btn = document.getElementById("langToggle");
-      const isEN = btn.textContent === "FR";
-      btn.textContent = isEN ? "FR" : "EN";
+    // Toggle button text
+    btn.textContent = isFR ? "FR" : "EN";
 
-      document.querySelectorAll(".quote-en").forEach(el => el.style.display = isEN ? "none" : "block");
-      document.querySelectorAll(".quote-fr").forEach(el => el.style.display = isEN ? "none" : "block");
-    }
-  </script>
+    // Toggle visibility
+    document.querySelectorAll(".quote-en").forEach(el => {
+      el.style.display = isFR ? "block" : "none";
+    });
+    document.querySelectorAll(".quote-fr").forEach(el => {
+      el.style.display = isFR ? "none" : "block";
+    });
+  }
+</script>
+
 </body>
 </html>
