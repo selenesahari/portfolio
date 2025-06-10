@@ -275,8 +275,25 @@
     btn.textContent = isFR ? "FR" : "EN";
     document.querySelectorAll(".quote-en").forEach(el => el.style.display = isFR ? "block" : "none");
     document.querySelectorAll(".quote-fr").forEach(el => el.style.display = isFR ? "none" : "block");
+
+    // Optional: remember user preference
+    // localStorage.setItem("lang", isFR ? "en" : "fr");
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Optional: retrieve user preference
+    // const savedLang = localStorage.getItem("lang") || "fr";
+
+    const savedLang = "fr"; // default to French
+    const isFR = savedLang === "fr";
+    const btn = document.getElementById("langToggle");
+    btn.textContent = isFR ? "EN" : "FR";
+
+    document.querySelectorAll(".quote-en").forEach(el => el.style.display = isFR ? "none" : "block");
+    document.querySelectorAll(".quote-fr").forEach(el => el.style.display = isFR ? "block" : "none");
+  });
 </script>
+
 
 </body>
 </html>
