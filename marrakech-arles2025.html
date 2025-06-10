@@ -1,381 +1,266 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Visual Folio: Signals of Sovereignty</title>
-  <meta name="description" content="The Sovereign Path by Selene Sahari is a long-form visual narrative exploring feminine authorship, psychological sovereignty, and symbolic storytelling through the lens of Sovereign Systems Psychology.">
-<meta name="keywords" content="Selene Sahari, The Sovereign Path, sovereign women, visual narrative, DreamWeaver AI, authorship, Sovereign Systems Psychology, identity, Morocco photography, symbolic space, psychological clarity, cinematic storytelling">
-<meta name="author" content="Selene Sahari">
-
-<!-- Open Graph Meta Tags for Social Sharing -->
-<meta property="og:title" content="The Sovereign Path – A Cinematic Visual Narrative by Selene Sahari">
-<meta property="og:description" content="A DreamWeaver AI visual narrative exploring presence and authorship through the lens of Sovereign Systems Psychology — where image becomes signal, not spectacle.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://selenesahari.github.io/portfolio/sovereignpath_ui.html">
-<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thresholds of Her – Arles 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-light: #ffffff;
-      --text-light: #1c1c1e;
-      --bg-dark: #1c1c1e;
-      --text-dark: #f2f2f7;
-      --caption-light: #3a3a3c;
-      --caption-dark: #e0e0e0;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       margin: 0;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      opacity: 0;
-      transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease;
+      padding: 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #1c1c1e;
+      color: #f2f2f7;
+      line-height: 1.6;
     }
-
-    body.fade-in {
-      opacity: 1;
-    }
-
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    nav {
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
       text-align: center;
-      font-size: 1rem;
-      padding: 1.5rem 0;
     }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin: 0 1.5rem;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: border-bottom 0.3s ease, color 0.3s ease;
-    }
-
-    nav a.active, nav a:hover {
-      border-bottom: 2px solid currentColor;
-    }
-
-    body.dark nav a {
-      color: var(--text-dark);
-    }
-
     h1 {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-top: 2.5rem;
-      font-weight: 500;
-      letter-spacing: -0.3px;
-      color: inherit;
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      margin-bottom: 0.5rem;
     }
-
     h2 {
-  font-size: 1.2rem;
-  font-weight: normal;
-  color: #ccc;
-  margin-top: 0;
-  text-align: center; /* ✅ Add this line */
-}
-
-
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #ccc;
+      margin-top: 0;
+    }
+    .toggle-bar {
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+    }
     .toggle-theme {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
       background-color: #f2f2f7;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       font-size: 0.95rem;
       border-radius: 16px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
       cursor: pointer;
-      z-index: 100;
-      font-weight: 500;
+      margin: 0 0.5rem;
+      font-weight: 600;
+      color: #1c1c1e;
     }
-
-    .toggle-theme:hover {
-      background-color: #e5e5ea;
-    }
-
-    .submission-description {
-      padding: 3rem 1.5rem;
+    .description {
       max-width: 960px;
-      margin: auto;
+      margin: 2rem auto;
       font-size: 1.05rem;
       line-height: 1.7;
-      color: var(--text-light);
     }
-
-    body.dark .submission-description {
-      color: var(--text-dark);
+    .description p {
+      margin-bottom: 1.2rem;
     }
-
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       max-width: 1280px;
       margin: 3rem auto;
       padding: 0 1rem;
     }
-
     .photo-card {
       overflow: hidden;
       border-radius: 20px;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-      background-color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .photo-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    body.dark .photo-card {
       background-color: #2c2c2e;
     }
-
     .photo-card img {
       display: block;
       width: 100%;
       height: auto;
     }
-
     .caption {
       padding: 1rem 1.2rem;
     }
-
     .caption h3 {
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
       font-weight: 600;
       color: inherit;
     }
-
     .caption .meta {
       font-size: 0.82rem;
-      color: #888;
+      color: #aaa;
     }
-
-    body.dark .caption .meta {
-      color: #ccc;
-    }
-
-    .caption .quote {
+    .quote {
       font-style: italic;
       font-size: 0.95rem;
       line-height: 1.6;
-      color: var(--caption-light);
+      color: #ccc;
     }
-
-    body.dark .caption .quote {
-      color: var(--caption-dark);
-    }
-
     footer {
       text-align: center;
       font-size: 0.9rem;
-      color: #666;
-      padding: 3rem 1rem;
-      border-top: 1px solid #eee;
-    }
-
-    body.dark footer {
       color: #aaa;
+      padding: 3rem 1rem;
       border-top: 1px solid #444;
     }
   </style>
 </head>
 <body>
-  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="the-sovereign-path.html">The Sovereign Path</a>
-    <a href="marrakech-arles2025.html" class="active">Crossings</a>
-    <a href="about.html">About</a>
-    <a href="dreamweaver.html">DreamWeaver AI</a>
+  <nav style="text-align: center; padding: 1.5rem 0; font-size: 1rem;">
+    <a href="index.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">Home</a>
+    <a href="the-sovereign-path.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">The Sovereign Path</a>
+    <a href="marrakech-arles2025.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none; border-bottom: 2px solid #f2f2f7;">Crossings</a>
+    <a href="about.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">About</a>
+    <a href="dreamweaver.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">DreamWeaver AI</a>
   </nav>
+  <h1>Thresholds of Her: A Sovereign Cartography of Crossing</h1>
+  <h2>Rencontres de la Photographie Marrakech 5th Edition + Festival OFF Arles 2025</h2>
 
-    <h1>Thresholds of Her: A Sovereign Cartography of Crossing</h1>
-    <h2>Rencontres de la Photographie Marrakech 5th Edition + Festival OFF Arles 2025</h2>
-  <section class="submission-description">
-      <p><strong>Short Statement (EN):</strong><br>
-        <em>Thresholds of Her</em> is a long-form visual cartography mapping the sovereign journey of a woman who no longer seeks entry — but authors space. Shot across Morocco, France, and North America, the series reclaims architecture as inner landscape: arches, shadows, and alleys become metaphors for psychological clarity and self-possession. Rather than performing visibility, she arrives in silence. Her stance rewrites inherited scripts of femininity, migration, and place. Authored under the symbolic name <em>Selene Sahari</em>, this project weaves cinematic framing with the visual grammar of Sovereign Systems Psychology™ — an emerging framework where identity is not consumed but composed.
-      </p>
-      <p><strong>Short Statement (FR) :</strong><br>
-        <em>Les Seuils d’Elle</em> est une cartographie visuelle au long cours retraçant le chemin souverain d’une femme qui ne cherche plus à entrer — mais à inscrire sa présence. Réalisée entre le Maroc, la France et l’Amérique du Nord, la série transforme l’architecture en paysage intérieur : arches, ombres et ruelles deviennent des métaphores de clarté psychologique et de maîtrise de soi. Plutôt que de performer la visibilité, elle arrive en silence. Sous le nom symbolique de <em>Selene Sahari</em>, le projet mêle une esthétique cinématographique à la grammaire visuelle de la Sovereign Systems Psychology™ — une discipline émergente où l’identité ne se consomme pas, mais se compose.
-      </p>
-  </section>
+  <div class="toggle-bar">
+    <button id="langToggle" class="toggle-theme" onclick="toggleLanguage()">EN</button>
+  </div>
 
+  <div class="description">
+    <div class="quote-en" style="display: none;">
+      <p><strong>Project Description (EN):</strong></p>
+      <p><em>Thresholds of Her</em> traces a woman’s quiet reclamation of authorship through space. Shot across Morocco, France, and North America, the series turns architecture into interior cartography — where arches, shadows, and doorways mark moments of clarity and transformation. Rather than seeking attention, she arrives with sovereign stance. Her presence resists spectacle. It composes signal.</p>
+      <p>Guided by the framework of Sovereign Systems Psychology™, the work reimagines how identity moves — not as performance, but as authorship. Each frame is spatially composed, mythically attuned, and psychologically anchored. Together, they form a cinematic grammar of refusal, crossing thresholds without submission.</p>
+    </div>
+    <div class="quote-fr">
+      <p><strong>Description du projet (FR) :</strong></p>
+      <p><em>Les Seuils d’Elle</em> suit la réappropriation silencieuse d’une femme par l’espace. Réalisée au Maroc, en France et en Amérique du Nord, la série transforme l’architecture en cartographie intérieure — où arches, ombres et passages signalent clarté et transformation. Elle ne cherche pas à être vue. Elle arrive. Sa présence ne performe pas. Elle compose un signal.</p>
+      <p>Ancrée dans la Sovereign Systems Psychology™, l’œuvre reconfigure l’identité non comme spectacle, mais comme autorité. Chaque image est un fragment cinématographique — spatiale, mythique, psychologique. Ensemble, elles forment une grammaire de refus, traversant les seuils sans soumission.</p>
+    </div>
+  </div>
+
+  <!-- Injected gallery content from previous step -->
+  <!-- We'll load this dynamically in full in follow-up -->
   
-  <!-- Gallery content remains unchanged below -->
-<div id="folio" class="gallery">
+<div class="gallery">
 
-     <!-- Full HTML Blocks for Crossings 2025 Submission -->
-
-<!-- 1. Selene in the Garden -->
-<div class="photo-card" tabindex="0">
-  <img src="1_Selene_Sovereign_Path_Garden.jpg" alt="Selene in the Garden (The Pre-Crossing)">
-  <div class="caption">
-    <h3>Selene in the Garden (The Pre-Crossing)</h3>
-    <p class="meta">Majorelle Garden · Morocco · March 2025</p>
-    <p class="quote">
-Beneath the lattice of palm fronds, she emerges — a sovereign presence framed in botanical geometry. Her stance is quiet, yet declarative. This is the garden before exile, the self before rupture. The viewer is invited into a psychological crossing: from belonging to becoming. Surrounded by life cultivated and curated, she prepares to step into the wilderness of her own authorship. The floral riot is not backdrop — it is metaphor.  
-*Crossing begins not at the gate, but in the breath before.*
-    </p>
+  <!-- 1. Selene in the Garden -->
+  <div class="photo-card">
+    <img src="1_Selene_Sovereign_Path_Garden.jpg" alt="Selene in the Garden">
+    <div class="caption">
+      <h3>Selene in the Garden (The Pre-Crossing)</h3>
+      <p class="meta">Majorelle Garden · Morocco · March 2025</p>
+      <p class="quote quote-en">Beneath the lattice of palm fronds, she emerges — a sovereign presence framed in botanical geometry... <em>*Crossing begins not at the gate, but in the breath before.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Sous la dentelle des palmiers, elle émerge — une présence souveraine dans une géométrie végétale... <em>*Le passage ne commence pas à la porte, mais dans le souffle avant.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 2. Mosaic Memory -->
-<div class="photo-card" tabindex="0">
-  <img src="2_Selene_Sovereign_Path_Mosaic.jpg" alt="Mosaic Memory (Crossing into Inheritance)">
-  <div class="caption">
-    <h3>Mosaic Memory (Crossing into Inheritance)</h3>
-    <p class="meta">Casablanca · Morocco · March 2025</p>
-    <p class="quote">
-      Before the Zellige wall, she stands as one stands before memory: with reverence and resistance. Her bright dress and scarf form a dialogue with the ancestral pattern, evoking the tension between origin and redefinition. This is not costume — it is negotiation. Her gaze is neither nostalgic nor defiant; it is awake.  
-*Inheritance is not received — it is reauthored.*
-    </p>
+  <!-- 2. Mosaic Memory -->
+  <div class="photo-card">
+    <img src="2_Selene_Sovereign_Path_Mosaic.jpg" alt="Mosaic Memory">
+    <div class="caption">
+      <h3>Mosaic Memory (Crossing into Inheritance)</h3>
+      <p class="meta">Casablanca · Morocco · March 2025</p>
+      <p class="quote quote-en">Before the Zellige wall, she stands as one stands before memory: with reverence and resistance... <em>*Inheritance is not received — it is reauthored.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Devant le mur de zellige, elle se tient comme face à une mémoire : avec révérence et résistance... <em>*L’héritage ne se reçoit pas — il se réécrit.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 3. Threshold of Knowledge -->
-<div class="photo-card" tabindex="0">
-  <img src="3_Selene_Sovereign_Path_Threshold.jpg" alt="Threshold of Knowledge">
-  <div class="caption">
-    <h3>Threshold of Knowledge</h3>
-    <p class="meta">Al Quaraouiyine, Fez · Morocco · March 2025</p>
-    <p class="quote">
-      She stands at the golden gate of the world’s oldest university, not as a seeker of permission — but as a sovereign inheritor of knowledge. The hand does not knock. It claims. In a place where scholarship began centuries before women were granted access, she redefines the threshold — not to enter history, but to author its next chapter.  
-*The gate opens not to the past — but to authorship.*
-    </p>
-    
-   </div>
-</div>
-
-<!-- 4. Vastness (Crossing into Silence) -->
-<div class="photo-card" tabindex="0">
-  <img src="4_Selene_Sovereign_Path_Vastness.jpg" alt="Vastness (Crossing into Silence)">
-  <div class="caption">
-    <h3>Vastness (Crossing into Silence)</h3>
-    <p class="meta">Erg Chebbi · Moroccan Sahara · March 2025</p>
-    <p class="quote">
-    Bathed in desert gold, her arms lifted skyward, she dances alone with the void. The dunes ripple like memory, and the sun is both witness and wound. This is where language falls away. Where performance melts into presence. No longer needing to be seen, she becomes the terrain.  
-*Sovereignty is born where narrative ends.*
-    </p>
-    
-   </div>
-</div>
-
-<!-- 5. Liberation (The Reclaimed Self) -->
-<div class="photo-card" tabindex="0">
-  <img src="5_Selene_Sovereign_Path_Liberation.jpg" alt="Liberation (The Reclaimed Self)">
-  <div class="caption">
-    <h3>Liberation (The Reclaimed Self)</h3>
-    <p class="meta">Sahara Caravan Route · Morocco · March 2025</p>
-    <p class="quote">
-      A caravan passes behind her — echoes of tradition, commerce, gender, migration. But she does not walk with them. She turns to face us, grounded, luminous, unapologetically alone. The desert behind her is not empty but ancestral. She has crossed through the archetypes — maiden, mother, exile — and emerged not as symbol, but as author.  
-*Arrival is not a place. It is a posture.*
-    </p>
+  <!-- 3. Threshold of Knowledge -->
+  <div class="photo-card">
+    <img src="3_Selene_Sovereign_Path_Threshold.jpg" alt="Threshold of Knowledge">
+    <div class="caption">
+      <h3>Threshold of Knowledge</h3>
+      <p class="meta">Al Quaraouiyine, Fez · Morocco · March 2025</p>
+      <p class="quote quote-en">She stands at the golden gate of the world’s oldest university, not as a seeker of permission... <em>*The gate opens not to the past — but to authorship.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Elle se tient devant la porte dorée de la plus ancienne université du monde, non pas pour demander l'entrée... <em>*La porte ne s’ouvre pas sur le passé — mais sur l’autorité.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 6. Arles Ascent -->
-<div class="photo-card" tabindex="0">
-  <img src="7_Selene_Sovereign_Path_Arles.jpg" alt="Arles Ascent (Crossing into Authorship)">
-  <div class="caption">
-    <h3>Arles Ascent (Crossing into Authorship)</h3>
-    <p class="meta">Old Town, Arles · France · May 2025</p>
-    <p class="quote">
-      On a sun-bleached street, her form elongates between Renaissance stone and modern sky. The city watches, but she does not perform. Her back is to us; her gaze moves inward. This is not retreat. This is return. Arles is not backdrop; it is a station of rebirth.  
-*Authorship is not shouted. It is walked.*
-    </p>
+  <!-- 4. Vastness -->
+  <div class="photo-card">
+    <img src="4_Selene_Sovereign_Path_Vastness.jpg" alt="Vastness">
+    <div class="caption">
+      <h3>Vastness (Crossing into Silence)</h3>
+      <p class="meta">Erg Chebbi · Moroccan Sahara · March 2025</p>
+      <p class="quote quote-en">Bathed in desert gold, her arms lifted skyward, she dances alone with the void... <em>*Sovereignty is born where narrative ends.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Baignée de lumière dorée, les bras levés, elle danse seule avec le vide... <em>*La souveraineté naît là où le récit s’efface.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 7. Threshold of the Unclaimed -->
-<div class="photo-card" tabindex="0">
-  <img src="6_Selene_Sovereign_Path_Coastline.jpg" alt="Threshold of the Unclaimed">
-  <div class="caption">
-    <h3>Threshold of the Unclaimed</h3>
-    <p class="meta">Rahat · Morocco · March 2025</p>
-    <p class="quote">
-At the edge where land surrenders to sea, the figure leans into the wind — a gesture of becoming. The scarf unfurls like a cartographer’s draft, mapping the invisible: the tension between rooted identity and the tidal pull of possibility.  
-*She is not arriving at a view — but into form.*
-    </p>
+  <!-- 5. Liberation -->
+  <div class="photo-card">
+    <img src="5_Selene_Sovereign_Path_Liberation.jpg" alt="Liberation">
+    <div class="caption">
+      <h3>Liberation (The Reclaimed Self)</h3>
+      <p class="meta">Sahara Caravan Route · Morocco · March 2025</p>
+      <p class="quote quote-en">A caravan passes behind her — echoes of tradition, commerce, migration. But she does not walk with them... <em>*Arrival is not a place. It is a posture.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Une caravane passe derrière elle — échos de tradition, commerce, migration. Mais elle ne marche pas avec eux... <em>*L’arrivée n’est pas un lieu. C’est une posture.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 8. Descent from the Fogline -->
-<div class="photo-card" tabindex="0">
-  <img src="11_MistWalker.jpg" alt="Descent from the Fogline">
-  <div class="caption">
-    <h3>Descent from the Fogline</h3>
-    <p class="meta">Grouse Mountain · Canada · January 2025</p>
-    <p class="quote">
-      In a cathedral of silence, she emerges from the snow, dressed in gold and ivory — neither pilgrim nor exile. The path behind her erased by snowfall, the path ahead undefined. Here, crossing is not movement — it is reformation.  
-*Form becomes sovereign when certainty vanishes.*
-    </p>
+  <!-- 6. Arles Ascent -->
+  <div class="photo-card">
+    <img src="7_Selene_Sovereign_Path_Arles.jpg" alt="Arles Ascent">
+    <div class="caption">
+      <h3>Arles Ascent (Crossing into Authorship)</h3>
+      <p class="meta">Old Town, Arles · France · May 2025</p>
+      <p class="quote quote-en">On a sun-bleached street, her form elongates between stone and sky. Her back is to us. Her gaze moves inward... <em>*Authorship is not shouted. It is walked.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Dans une rue blanchie par le soleil, sa forme s’étire entre pierre et ciel. Son dos nous fait face... <em>*L’autorité ne se crie pas. Elle se marche.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 9. Inheritance Rewritten in Air -->
-<div class="photo-card" tabindex="0">
-  <img src="9_Selene_Sovereign_Path_Lyon.jpg" alt="Inheritance Rewritten in Air">
-  <div class="caption">
-    <h3>Inheritance Rewritten in Air</h3>
-    <p class="meta">Lyon · France · May 2025</p>
-    <p class="quote">
-      She stands above a city of memory, the past unspooling beneath her. The translucent veil flares — a spectral palimpsest, suggesting history, myth, and womanhood in motion. This is the breath between generations, where daughters choose which ghosts to carry forward.  
-*Legacy is not what you hold. It’s what you rewrite.*
-    </p>
+  <!-- 7. Threshold of the Unclaimed -->
+  <div class="photo-card">
+    <img src="6_Selene_Sovereign_Path_Coastline.jpg" alt="Threshold of the Unclaimed">
+    <div class="caption">
+      <h3>Threshold of the Unclaimed</h3>
+      <p class="meta">Rahat · Morocco · March 2025</p>
+      <p class="quote quote-en">At the edge where land surrenders to sea, the figure leans into the wind — a gesture of becoming... <em>*She is not arriving at a view — but into form.*</em></p>
+      <p class="quote quote-fr" style="display:none;">À l’endroit où la terre se donne à la mer, elle s’incline vers le vent — un geste de devenir... <em>*Elle n’arrive pas à une vue — mais à sa forme.*</em></p>
+    </div>
   </div>
-</div>
 
-<!-- 10. Interface -->
-<div class="photo-card" tabindex="0">
-  <img src="14_CodeOfNothing.jpg" alt="Interface">
-  <div class="caption">
-    <h3>Interface</h3>
-    <p class="meta">San Jose · United States · March 2025</p>
-    <p class="quote">
-      In a temple of machine vision, she gestures with knowing. The boundary between human intuition and algorithmic logic dissolves. This crossing is not physical — it is epistemological. The sovereign stance reclaims authorship in an age where machines read faces but not souls.  
-*Visibility is not insight. Presence is not data.*
-    </p>
+  <!-- 8. Descent from the Fogline -->
+  <div class="photo-card">
+    <img src="11_MistWalker.jpg" alt="Descent from the Fogline">
+    <div class="caption">
+      <h3>Descent from the Fogline</h3>
+      <p class="meta">Grouse Mountain · Canada · January 2025</p>
+      <p class="quote quote-en">In a cathedral of silence, she emerges from the snow, dressed in gold and ivory... <em>*Form becomes sovereign when certainty vanishes.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Dans une cathédrale de silence, elle sort de la neige, vêtue d’or et d’ivoire... <em>*La forme devient souveraine quand la certitude disparaît.*</em></p>
+    </div>
   </div>
-</div>
+
+  <!-- 9. Inheritance Rewritten in Air -->
+  <div class="photo-card">
+    <img src="9_Selene_Sovereign_Path_Lyon.jpg" alt="Inheritance Rewritten in Air">
+    <div class="caption">
+      <h3>Inheritance Rewritten in Air</h3>
+      <p class="meta">Lyon · France · May 2025</p>
+      <p class="quote quote-en">She stands above a city of memory... <em>*Legacy is not what you hold. It’s what you rewrite.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Elle se tient au-dessus d’une ville de mémoire... <em>*L’héritage n’est pas ce qu’on garde, mais ce qu’on réécrit.*</em></p>
+    </div>
+  </div>
+
+  <!-- 10. Interface -->
+  <div class="photo-card">
+    <img src="14_CodeOfNothing.jpg" alt="Interface">
+    <div class="caption">
+      <h3>Interface</h3>
+      <p class="meta">San Jose · United States · March 2025</p>
+      <p class="quote quote-en">In a temple of machine vision, she gestures with knowing... <em>*Visibility is not insight. Presence is not data.*</em></p>
+      <p class="quote quote-fr" style="display:none;">Dans un temple de vision algorithmique, elle fait un geste de connaissance... <em>*La visibilité n’est pas la clarté. La présence n’est pas une donnée.*</em></p>
+    </div>
+  </div>
 
 </div>
+
 
   <footer>
     &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("darkMode");
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === "true" || (!saved && prefersDark)) {
-        document.body.classList.add("dark");
-        document.getElementById("modeToggle").textContent = "☀️";
-      }
-      requestAnimationFrame(() => {
-        document.body.classList.add("fade-in");
-      });
-    });
+    function toggleLanguage() {
+      const btn = document.getElementById("langToggle");
+      const isEN = btn.textContent === "FR";
+      btn.textContent = isEN ? "FR" : "EN";
 
-    function toggleDarkMode() {
-      const isDark = document.body.classList.toggle("dark");
-      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("darkMode", isDark);
+      document.querySelectorAll(".quote-en").forEach(el => el.style.display = isEN ? "none" : "block");
+      document.querySelectorAll(".quote-fr").forEach(el => el.style.display = isEN ? "none" : "block");
     }
   </script>
 </body>
