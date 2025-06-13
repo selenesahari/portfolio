@@ -6,155 +6,250 @@
   <title>Thresholds of Her – Arles 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #1c1c1e;
-      color: #f2f2f7;
-      line-height: 1.6;
-      padding: 0 1rem;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 1.2rem 1rem;
-      font-size: 0.95rem;
-      background-color: #1c1c1e;
-    }
-    nav a {
-      color: #f2f2f7;
-      text-decoration: none;
-      margin: 0.5rem 1rem;
-      border-bottom: 2px solid transparent;
-    }
-    nav a.active {
-      border-bottom: 2px solid #f2f2f7;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      padding: 0 1rem;
-    }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      line-height: 1.3;
-      margin-top: 2.5rem;
-    }
-    h2 {
-      font-size: 1.1rem;
-      font-weight: normal;
-      color: #ccc;
-      margin-top: 0.4rem;
-    }
-    .toggle-bar {
-      text-align: center;
-      margin: 2rem 0 1.5rem 0;
-    }
-    .toggle-theme {
-      background-color: #f2f2f7;
-      border: none;
-      padding: 0.5rem 1.2rem;
-      font-size: 0.95rem;
-      border-radius: 16px;
-      cursor: pointer;
-      font-weight: 600;
-      color: #1c1c1e;
-    }
-    .description {
-      max-width: 960px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      padding: 0 1rem 2rem;
-    }
-    .description p {
-      margin-bottom: 1.2rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1280px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .photo-card {
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-      background-color: #2c2c2e;
-    }
-    .photo-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .caption {
-      padding: 1rem 1.2rem;
-    }
-    .caption h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-    }
-    .caption .meta {
-      font-size: 0.82rem;
-      color: #aaa;
-    }
-    .quote {
-      font-style: italic;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #ccc;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #aaa;
-      padding: 3rem 1rem;
-      border-top: 1px solid #444;
-      margin-top: 3rem;
-    }
+     :root {
+    --bg-light: #ffffff;
+    --text-light: #1c1c1e;
+    --bg-dark: #1c1c1e;
+    --text-dark: #f2f2f7;
+    --caption-light: #3a3a3c;
+    --caption-dark: #e0e0e0;
+  }
 
-        a.lexicon-link {
-  color: #ffe066;
-  font-weight: 500;
-  text-decoration: none;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    opacity: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease;
+  }
+
+  body.fade-in {
+    opacity: 1;
+  }
+
+  body.dark {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-top: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    color: inherit;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  /* Theme toggle button */
+  .toggle-theme {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #f2f2f7;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    z-index: 100;
+    font-weight: 500;
+  }
+
+  .toggle-theme:hover {
+    background-color: #e5e5ea;
+  }
+
+  /* Submission description styling */
+  .submission-description {
+    padding: 3rem 1.5rem;
+    max-width: 960px;
+    margin: auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-light);
+  }
+
+  body.dark .submission-description {
+    color: var(--text-dark);
+  }
+
+  /* Image gallery styles */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  .photo-card {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  body.dark .photo-card {
+    background-color: #2c2c2e;
+  }
+
+  .photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .caption {
+    padding: 1rem 1.2rem;
+  }
+
+  .caption h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: inherit;
+  }
+
+  .caption .meta {
+    font-size: 0.82rem;
+    color: #888;
+  }
+
+  body.dark .caption .meta {
+    color: #ccc;
+  }
+
+  .caption .quote {
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--caption-light);
+  }
+
+  body.dark .caption .quote {
+    color: var(--caption-dark);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 3rem 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  body.dark footer {
+    color: #aaa;
+    border-top: 1px solid #444;
+  }
+
+  .centered-link {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .lexicon-link {
+    color: #ffe066;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .lexicon-link:hover {
+    text-decoration: underline;
+  }
+
+  /* 🔻 Minimalist Hamburger Menu */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #111;
+    color: white;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .site-icon {
+    font-size: 1.2rem;
+  }
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 32px; /* aligns under hamburger */
+  background-color: #111;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 999;
 }
 
-a.lexicon-link:hover {
-  text-decoration: underline;
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+.hamburger {
+  display: flex;
 }
-
-    .centered-link {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.lexicon-link {
-  color: #ffe066;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.lexicon-link:hover {
-  text-decoration: underline;
-}
-
-
     
   </style>
 </head>
   <body>
-  <nav style="text-align: center; padding: 1.5rem 0; font-size: 1rem;">
-    <a href="index.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">Home</a>
-    <a href="the-sovereign-path.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">The Sovereign Path</a>
-    <a href="marrakech-arles2025.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none; border-bottom: 2px solid #f2f2f7;">Crossings</a>
-    <a href="about.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">About</a>
-    <a href="dreamweaver.html" style="margin: 0 1.5rem; color: #f2f2f7; text-decoration: none;">DreamWeaver AI</a>
-  </nav>
+  <div class="navbar">
+  <div class="site-icon">☀️</div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="sovereign-path-photovogue.html">The Sovereign Path</a>
+    <a href="about.html">About</a>
+    <a href="dreamweaver.html">DreamWeaver AI</a>
+  </div>
+</div>
+
   <h1>Thresholds of Her: A Sovereign Cartography of Crossing</h1>
   <h2>Rencontres de la Photographie Marrakech 5th Edition + Festival OFF Arles 2025</h2>
 
@@ -433,6 +528,11 @@ La présence n’est pas un code — c’est un commandement.
     document.querySelectorAll(".quote-en").forEach(el => el.style.display = isFR ? "none" : "block");
     document.querySelectorAll(".quote-fr").forEach(el => el.style.display = isFR ? "block" : "none");
   });
+
+        function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+  }
 </script>
 
 
