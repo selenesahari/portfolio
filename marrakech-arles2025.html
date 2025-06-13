@@ -6,7 +6,8 @@
   <title>Thresholds of Her – Arles 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-     :root {
+<style>
+  :root {
     --bg-light: #ffffff;
     --text-light: #1c1c1e;
     --bg-dark: #1c1c1e;
@@ -46,7 +47,6 @@
     text-align: center;
   }
 
-  /* Theme toggle button */
   .toggle-theme {
     position: fixed;
     top: 1rem;
@@ -66,7 +66,7 @@
     background-color: #e5e5ea;
   }
 
-  /* Submission description styling */
+  /* 🔤 Text block styles */
   .submission-description {
     padding: 3rem 1.5rem;
     max-width: 960px;
@@ -74,13 +74,16 @@
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-light);
+    background-color: var(--bg-light);
+    border-radius: 8px;
   }
 
   body.dark .submission-description {
     color: var(--text-dark);
+    background-color: #2a2a2d;
   }
 
-  /* Image gallery styles */
+  /* 🖼️ Image gallery */
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -172,7 +175,7 @@
     text-decoration: underline;
   }
 
-  /* 🔻 Minimalist Hamburger Menu */
+  /* 🍔 Minimalist Hamburger Menu */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -188,19 +191,18 @@
     font-size: 1.2rem;
   }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 32px; /* aligns under hamburger */
-  background-color: #111;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
-
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 32px;
+    background-color: #111;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
 
   .nav-links a {
     color: white;
@@ -214,7 +216,7 @@
   }
 
   .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
   }
@@ -226,10 +228,6 @@
     margin: 4px 0;
   }
 
-.hamburger {
-  display: flex;
-}
-    
   </style>
 </head>
 <body class="fade-in">
