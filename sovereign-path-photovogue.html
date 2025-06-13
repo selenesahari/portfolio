@@ -247,17 +247,81 @@ a.lexicon-link:hover {
   text-decoration: underline;
 }
 
+      .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #111;
+    color: white;
+    position: relative;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #111;
+      width: 100%;
+      padding: 16px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+
   </style>
 </head>
 <body>
   <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
-<nav>
+
+<div class="navbar">
+  <div style="font-weight: bold;">☀️</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="nav-links" id="navLinks">
   <a href="index.html">Home</a>
   <a href="sovereignpath_ui.html" class="active">The Sovereign Path</a>
   <a href="about.html">About</a>
   <a href="dreamweaver.html">DreamWeaver AI</a>
-</nav>
-
+  </div>
+</div>
+  
 
    <h1>The Sovereign Path</h1>
   <h2>PhotoVogue 2025: East & Southeast Asian Panorama Submission</h2>
@@ -467,6 +531,10 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
       localStorage.setItem("darkMode", isDark);
     }
+      function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+  }
   </script>
 </body>
 </html>
