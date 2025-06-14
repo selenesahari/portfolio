@@ -52,32 +52,6 @@
     </nav>
   </div>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("fullscreenMenu");
-      const hamburger = document.getElementById("hamburger");
-      menu.classList.toggle("show");
-      hamburger.classList.toggle("active");
-    }
-
-    // Auto-close fullscreen menu if window resizes to desktop width
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 900) {
-        document.getElementById("fullscreenMenu").classList.remove("show");
-        document.getElementById("hamburger").classList.remove("active");
-      }
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        const menu = document.getElementById("fullscreenMenu");
-        const hamburger = document.getElementById("hamburger");
-        if (menu.classList.contains("show")) {
-          menu.classList.remove("show");
-          hamburger.classList.remove("active");
-        }
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
