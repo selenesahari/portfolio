@@ -99,7 +99,7 @@ body {
   padding: 0.25rem 0;
 }
 
-/* Hover for desktop */
+/* Desktop hover support */
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
   display: block;
@@ -156,7 +156,7 @@ body {
   }
 
   .dropdown:hover .dropdown-content {
-    display: none; /* disables hover logic on mobile */
+    display: none;
   }
 
   .hamburger {
