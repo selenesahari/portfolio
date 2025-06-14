@@ -1,150 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DreamWeaver AI Manifesto</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <style>
-    :root {
-      --bg-dark: #1c1c1e;
-      --text-dark: #f2f2f7;
-      --accent: #b71c1c;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.8;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-      background-color: #111;
-      color: white;
-      position: relative;
-      z-index: 1000;
-    }
-
-    .site-icon {
-      font-size: 1.2rem;
-    }
-
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 32px;
-      background-color: #111;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      z-index: 999;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0.5rem 0;
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 5rem auto 3rem;
-      padding: 0 1.5rem;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--text-dark);
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-top: 2.5rem;
-    }
-
-    h3 {
-      margin-top: 2rem;
-    }
-
-    p {
-      font-size: 1.05rem;
-      margin-bottom: 1.2rem;
-      text-align: justify;
-    }
-
-    .tool {
-      margin-bottom: 2rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-      color: #888;
-      border-top: 1px solid #444;
-      margin-top: 4rem;
-    }
-  </style>
 </head>
 <body>
+  <!-- ✅ Unified Navbar -->
   <div class="navbar">
-    <div class="site-icon">☀️</div>
+    <div class="site-icon">
+      <a href="index.html" class="site-icon">
+        <img src="images/dreamweaver-logo.png" alt="DreamWeaver AI Logo" class="logo-img" />
+      </a>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label" onclick="toggleDropdown(event)">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </div>
+
+    <!-- 🌞 / 🌙 Toggle Button -->
+    <button id="themeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text);">
+      🦁 / 🌙
+    </button>
+
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="dreamweaver.html">DreamWeaver AI</a>
-      <a href="ssp.html">SSP</a>
-      <a href="lexicon.html">Lexicon</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="about.html">About</a>
-      <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
-      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-      <a href="marrakech-arles2025.html">• Arles 2025</a>
-      <a href="the-sovereign-path.html">• Women Grant</a>
-    </div>
   </div>
 
+  <!-- 📜 Main Content -->
   <main>
     <h1>DreamWeaver AI Manifesto</h1>
 
@@ -183,15 +84,11 @@
     <p><strong>Selene Sahari<br>Founder, DreamWeaver AI</strong></p>
   </main>
 
-  <footer>
-    &copy; 2025 DreamWeaver AI · Designed for Sovereignty · All rights reserved
+    <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
+
+    &copy; 2025 DreamWeaver AI Initiative · All rights reserved · Sovereign Systems Psychology™ is DreamWeaver AI IP
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("active");
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
