@@ -1,297 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-<title>The Sovereign Path – A Cinematic Visual Narrative by Selene Sahari</title>
-  <!-- Basic Metadata -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Selene Sahari is the creator of DreamWeaver AI and Sovereign Systems Psychology™ — a visual and psychological design framework for authorship, presence, and signal clarity.">
-<meta name="keywords" content="Selene Sahari, Sovereign Systems Psychology, DreamWeaver AI, visual narrative, symbolic architecture, feminine authorship, signal over spectacle, sovereign design, psychological clarity">
-<meta name="author" content="Selene Sahari">
-<meta name="copyright" content="Sovereign Systems Psychology™ – a registered trademark of DreamWeaver AI.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Sovereign Path</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script defer src="script.js"></script>
 
-<!-- Open Graph Metadata (for rich previews) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Selene Sahari – The Sovereign Path | DreamWeaver AI">
-<meta property="og:description" content="Explore the Sovereign Path — a cinematic visual journey through space, silence, and symbolic authorship. A project of DreamWeaver AI.">
-<meta property="og:url" content="https://selenesahari.github.io/portfolio/">
-<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
-<meta property="og:site_name" content="Selene Sahari Portfolio">
-
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <style>
-  :root {
-    --bg-light: #ffffff;
-    --text-light: #1c1c1e;
-    --bg-dark: #1c1c1e;
-    --text-dark: #f2f2f7;
-    --caption-light: #3a3a3c;
-    --caption-dark: #e0e0e0;
-  }
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    margin: 0;
-    background-color: var(--bg-light);
-    color: var(--text-light);
-    opacity: 0;
-    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease;
-  }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--bg);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 160px;
+      z-index: 1;
+    }
 
-  body.fade-in {
-    opacity: 1;
-  }
-
-  body.dark {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  h1 {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-top: 2.5rem;
-    font-weight: 500;
-    letter-spacing: -0.3px;
-    color: inherit;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  /* Theme toggle button */
-  .toggle-theme {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background-color: #f2f2f7;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-    border-radius: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    cursor: pointer;
-    z-index: 100;
-    font-weight: 500;
-  }
-
-  .toggle-theme:hover {
-    background-color: #e5e5ea;
-  }
-
-  /* Submission description styling */
-  .submission-description {
-    padding: 3rem 1.5rem;
-    max-width: 960px;
-    margin: auto;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text-light);
-  }
-
-  body.dark .submission-description {
-    color: var(--text-dark);
-  }
-
-  /* Image gallery styles */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1280px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-  }
-
-  .photo-card {
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-    background-color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .photo-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  }
-
-  body.dark .photo-card {
-    background-color: #2c2c2e;
-  }
-
-  .photo-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .caption {
-    padding: 1rem 1.2rem;
-  }
-
-  .caption h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    color: inherit;
-  }
-
-  .caption .meta {
-    font-size: 0.82rem;
-    color: #888;
-  }
-
-  body.dark .caption .meta {
-    color: #ccc;
-  }
-
-  .caption .quote {
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--caption-light);
-  }
-
-  body.dark .caption .quote {
-    color: var(--caption-dark);
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    padding: 3rem 1rem;
-    border-top: 1px solid #eee;
-  }
-
-  body.dark footer {
-    color: #aaa;
-    border-top: 1px solid #444;
-  }
-
-  .centered-link {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .lexicon-link {
-    color: #ffe066;
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .lexicon-link:hover {
-    text-decoration: underline;
-  }
-
-  /* 🔻 Minimalist Hamburger Menu */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 32px;
-    background-color: #111;
-    color: white;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .site-icon {
-    font-size: 1.2rem;
-  }
-
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 32px; /* aligns under hamburger */
-  background-color: #111;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
-
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    margin: 0.5rem 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-  }
-
-.hamburger {
-  display: flex;
-}
-
-</style>
-
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="navbar">
+    <div class="site-icon">
+      <a href="index.html" class="site-icon">
+        <img src="images/dreamweaver-logo.png" alt="DreamWeaver AI Logo" class="logo-img" />
+      </a>
+    </div>
 
-<div class="navbar">
-  <div class="site-icon">☀️</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label" onclick="toggleDropdown(event)">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+    <button id="themeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text);">
+      🦁 / 🌙
+    </button>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="dreamweaver.html">DreamWeaver AI</a>
-    <a href="ssp.html">Sovereign Systems Psychology</a>
-    <a href="lexicon.html">Lexicon</a>
-    <a href="manifesto.html">Manifesto</a>
-    <a href="about.html">About</a>
+  <main class="content-left" style="padding-top: 6rem;">
+    <h1>The Sovereign Path</h1>
 
-    <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
-    <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-    <a href="marrakech-arles2025.html">• Arles 2025</a>
-    <a href="the-sovereign-path.html">• Women Grant</a>
-  </div>
-</div>
-
-
-
-  
-  
-   <h1>The Sovereign Path</h1>
-  <h2>Women Photograph Project Grants 2025</h2>
-    <section class="submission-description">
   <p>This series unfolds in three arcs — Root & Refusal, Power & Poise, and Transcendence & Signal — tracing how sovereignty is enacted through real spaces shaped by empire, architecture, and code. Each image forms a visual stanza in a living documentary of presence.</p>
 <div class="centered-link">
   <a class="lexicon-link" href="lexicon.html">Explore the Sovereign Lexicon →</a>
-</div>
-
-    </section>
+  </main>
 
 
-  <!-- Gallery content remains unchanged below -->
+
+    <!-- Gallery content remains unchanged below -->
 <div id="folio" class="gallery">
 
     <!-- Start of image blocks -->
@@ -528,27 +316,11 @@ In AI halls, she exceeds prediction — her presence is code-less.
     <!-- End of image blocks -->
 
   </div>
-  
-  <footer>
-    &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
+  <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
+    <p>
+      <em>Sovereign Systems Psychology™</em> is intellectual property of DreamWeaver AI Initiative.<br>
+      All content on this website is © 2025 DreamWeaver AI Initiative. All rights reserved.
+    </p>
   </footer>
-
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("dark", "fade-in");
-  document.getElementById("modeToggle").textContent = "☀️";
-});
-
-    function toggleDarkMode() {
-      const isDark = document.body.classList.toggle("dark");
-      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("darkMode", isDark);
-    }
-
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-  }
-  </script>
 </body>
 </html>
