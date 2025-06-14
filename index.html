@@ -66,13 +66,17 @@
 
     .dropdown {
       position: relative;
-      padding-bottom: 0.5rem; /* prevent submenu flicker */
+      display: flex;
+      align-items: center;
+      padding-bottom: 0.5rem;
     }
 
     .dropdown-label {
       color: white;
       font-weight: 500;
       cursor: pointer;
+      display: inline-block;
+      padding: 0.75rem 0;
     }
 
     .dropdown-content {
