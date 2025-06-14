@@ -263,3 +263,23 @@ html[data-theme="dark"] .hero p {
 html[data-theme="dark"] .logo-img {
   content: url('images/dreamweaver-transparent-logo.png');
 }
+
+
+.content-left {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.content-left p {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.content-left h1,
+.content-left h2,
+.content-left h3 {
+  text-align: left;
+}
