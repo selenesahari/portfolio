@@ -36,3 +36,22 @@ document.addEventListener('click', (e) => {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownLabel = document.querySelector('.dropdown-label');
+  if (dropdownLabel) {
+    dropdownLabel.addEventListener('click', toggleDropdown);
+  }
+
+  // ✅ Dark mode toggle logic
+  const themeToggle = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+});
+
