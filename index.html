@@ -4,22 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Selene Sahari – Sovereign Architect</title>
-    <!-- Basic Metadata -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Selene Sahari is the creator of DreamWeaver AI and Sovereign Systems Psychology™ — a visual and psychological design framework for authorship, presence, and signal clarity.">
-<meta name="keywords" content="Selene Sahari, Sovereign Systems Psychology, DreamWeaver AI, visual narrative, symbolic architecture, feminine authorship, signal over spectacle, sovereign design, psychological clarity">
-<meta name="author" content="Selene Sahari">
-<meta name="copyright" content="Sovereign Systems Psychology™ – a registered trademark of DreamWeaver AI.">
-
-<!-- Open Graph Metadata (for rich previews) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Selene Sahari – The Sovereign Path | DreamWeaver AI">
-<meta property="og:description" content="Explore the Sovereign Path — a cinematic visual journey through space, silence, and symbolic authorship. A project of DreamWeaver AI.">
-<meta property="og:url" content="https://selenesahari.github.io/portfolio/">
-<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
-<meta property="og:site_name" content="Selene Sahari Portfolio">
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
@@ -30,69 +14,71 @@
       --text-dark: #eeeeee;
       --accent: #b71c1c;
     }
-
     html[data-theme="dark"] {
       --bg: var(--bg-dark);
       --text: var(--text-dark);
     }
-
     html[data-theme="light"] {
       --bg: var(--bg-light);
       --text: var(--text-light);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'Inter', sans-serif;
       transition: background-color 0.6s ease, color 0.6s ease;
     }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0.75rem 1rem;
-      z-index: 100;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: #111;
+      color: white;
+      position: relative;
+      z-index: 1000;
     }
-
-    nav a {
-      color: var(--text);
+    .site-icon {
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 32px;
+      background-color: #111;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+    .nav-links a {
+      color: white;
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.3s ease;
+      font-weight: 500;
+      margin: 0.5rem 0;
     }
-
-    nav a:hover {
-      opacity: 0.7;
+    .nav-links.active {
+      display: flex;
     }
-
-    .theme-toggle {
-      position: fixed;
-      top: 0.75rem;
-      right: 1rem;
-      background: none;
-      color: var(--text);
-      border: 1px solid var(--text);
-      padding: 0.3rem 0.8rem;
-      font-size: 0.85rem;
+    .hamburger {
+      display: flex;
+      flex-direction: column;
       cursor: pointer;
-      z-index: 200;
     }
-
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
     .hero {
       height: 100vh;
       background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.85)),
@@ -104,19 +90,16 @@
       text-align: center;
       padding: 2rem;
     }
-
     .hero h1, .hero p {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1s ease forwards;
     }
-
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       animation-delay: 0.2s;
     }
-
     .hero p {
       font-size: 1.2rem;
       color: #ccc;
@@ -124,93 +107,29 @@
       line-height: 1.6;
       animation-delay: 0.5s;
     }
-
-
-.cta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 1s;
-  opacity: 0;
-}
-
-.cta a {
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid var(--text);
-  color: var(--text);
-  background: transparent;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  flex: 1 1 250px;
-  max-width: 280px;
-  text-align: center;
-}
-
-.cta a:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
-
     .cta-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.cta-button {
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--text);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-align: center;
-  width: 100%;
-  max-width: 320px;
-}
-
-.cta-button:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
-    
-
-    .section {
-      padding: 6rem 2rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .cta-button {
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--text);
+      font-weight: 500;
+      transition: all 0.3s ease;
       text-align: center;
-      background-color: var(--bg);
+      width: 100%;
+      max-width: 320px;
     }
-
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .cta-button:hover {
+      background: var(--text);
+      color: var(--bg);
     }
-
-    .section p {
-      font-size: 1.1rem;
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      padding: 2rem 0;
-      background: #111;
-    }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -220,59 +139,54 @@
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="#section1" class="active">Signal</a>
-    <a href="#section2">Threshold</a>
-    <a href="about.html">About</a>
-    <a href="dreamweaver.html">DreamWeaver AI</a>
-  </nav>
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+  <div class="navbar">
+    <div class="site-icon">☀️</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">SSP</a>
+      <a href="lexicon.html">Lexicon</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="about.html">About</a>
+      <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
+      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
+      <a href="marrakech-arles2025.html">• Arles 2025</a>
+      <a href="the-sovereign-path.html">• Women Grant</a>
+    </div>
+  </div>
 
   <section class="hero">
     <h1>She Does Not Seek to Be Seen</h1>
-    <p>
-      She arrives. Sovereign, silent, whole.<br>
-      Architect of presence. Author of signal.<br>
-      This is not spectacle. This is authorship.
-    </p>
-
+    <p>She arrives. Sovereign, silent, whole.<br>Architect of presence. Author of signal.<br>This is not spectacle. This is authorship.</p>
     <div class="cta-buttons">
-  <a href="the-sovereign-path.html" class="cta-button">Enter The Sovereign Path →</a>
-  <a href="marrakech-arles2025.html" class="cta-button">Enter Les Seuils d’Elle – Arles 2025 →</a>
-  <a href="sovereign-path-photovogue.html" class="cta-button">Enter PhotoVogue →</a>
-</div>
-
+      <a href="the-sovereign-path.html" class="cta-button">Enter The Sovereign Path →</a>
+      <a href="marrakech-arles2025.html" class="cta-button">Enter Les Seuils d’Elle – Arles 2025 →</a>
+      <a href="sovereign-path-photovogue.html" class="cta-button">Enter PhotoVogue →</a>
+    </div>
   </section>
-
-  <section id="section1" class="section">
-    <h2>The Signal is Hers</h2>
-    <p>
-      Across Morocco, France, Asia, and North America, she moves with clarity.  
-      Not to escape history, but to rewrite it.  
-      This is not performance. It is reclamation.
-    </p>
-  </section>
-
-  <section id="section2" class="section">
-    <h2>She Authors Thresholds</h2>
-    <p>
-      Doors were built to keep her out.  
-      Now, she does not knock. She arrives.  
-      Her stance redefines permission — not to enter, but to rewrite the threshold itself.
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 DreamWeaver AI · Designed for Sovereignty · All rights reserved
-  </footer>
 
   <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute("data-theme");
-      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
     }
-  </script>
 
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("dark", "fade-in");
+      document.getElementById("modeToggle").textContent = "☀️";
+    });
+  </script>
 </body>
 </html>
