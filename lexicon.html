@@ -1,495 +1,90 @@
-
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sovereign Lexicon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sovereign Lexicon – DreamWeaver AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    body {
-      background-color: #111;
-      color: #f5f5f5;
-      font-family: 'Georgia', serif;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-      background-color: #111;
-      color: white;
-      position: relative;
-      z-index: 1000;
-      width: 100%;
-    }
-
-    .site-icon {
-      font-size: 1.2rem;
-    }
-
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 32px;
-      background-color: #111;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      z-index: 999;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0.5rem 0;
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 36px;
-      color: #ffd700;
-      margin-bottom: 40px;
-      letter-spacing: 1px;
-    }
-
-    .term {
-      margin-bottom: 36px;
-    }
-
-    .term h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #ffe066;
-    }
-
-    .term p {
-      font-size: 16px;
-      margin: 6px 0;
-    }
-
-    .term ul {
-      padding-left: 1.2rem;
-      line-height: 1.6;
-    }
-
-    .term h3 {
-      margin-top: 1.8rem;
-      color: #ffe066;
-      font-size: 1.1rem;
-    }
-
-    a.back-link {
-      display: block;
-      margin-top: 60px;
-      text-align: center;
-      font-size: 14px;
-      color: #aaa;
-      text-decoration: none;
-    }
-
-    a.back-link:hover {
-      text-decoration: underline;
-    }
-
-    a.lexicon-link {
-      color: #ffe066;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    a.lexicon-link:hover {
-      text-decoration: underline;
-    }
-
-
-    :root {
-      --bg-dark: #0c0c0c;
-      --text-dark: #eeeeee;
-      --accent: #b71c1c;
-    }
-
-    html[data-theme="dark"] {
-      --bg: var(--bg-dark);
-      --text: var(--text-dark);
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.7;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-      background-color: #111;
-      color: white;
-      position: relative;
-      z-index: 1000;
-    }
-
-    .site-icon {
-      font-size: 1.2rem;
-    }
-
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 32px;
-      background-color: #111;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      z-index: 999;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0.5rem 0;
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 6rem 2rem 3rem;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    ul.timeline {
-      list-style: none;
-      padding-left: 1rem;
-      border-left: 2px solid var(--accent);
-    }
-
-    ul.timeline li {
-      margin-bottom: 1.2rem;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    ul.timeline li::before {
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: -8px;
-      width: 10px;
-      height: 10px;
-      background-color: var(--accent);
-      border-radius: 50%;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      padding: 2rem;
-      background: #111;
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="navbar">
-    <div class="site-icon">☀️</div>
+    <div class="site-icon">
+      <a href="index.html" class="site-icon">
+        <img src="images/dreamweaver-logo.png" alt="DreamWeaver AI Logo" class="logo-img" />
+      </a>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label" onclick="toggleDropdown(event)">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </div>
+
+    <!-- 🌞 / 🌙 Toggle Button -->
+    <button id="themeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text);">
+      🌞 / 🌙
+    </button>
+
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="dreamweaver.html">DreamWeaver AI</a>
-      <a href="ssp.html">SSP</a>
-      <a href="lexicon.html">Lexicon</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="about.html">About</a>
-      <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
-      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-      <a href="marrakech-arles2025.html">• Arles 2025</a>
-      <a href="the-sovereign-path.html">• Women Grant</a>
+  </div>
+
+  <section class="hero" style="background: none; min-height: auto; padding-top: 8rem; padding-bottom: 4rem; background-color: var(--bg);">
+    <div style="max-width: 850px; margin: 0 auto; padding: 0 2rem;">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 2.6rem; text-align: center;">Sovereign Lexicon</h1>
+
+      <!-- Insert full original <div class="term"> blocks and content here -->
+      <!-- You can paste everything between <div class="term"> ... </div> from the original file -->
+
+      <!-- Example block -->
+      <div class="term">
+        <h2>Silence</h2>
+        <p>Presence without interruption. Silence is not the absence of sound — it is the space where truth echoes without distortion.</p>
+        <p><em>Mantra:</em> “In silence, I hear what matters.”</p>
+      </div>
+
+      <!-- (Paste all other terms and the SOAR table, Dependency Fog, etc. here from original file) -->
+
+      <a href="sovereign-path-photovogue.html" class="back-link">← Back to The Sovereign Path</a>
+
+      <hr style="margin-top: 60px; border-color: #444;" />
+
+      <div style="text-align: center; font-size: 14px; color: #888; margin-top: 20px;">
+        <p>
+          <strong>Sovereign Systems Psychology™</strong> is an original framework by <strong>DreamWeaver AI</strong><br />
+          for mindset transformation, narrative design, and self-regulation.
+        </p>
+        <p>
+          <a href="about-framework.html" style="color: #ffe066; text-decoration: none;">Learn more about the framework →</a>
+        </p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="container">
-
-      <h1>Sovereign Lexicon</h1>
-  <!-- Original lexicon content will follow here, unchanged -->
-  <!-- Keep the rest of your <div class="term"> blocks as-is... -->
-
-
-    <div class="term">
-    <h2>Silence</h2>
-    <p>Presence without interruption. Silence is not the absence of sound — it is the space where truth echoes without distortion.</p>
-    <p><em>Mantra:</em> “In silence, I hear what matters.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Stillness</h2>
-    <p>The state of non-resistance. Stillness is not lack of movement — it's inner alignment where no energy is wasted on struggle or reaction.</p>
-    <p><em>Mantra:</em> “I do not chase or grasp. I return to stillness and remember who I am.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Truth</h2>
-    <p>Unfiltered reality that remains when illusion is removed. It does not need consensus — only courage to see.</p>
-    <p><em>Mantra:</em> “Truth doesn’t scream. It stands.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Signal</h2>
-    <p>A real message from within or beyond — clear, direct, and unpolluted. It bypasses noise and conditioning.</p>
-    <p><em>Mantra:</em> “I follow signal, not noise. My body is a transmitter of truth.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Presence</h2>
-    <p>Full awareness of now. No performing, no projecting, no running. Just being.</p>
-    <p><em>Mantra:</em> “I don’t need to say much. My presence speaks for me.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Performance</h2>
-    <p>The false self acting for approval, control, or belonging. It is the opposite of authenticity.</p>
-    <p><em>Mantra:</em> “I release performance. I don’t audition for love.”</p>
-  </div>
-
-  <div class="term">
-    <h2>React</h2>
-    <p>Automatic movement based on fear, habit, or conditioning. Reaction is fast — but rarely sovereign.</p>
-    <p><em>Mantra:</em> “I don’t react. I respond — when I’m ready, from center.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Projection</h2>
-    <p>What the mind throws onto others that actually belongs to you — unacknowledged fear, shame, or desire.</p>
-    <p><em>Mantra:</em> “I reclaim what I project. What I see in others reveals me.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Illusion</h2>
-    <p>A story or construct that comforts but conceals. Illusion always comes with a cost: your freedom.</p>
-    <p><em>Mantra:</em> “Even beautiful illusions must go. I choose what’s real.”</p>
-  </div>
-
-  <div class="term">
-    <h2>Clarity</h2>
-    <p>Inner stillness that lets you see the truth without distortion. It’s not loud — it’s luminous.</p>
-    <p><em>Mantra:</em> “I don’t rush decisions — I wait for clarity. It always comes.”</p>
-  </div>
-
-  <div class="term">
-  <h2>Loop</h2>
-  <p>A repeated emotional, mental, or behavioral cycle that keeps you trapped in the past. Loops are patterns — often unconscious — driven by fear, shame, or unmet needs.</p>
-  <p>They mimic movement but never lead to change. Loops keep you busy but not free.</p>
-  <p><em>Mantra:</em> “I step out of the loop. I don’t repeat — I evolve.”</p>
-  </div>
-
-
-  <div class="term">
-  <h2>Love</h2>
-  <p>Not external validation or fantasy — but the frequency of self-return. Love begins as self-devotion: caring for the body, tending to the mind, protecting the spirit.</p>
-  <p>True love is not found. It is *remembered* — and reclaimed within.</p>
-  <p><em>Mantra:</em> “I am not seeking love. I am love remembering itself.”</p>
-  </div>
-
-  <div class="term">
-  <h2>Food</h2>
-  <p>Not just fuel — food is communication with the body. Every bite asks: *Am I honoring my body, or reacting to a trigger?*</p>
-  <p>True nourishment responds to a clear signal: hunger, fatigue, need for vitality. Emotional eating, in contrast, is a loop — an attempt to soothe, numb, or delay truth.</p>
-  <p>Food becomes sacred when chosen from clarity, not compulsion.</p>
-  <p><em>Mantra:</em> “I eat to honor my body, not to silence my feelings.”</p>
-</div>
-
-  <div class="term">
-  <h2>🪶 Sovereign Lexicon: SOAR (Reframed)</h2>
-  <p><strong>SOAR</strong> — the sovereign path to transcend reaction and reclaim elevation.</p>
-
-  <table style="width: 100%; max-width: 500px; margin: 1.5rem auto; border-collapse: collapse; text-align: left;">
-    <thead>
-      <tr>
-        <th style="padding: 0.5rem; border-bottom: 1px solid #666;">Letter</th>
-        <th style="padding: 0.5rem; border-bottom: 1px solid #666;">Meaning</th>
-        <th style="padding: 0.5rem; border-bottom: 1px solid #666;">Essence</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 0.5rem;">S</td>
-        <td style="padding: 0.5rem;">Stillness</td>
-        <td style="padding: 0.5rem;">The origin point — you observe, not react.</td>
-      </tr>
-      <tr>
-        <td style="padding: 0.5rem;">O</td>
-        <td style="padding: 0.5rem;">Ownership</td>
-        <td style="padding: 0.5rem;">You take responsibility for your inner world.</td>
-      </tr>
-      <tr>
-        <td style="padding: 0.5rem;">A</td>
-        <td style="padding: 0.5rem;">Awareness</td>
-        <td style="padding: 0.5rem;">You see the patterns, the fog, and the game.</td>
-      </tr>
-      <tr>
-        <td style="padding: 0.5rem;">R</td>
-        <td style="padding: 0.5rem;">Rise</td>
-        <td style="padding: 0.5rem;">You act from power, not need. From clarity, not chaos.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p><strong>🔁 Summary:</strong><br>
-    <em>"In the fog, I return to stillness.<br>
-    From stillness, I take ownership.<br>
-    Through ownership, I sharpen awareness.<br>
-    And with awareness, I rise."</em>
-  </p>
-</div>
-
-
-  <div class="term">
-  <h2>🔮 Dependency Fog</h2>
-
-  <p><strong>Dependency Fog</strong> <em>(n.)</em><br>
-  A psychic haze caused by emotional entanglement with those who weaponize need.<br>
-  It arises when loyalty, guilt, or identity are hijacked under the illusion of duty.<br>
-  The sovereign mind learns to distinguish true care from emotional capture —
-  and exits the fog by choosing peace over performance, and clarity over obligation.</p>
-
-  <h3>🧬 Variant Loops</h3>
-  <ul>
-    <li><strong>False Bond Loop:</strong> A cycle where love is confused with responsibility, and presence is used as proof of worth. It often begins with compassion and ends with depletion.</li>
-    <li><strong>The Guilt Bind:</strong> A self-eroding pattern where one’s highest values (care, loyalty, honor) are subtly turned against them. The sovereign sees the bind, names it, and unhooks.</li>
-    <li><strong>Service Hijack:</strong> The energetic distortion that occurs when acts of kindness are reinterpreted as life support. Those who can’t carry their own weight disguise need as connection.</li>
-  </ul>
-
-  <h3>🪬 Sovereign Reframe Mantra</h3>
-  <p><em>
-    “I am not the battery for someone else’s collapse.<br>
-    I walk beside — not beneath.<br>
-    Where there is fog, I return to breath.<br>
-    Where there is guilt, I install clarity.<br>
-    My peace is not theirs to borrow.”
-  </em></p>
-
-  <h3>🪄 Sigil of Sovereign Detachment</h3>
-  <div style="text-align: center; margin: 2rem auto;">
-    <img src="sigils/dependency-fog-sigil.png" alt="Dependency Fog Sigil" style="max-width: 280px; width: 100%; border-radius: 8px;">
-    <p style="font-size: 0.9rem; margin-top: 0.6rem; color: #ccc;">Dependency Fog Sigil – A sovereign anchor against emotional entanglement</p>
-  </div>
-    
-  <h3>🕯️ Dependency Fog Sigil — Interpretive Elements</h3>
-  <ul>
-    <li><strong>⭕ The Circle:</strong> Represents containment — the sovereign boundary. You are the observer, not the absorber.</li>
-    <li><strong>🔻 Downward Triangle with Vertical Line:</strong> Symbolizes truth piercing illusion. The line is your axis cutting through emotional fog.</li>
-    <li><strong>🌙 The Crescent:</strong> Emotional cycles — the ability to reflect emotion without being ruled by it.</li>
-    <li><strong>🌀 Spirals:</strong> Mirrored loops of guilt and obligation. Compassion vs. captivity. Stillness breaks the spin.</li>
-    <li><strong>✡️ Six-Pointed Star:</strong> Balance between opposites — logic + emotion, service + self-preservation. A reminder that clarity is sacred.</li>
-  </ul>
-
-  <p><strong>🪬 Overall Meaning:</strong><br>
-  This sigil encodes the sovereign's ability to:<br>
-  Witness without merging · Support without surrender · Care without being captured.<br>
-  It is a visual anchor for moments when someone tries to fog your vision with flattery, crisis, or guilt.
-  </p>
-</div>
-
-
-  <a href="sovereign-path-photovogue.html" class="back-link">← Back to The Sovereign Path</a>
-
-  <hr style="margin-top: 60px; border-color: #444;" />
-
-<div style="text-align: center; font-size: 14px; color: #888; margin-top: 20px;">
-  <p>
-    <strong>Sovereign Systems Psychology™</strong> is an original framework by <strong>DreamWeaver AI</strong><br />
-    for mindset transformation, narrative design, and self-regulation.
-  </p>
-  <p>
-    <a href="about-framework.html" style="color: #ffe066; text-decoration: none;">Learn more about the framework →</a>
-  </p>
-</div>
-   </div>
-
-  <footer>
-    &copy; 2025 DreamWeaver AI. Sovereign Systems Psychology™ is a registered trademark. All rights reserved.
+  <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
+    <p>
+      <em>Sovereign Systems Psychology™</em> is intellectual property of DreamWeaver AI Initiative.<br>
+      All content on this website is © 2025 DreamWeaver AI Initiative. All rights reserved.
+    </p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("active");
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
