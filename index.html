@@ -50,15 +50,10 @@
       font-size: 1.2rem;
     }
 
-    .nav-center {
+    .nav-links {
       flex: 1;
       display: flex;
       justify-content: center;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-direction: row;
       gap: 2rem;
       align-items: center;
     }
@@ -122,10 +117,6 @@
     }
 
     @media screen and (max-width: 767px) {
-      .nav-center {
-        display: none;
-      }
-
       .nav-links {
         display: none;
         flex-direction: column;
@@ -248,23 +239,21 @@
   <div class="navbar">
     <div class="site-icon">☀️</div>
 
-    <div class="nav-center">
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="dreamweaver.html">DreamWeaver AI</a>
-        <a href="ssp.html">Sovereign Systems Psychology</a>
-        <a href="manifesto.html">Manifesto</a>
-        <a href="lexicon.html">Lexicon</a>
-        <div class="dropdown">
-          <span class="dropdown-label">Exhibitions ▾</span>
-          <div class="dropdown-content">
-            <a href="sovereign-path-photovogue.html">PhotoVogue</a>
-            <a href="marrakech-arles2025.html">Arles 2025</a>
-            <a href="the-sovereign-path.html">Women Grant</a>
-          </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
         </div>
-        <a href="about.html">About</a>
       </div>
+      <a href="about.html">About</a>
     </div>
 
     <div class="hamburger" onclick="toggleMenu()">
