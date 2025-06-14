@@ -66,6 +66,7 @@
 
     .dropdown {
       position: relative;
+      padding-bottom: 0.5rem; /* prevent submenu flicker */
     }
 
     .dropdown-label {
@@ -77,7 +78,7 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      top: calc(100% + 0.25rem);
+      top: 100%;
       left: 0;
       background-color: #111;
       padding: 0.75rem 1rem;
@@ -98,7 +99,8 @@
       padding: 0.25rem 0;
     }
 
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
       display: block;
     }
 
