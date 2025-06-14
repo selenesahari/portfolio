@@ -35,10 +35,14 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
-  background-color: #111;
-  color: white;
-  position: relative;
+  background-color: transparent;
+  color: var(--text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  backdrop-filter: blur(2px);
 }
 
 .site-icon {
@@ -54,7 +58,7 @@ body {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   padding: 0.75rem 0;
@@ -69,7 +73,7 @@ body {
 }
 
 .dropdown-label {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   padding: 0.75rem 0;
@@ -81,7 +85,7 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #111;
+  background-color: var(--bg);
   padding: 0.75rem 1rem;
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -126,7 +130,7 @@ body {
     top: 60px;
     left: 0;
     right: 0;
-    background-color: #111;
+    background-color: var(--bg);
     padding: 16px;
     z-index: 999;
     width: 100%;
@@ -181,10 +185,9 @@ body {
   }
 }
 
-/* ✅ Updated for light overlay aesthetic */
 .hero {
   height: 100vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9)),
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.85)),
     url('images/3_Selene_Sovereign_Path_Threshold.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -194,23 +197,24 @@ body {
   padding: 2rem;
 }
 
+.hero h1, .hero p {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  animation: fadeInUp 1s ease forwards;
   animation-delay: 0.2s;
-  color: #111;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #444;
+  color: #ccc;
   max-width: 700px;
   line-height: 1.6;
-  animation: fadeInUp 1s ease forwards;
   animation-delay: 0.5s;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .cta-buttons {
