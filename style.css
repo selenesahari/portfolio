@@ -283,3 +283,7 @@ html[data-theme="dark"] .logo-img {
 .content-left h3 {
   text-align: left;
 }
+
+.tool {
+  margin-bottom: 2rem;
+}
