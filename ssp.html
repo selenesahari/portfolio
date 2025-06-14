@@ -1,9 +1,14 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Sovereign Systems Psychology</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
     body {
       background-color: #111;
@@ -34,6 +39,14 @@
       font-size: 16px;
     }
 
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
     a.back-link {
       display: block;
       text-align: center;
@@ -46,20 +59,96 @@
     a.back-link:hover {
       text-decoration: underline;
     }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: #111;
+      color: white;
+      position: relative;
+      z-index: 1000;
+      max-width: 100%;
+    }
+
+    .site-icon {
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 32px;
+      background-color: #111;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0.5rem 0;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <div class="site-icon">☀️</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">SSP</a>
+      <a href="lexicon.html">Lexicon</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="about.html">About</a>
+      <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
+      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
+      <a href="marrakech-arles2025.html">• Arles 2025</a>
+      <a href="the-sovereign-path.html">• Women Grant</a>
+    </div>
+  </div>
 
   <h1>Sovereign Systems Psychology™</h1>
 
-  <p>
-    <strong>Sovereign Systems Psychology™</strong> is a proprietary framework developed by the <strong>DreamWeaver AI Initiative</strong> to help individuals reclaim authorship over their inner world through structured self-awareness, narrative clarity, and mindset transformation.
-  </p>
+  <p><strong>Sovereign Systems Psychology™</strong> is a proprietary framework developed by the <strong>DreamWeaver AI Initiative</strong> to help individuals reclaim authorship over their inner world through structured self-awareness, narrative clarity, and mindset transformation.</p>
 
   <h2>What It Is</h2>
-  <p>
-    This framework integrates psychology, language, somatic intelligence, and systems design to offer a model for personal sovereignty. It invites individuals to move beyond reactive patterns, emotional loops, and societal programming into clarity, composure, and signal-based living.
-  </p>
+  <p>This framework integrates psychology, language, somatic intelligence, and systems design to offer a model for personal sovereignty. It invites individuals to move beyond reactive patterns, emotional loops, and societal programming into clarity, composure, and signal-based living.</p>
 
   <h2>Core Elements</h2>
   <ul>
@@ -71,25 +160,24 @@
   </ul>
 
   <h2>Why It Matters</h2>
-  <p>
-    In a world of over-stimulation, algorithmic conditioning, and performance identity, Sovereign Systems Psychology™ offers a return path to inner stability. It is especially designed for those navigating transformation, burnout, reinvention, or spiritual growth in high-pressure systems.
-  </p>
+  <p>In a world of over-stimulation, algorithmic conditioning, and performance identity, Sovereign Systems Psychology™ offers a return path to inner stability. It is especially designed for those navigating transformation, burnout, reinvention, or spiritual growth in high-pressure systems.</p>
 
-  <p>
-    Whether used for personal reflection, mentorship, or artistic creation — this lexicon and mindset model serves as a map back to clarity.
-  </p>
+  <p>Whether used for personal reflection, mentorship, or artistic creation — this lexicon and mindset model serves as a map back to clarity.</p>
 
   <h2>Attribution</h2>
-  <p>
-    Sovereign Systems Psychology™ and its associated lexicon are developed by DreamWeaver AI Initiative. All terms, mantras, and framework structure are © 2025 and protected as original intellectual property.
-  </p>
+  <p>Sovereign Systems Psychology™ and its associated lexicon are developed by DreamWeaver AI Initiative. All terms, mantras, and framework structure are © 2025 and protected as original intellectual property.</p>
 
   <a href="lexicon.html" class="back-link">← Return to the Sovereign Lexicon</a>
 
-  <div style="text-align: center; font-size: 14px; color: #888; margin-top: 20px;">
-  <p>
+  <footer>
     © 2025 DreamWeaver AI Initiative. All rights reserved.
-  </p>
-  <div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
