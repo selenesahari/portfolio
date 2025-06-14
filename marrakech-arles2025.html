@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thresholds of Her – Arles 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
-<style>
-<style>
+  <meta charset="UTF-8">
+<title>Rencontres de la Photographie Marrakech 5th Edition + Festival OFF Arles 2025</title>
+  <!-- Basic Metadata -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Selene Sahari is the creator of DreamWeaver AI and Sovereign Systems Psychology™ — a visual and psychological design framework for authorship, presence, and signal clarity.">
+<meta name="keywords" content="Selene Sahari, Sovereign Systems Psychology, DreamWeaver AI, visual narrative, symbolic architecture, feminine authorship, signal over spectacle, sovereign design, psychological clarity">
+<meta name="author" content="Selene Sahari">
+<meta name="copyright" content="Sovereign Systems Psychology™ – a registered trademark of DreamWeaver AI.">
+
+<!-- Open Graph Metadata (for rich previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Selene Sahari – The Sovereign Path | DreamWeaver AI">
+<meta property="og:description" content="Explore the Sovereign Path — a cinematic visual journey through space, silence, and symbolic authorship. A project of DreamWeaver AI.">
+<meta property="og:url" content="https://selenesahari.github.io/portfolio/">
+<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
+<meta property="og:site_name" content="Selene Sahari Portfolio">
+
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style>
   :root {
     --bg-light: #ffffff;
     --text-light: #1c1c1e;
@@ -48,6 +63,7 @@
     text-align: center;
   }
 
+  /* Theme toggle button */
   .toggle-theme {
     position: fixed;
     top: 1rem;
@@ -67,32 +83,21 @@
     background-color: #e5e5ea;
   }
 
-  /* 🔤 Text block styles */
+  /* Submission description styling */
   .submission-description {
     padding: 3rem 1.5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
     max-width: 960px;
     margin: auto;
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-light);
-    background-color: var(--bg-light);
-    border-radius: 8px;
   }
 
   body.dark .submission-description {
     color: var(--text-dark);
-    background-color: #2a2a2d;
   }
 
-    body.dark .submission-description {
-  background-color: #1c1c1e; /* or slightly lighter: #2a2a2d */
-  color: var(--text-dark);
-  border-radius: 8px;
-}
-
-  /* 🖼️ Image gallery */
+  /* Image gallery styles */
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -184,7 +189,7 @@
     text-decoration: underline;
   }
 
-  /* 🍔 Minimalist Hamburger Menu */
+  /* 🔻 Minimalist Hamburger Menu */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -200,18 +205,19 @@
     font-size: 1.2rem;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 32px;
-    background-color: #111;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-  }
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 32px; /* aligns under hamburger */
+  background-color: #111;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
 
   .nav-links a {
     color: white;
@@ -225,7 +231,7 @@
   }
 
   .hamburger {
-    display: flex;
+    display: none;
     flex-direction: column;
     cursor: pointer;
   }
@@ -237,76 +243,44 @@
     margin: 4px 0;
   }
 
-    body.dark table, body.dark th, body.dark td {
-  color: var(--text-dark);
-  border-color: #555;
+.hamburger {
+  display: flex;
 }
 
-
-
-    
-  
-.submission-description, .description {
-  padding: 3rem 1.5rem;
-  max-width: 960px;
-  margin: auto;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-light);
-  background-color: var(--bg-light);
-  border-radius: 8px;
-}
-
-body.dark .submission-description,
-body.dark .description {
-  color: var(--text-dark);
-  background-color: #1c1c1e;
-}
-
-
-
-.gallery-section {
-  background-color: var(--bg-light);
-  transition: background-color 0.3s ease;
-}
-
-body.dark .gallery-section {
-  background-color: var(--bg-dark);
-}
-
-.caption {
-  color: var(--text-light);
-}
-
-body.dark .caption {
-  color: var(--text-dark);
-}
 </style>
+
 </head>
-<body class="fade-in">
-<div class="navbar">
-<div class="site-icon">☀️</div>
-<div class="hamburger" onclick="toggleMenu()">
-<div></div>
-<div></div>
-<div></div>
+<body>
+  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+
+  <div class="navbar">
+  <div class="site-icon">☀️</div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="dreamweaver.html">DreamWeaver AI</a>
+    <a href="ssp.html">Sovereign Systems Psychology</a>
+    <a href="lexicon.html">Lexicon</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="about.html">About</a>
+
+    <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
+    <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
+    <a href="marrakech-arles2025.html">• Arles 2025</a>
+    <a href="the-sovereign-path.html">• Women Grant</a>
+  </div>
 </div>
-<div class="nav-links" id="navLinks">
-<a href="index.html">Home</a>
-<a href="sovereign-path-photovogue.html">The Sovereign Path</a>
-<a href="about.html">About</a>
-<a href="dreamweaver.html">DreamWeaver AI</a>
-<hr style="border: 0; border-top: 1px solid #444; margin: 1rem 0;"/>
-<span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
-<a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-<a href="marrakech-arles2025.html">• Arles 2025</a>
-<a href="the-sovereign-path.html">• Women Grant</a>
-</div>
-</div>
+
+  
 <h1>Thresholds of Her: A Sovereign Cartography of Crossing</h1>
 <h2>Rencontres de la Photographie Marrakech 5th Edition + Festival OFF Arles 2025</h2>
 <div class="toggle-bar">
-<button class="toggle-theme" id="modeToggle" onclick="toggleDarkMode()">🌙</button>
 <button class="toggle-theme" id="langToggle" onclick="toggleLanguage()">EN</button>
 </div>
 <div class="description">
@@ -541,15 +515,9 @@ La présence n’est pas un code — c’est un commandement.
     btn.textContent = isFR ? "FR" : "EN";
     document.querySelectorAll(".quote-en").forEach(el => el.style.display = isFR ? "block" : "none");
     document.querySelectorAll(".quote-fr").forEach(el => el.style.display = isFR ? "none" : "block");
-
-    // Optional: remember user preference
-    // localStorage.setItem("lang", isFR ? "en" : "fr");
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Optional: retrieve user preference
-    // const savedLang = localStorage.getItem("lang") || "fr";
-
     const savedLang = "fr"; // default to French
     const isFR = savedLang === "fr";
     const btn = document.getElementById("langToggle");
@@ -563,19 +531,21 @@ La présence n’est pas un code — c’est un commandement.
     const nav = document.getElementById("navLinks");
     nav.classList.toggle("active");
   }
-</script>
-<script>
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("dark", "fade-in");
   document.getElementById("langToggle").textContent = "EN";
   const isDark = localStorage.getItem("darkMode") === "true";
   if (isDark) document.body.classList.add("dark");
 });
-function toggleDarkMode() {
-  const isDark = document.body.classList.toggle("dark");
-  document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
-  localStorage.setItem("darkMode", isDark);
-}
+
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark");
+      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("darkMode", isDark);
+    }
+
 </script>
 </body>
 </html>
