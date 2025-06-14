@@ -30,6 +30,7 @@ body {
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 
+/* Navigation Bar */
 .navbar {
   display: flex;
   align-items: center;
@@ -45,6 +46,7 @@ body {
   font-size: 1.2rem;
 }
 
+/* Nav Links */
 .nav-links {
   flex: 1;
   display: flex;
@@ -53,29 +55,22 @@ body {
   align-items: center;
 }
 
-.nav-links a {
+.nav-links a,
+.dropdown > .dropdown-label {
   color: white;
   text-decoration: none;
   font-weight: 500;
   padding: 0.75rem 0;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 
 .dropdown {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-.dropdown-label {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.75rem 0;
-  cursor: pointer;
-}
-
+/* Desktop Dropdown */
 .dropdown .dropdown-content {
   display: none;
   position: absolute;
@@ -104,6 +99,7 @@ body {
   display: block;
 }
 
+/* Hamburger Button */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -118,6 +114,7 @@ body {
   margin: 4px 0;
 }
 
+/* Responsive Layout */
 @media screen and (max-width: 767px) {
   .nav-links {
     display: none;
@@ -136,38 +133,27 @@ body {
     display: flex;
   }
 
-  .nav-links a {
+  .nav-links a,
+  .dropdown > .dropdown-label {
     padding: 0.75rem 1rem;
     text-align: center;
+    width: 100%;
   }
 
   .dropdown .dropdown-content {
     display: none;
-    flex-direction: column;
-    margin-left: 1rem;
+    position: static;
     background: none;
     box-shadow: none;
     padding: 0;
   }
 
   .dropdown.open .dropdown-content {
-    display: flex;
+    display: block;
   }
 
   .dropdown:hover .dropdown-content {
     display: none;
-  }
-
-  .dropdown-label {
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-content a {
-    padding: 0.4rem 0;
-    font-size: 0.95rem;
-    text-align: center;
   }
 
   .hamburger {
@@ -181,6 +167,7 @@ body {
   }
 }
 
+/* Hero Section */
 .hero {
   height: 100vh;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.85)),
@@ -244,15 +231,4 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* ✅ Dark/light mode logo switching */
-.logo-img {
-  content: url('images/dreamweaver-logo.png');
-  height: 32px;
-  transition: opacity 0.4s ease;
-}
-
-html[data-theme="dark"] .logo-img {
-  content: url('images/dreamweaver-transparent-logo.png');
 }
