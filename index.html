@@ -34,6 +34,7 @@
       font-family: 'Inter', sans-serif;
       transition: background-color 0.6s ease, color 0.6s ease;
     }
+
     .navbar {
       display: flex;
       align-items: center;
@@ -43,22 +44,16 @@
       color: white;
       position: relative;
       z-index: 1000;
-      overflow: visible;
     }
 
     .site-icon {
       font-size: 1.2rem;
     }
 
-    .nav-center {
+    .nav-links {
       flex: 1;
       display: flex;
       justify-content: center;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-direction: row;
       gap: 2rem;
       align-items: center;
     }
@@ -122,25 +117,44 @@
     }
 
     @media screen and (max-width: 767px) {
-      .nav-center {
-        display: none;
-      }
-
       .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 32px;
+        left: 0;
+        right: 0;
         background-color: #111;
         padding: 16px;
-        border-radius: 8px;
+        border-radius: 0;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         z-index: 999;
+        width: 100%;
       }
 
       .nav-links.active {
         display: flex;
+      }
+
+      .nav-links a, .dropdown-label {
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      .dropdown-content {
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        display: none;
+      }
+
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: none;
       }
 
       .hamburger {
@@ -225,23 +239,21 @@
   <div class="navbar">
     <div class="site-icon">☀️</div>
 
-    <div class="nav-center">
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="dreamweaver.html">DreamWeaver AI</a>
-        <a href="ssp.html">Sovereign Systems Psychology</a>
-        <a href="manifesto.html">Manifesto</a>
-        <a href="lexicon.html">Lexicon</a>   
-        <div class="dropdown">
-          <span class="dropdown-label">Exhibitions ▾</span>
-          <div class="dropdown-content">
-            <a href="sovereign-path-photovogue.html">PhotoVogue</a>
-            <a href="marrakech-arles2025.html">Arles 2025</a>
-            <a href="the-sovereign-path.html">Women Grant</a>
-          </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
         </div>
-        <a href="about.html">About</a>
       </div>
+      <a href="about.html">About</a>
     </div>
 
     <div class="hamburger" onclick="toggleMenu()">
@@ -266,6 +278,14 @@
       const nav = document.getElementById("navLinks");
       nav.classList.toggle("active");
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownLabel = document.querySelector('.dropdown-label');
+      dropdownLabel.addEventListener('click', () => {
+        const dropdown = dropdownLabel.parentElement;
+        dropdown.classList.toggle('open');
+      });
+    });
   </script>
 
 </body>
