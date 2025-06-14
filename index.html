@@ -36,8 +36,8 @@
     }
     .navbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 2rem;
       padding: 16px 32px;
       background-color: #111;
       color: white;
@@ -68,6 +68,38 @@
     .nav-links.active {
       display: flex;
     }
+
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-label {
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0.5rem 0;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      background-color: #111;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      border-radius: 4px;
+      z-index: 999;
+    }
+    .dropdown-content a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .hamburger {
       display: flex;
       flex-direction: column;
@@ -176,10 +208,14 @@
       <a href="lexicon.html">Lexicon</a>
       <a href="manifesto.html">Manifesto</a>
       <a href="about.html">About</a>
-      <span style="color: #aaa; font-size: 0.85rem;">Exhibitions</span>
-      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-      <a href="marrakech-arles2025.html">• Arles 2025</a>
-      <a href="the-sovereign-path.html">• Women Grant</a>
+      <div class="dropdown">
+        <span class="dropdown-label">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
+        </div>
+      </div>
     </div>
   </div>
 
