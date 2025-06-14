@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
@@ -5,29 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About – Selene Sahari</title>
 
-  <!-- Basic Metadata -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Selene Sahari is the creator of DreamWeaver AI and Sovereign Systems Psychology™ — a visual and psychological design framework for authorship, presence, and signal clarity.">
-<meta name="keywords" content="Selene Sahari, Sovereign Systems Psychology, DreamWeaver AI, visual narrative, symbolic architecture, feminine authorship, signal over spectacle, sovereign design, psychological clarity">
-<meta name="author" content="Selene Sahari">
-<meta name="copyright" content="Sovereign Systems Psychology™ – a registered trademark of DreamWeaver AI.">
-
-<!-- Open Graph Metadata (for rich previews) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Selene Sahari – The Sovereign Path | DreamWeaver AI">
-<meta property="og:description" content="Explore the Sovereign Path — a cinematic visual journey through space, silence, and symbolic authorship. A project of DreamWeaver AI.">
-<meta property="og:url" content="https://selenesahari.github.io/portfolio/">
-<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
-<meta property="og:site_name" content="Selene Sahari Portfolio">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://selenesahari.github.io/portfolio/">
-
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <style>
     :root {
       --bg-dark: #0c0c0c;
@@ -48,29 +29,56 @@
       line-height: 1.7;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0.75rem 1rem;
-      z-index: 100;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: #111;
+      color: white;
+      position: relative;
+      z-index: 1000;
     }
 
-    nav a {
-      color: var(--text);
+    .site-icon {
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 32px;
+      background-color: #111;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    .nav-links a {
+      color: white;
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.3s ease;
+      font-weight: 500;
+      margin: 0.5rem 0;
     }
 
-    nav a:hover {
-      opacity: 0.7;
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
     }
 
     .container {
@@ -131,21 +139,31 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="dreamweaver.html">DreamWeaver AI</a>
-    <a href="dreamweaver_manifesto.html">Manifesto</a>
-  </nav>
+  <div class="navbar">
+    <div class="site-icon">☀️</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">SSP</a>
+      <a href="lexicon.html">Lexicon</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="about.html">About</a>
+      <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
+      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
+      <a href="marrakech-arles2025.html">• Arles 2025</a>
+      <a href="the-sovereign-path.html">• Women Grant</a>
+    </div>
+  </div>
 
   <div class="container">
     <h1>About Selene Sahari</h1>
-    <p>
-      Selene Sahari is an interdisciplinary creator whose work weaves together systems architecture, Sovereign Systems Psychology&#8482;, and visual storytelling. Her portfolio moves across continents and disciplines — from software engineering and AI ethics to photographic narratives grounded in presence, silence, and symbolic refusal.
-    </p>
-    <p>
-      Through <strong>DreamWeaver AI</strong>, she builds tools for inner clarity — designing systems not only for enterprises but for the inner world. Her current project, <em>The Sovereign Path</em>, is both a visual journey and an evolving theory of authorship beyond visibility.
-    </p>
+    <p>Selene Sahari is an interdisciplinary creator whose work weaves together systems architecture, Sovereign Systems Psychology&#8482;, and visual storytelling. Her portfolio moves across continents and disciplines — from software engineering and AI ethics to photographic narratives grounded in presence, silence, and symbolic refusal.</p>
+    <p>Through <strong>DreamWeaver AI</strong>, she builds tools for inner clarity — designing systems not only for enterprises but for the inner world. Her current project, <em>The Sovereign Path</em>, is both a visual journey and an evolving theory of authorship beyond visibility.</p>
 
     <h2>Milestones</h2>
     <ul class="timeline">
@@ -157,15 +175,18 @@
     </ul>
 
     <h2>Ongoing Focus</h2>
-    <p>
-      Selene continues to explore how women reclaim narrative space — not through spectacle, but through structure, design, and deliberate authorship. She believes sovereignty is a design system, and clarity is a form of power.
-    </p>
+    <p>Selene continues to explore how women reclaim narrative space — not through spectacle, but through structure, design, and deliberate authorship. She believes sovereignty is a design system, and clarity is a form of power.</p>
   </div>
 
   <footer>
-  &copy; 2025 DreamWeaver AI. Sovereign Systems Psychology™ is a registered trademark. All rights reserved.
-</footer>
-
+    &copy; 2025 DreamWeaver AI. Sovereign Systems Psychology™ is a registered trademark. All rights reserved.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
