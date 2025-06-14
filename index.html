@@ -62,28 +62,16 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
+      padding: 0.75rem 0;
+      display: inline-block;
+      position: relative;
     }
 
     .dropdown {
       position: relative;
-      display: flex;
-      align-items: center;
-      padding-bottom: 0.5rem;
     }
 
-
-
-    .dropdown-label {
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 0.75rem 0;
-  display: inline-block;
-}
-
-
-    .dropdown-content {
+    .dropdown .dropdown-content {
       display: none;
       position: absolute;
       top: 100%;
@@ -136,8 +124,6 @@
         right: 0;
         background-color: #111;
         padding: 16px;
-        border-radius: 0;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         z-index: 999;
         width: 100%;
       }
@@ -146,7 +132,7 @@
         display: flex;
       }
 
-      .nav-links a, .dropdown-label {
+      .nav-links a {
         padding: 0.75rem 1rem;
         text-align: center;
       }
@@ -256,7 +242,7 @@
       <a href="manifesto.html">Manifesto</a>
       <a href="lexicon.html">Lexicon</a>
       <div class="dropdown">
-        <a class="dropdown-label">Exhibitions ▾</a>
+        <a href="#" class="dropdown-label" onclick="event.preventDefault()">Exhibitions ▾</a>
         <div class="dropdown-content">
           <a href="sovereign-path-photovogue.html">PhotoVogue</a>
           <a href="marrakech-arles2025.html">Arles 2025</a>
@@ -291,7 +277,8 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       const dropdownLabel = document.querySelector('.dropdown-label');
-      dropdownLabel.addEventListener('click', () => {
+      dropdownLabel.addEventListener('click', (e) => {
+        e.preventDefault();
         const dropdown = dropdownLabel.parentElement;
         dropdown.classList.toggle('open');
       });
