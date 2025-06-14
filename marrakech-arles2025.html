@@ -244,7 +244,25 @@
 
 
     
-  </style>
+  
+.submission-description, .description {
+  padding: 3rem 1.5rem;
+  max-width: 960px;
+  margin: auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  background-color: var(--bg-light);
+  border-radius: 8px;
+}
+
+body.dark .submission-description,
+body.dark .description {
+  color: var(--text-dark);
+  background-color: #1c1c1e;
+}
+
+</style>
 </head>
 <body class="fade-in">
   <div class="navbar">
@@ -275,7 +293,8 @@
   <h2>Rencontres de la Photographie Marrakech 5th Edition + Festival OFF Arles 2025</h2>
 
   <div class="toggle-bar">
-    <button id="langToggle" class="toggle-theme" onclick="toggleLanguage()">EN</button>
+    <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
+<button id="langToggle" class="toggle-theme" onclick="toggleLanguage()">EN</button>
   </div>
 
   <div class="description">
@@ -556,6 +575,21 @@ La présence n’est pas un code — c’est un commandement.
   }
 </script>
 
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("dark", "fade-in");
+  document.getElementById("langToggle").textContent = "EN";
+  const isDark = localStorage.getItem("darkMode") === "true";
+  if (isDark) document.body.classList.add("dark");
+});
+function toggleDarkMode() {
+  const isDark = document.body.classList.toggle("dark");
+  document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("darkMode", isDark);
+}
+</script>
 
 </body>
 </html>
