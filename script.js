@@ -10,7 +10,6 @@ function toggleMenu() {
 }
 
 function toggleDropdown(event) {
-  // Always prevent default
   event.preventDefault();
 
   // Only toggle dropdown in mobile view
@@ -20,10 +19,20 @@ function toggleDropdown(event) {
   }
 }
 
-// ✅ Always attach listener (safe regardless of screen size)
+// ✅ Attach listener once DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   const dropdownLabel = document.querySelector('.dropdown-label');
   if (dropdownLabel) {
     dropdownLabel.addEventListener('click', toggleDropdown);
+  }
+});
+
+// Optional enhancement: close dropdown if clicked outside (on mobile)
+document.addEventListener('click', (e) => {
+  if (window.innerWidth < 768) {
+    const isDropdown = e.target.closest(".dropdown");
+    if (!isDropdown) {
+      document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("open"));
+    }
   }
 });
