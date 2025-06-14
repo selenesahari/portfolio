@@ -47,6 +47,14 @@
     .site-icon {
       font-size: 1.2rem;
     }
+  
+    .navbar {
+    position: relative; /* enable stacking context */
+    z-index: 1000;       /* make sure it stays on top */
+    overflow: visible;   /* allow dropdown to show */
+  }
+
+    
     .nav-links {
       display: none;
       flex-direction: column;
@@ -78,17 +86,21 @@
       cursor: pointer;
       margin: 0.5rem 0;
     }
+
     .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 2rem;
-      left: 0;
-      background-color: #111;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      border-radius: 4px;
-      z-index: 999;
-    }
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  z-index: 1001;
+}
+
+    
     .dropdown-content a {
       color: white;
       text-decoration: none;
