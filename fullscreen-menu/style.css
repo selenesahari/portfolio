@@ -1,15 +1,16 @@
+/* ─── BASE STYLES ─────────────────────────────── */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #f9f9f9;
 }
 
-/* ─── NAVBAR ─────────────────────────────── */
+/* ─── NAVBAR ───────────────────────────────────── */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   background: white;
   border-bottom: 1px solid #ddd;
 }
@@ -18,25 +19,19 @@ body {
   font-size: 1.5rem;
 }
 
-/* ─── FULL DESKTOP MENU ──────────────────── */
-.desktop-menu {
-  display: none; /* default: hidden for mobile */
-}
-
-/* ─── HAMBURGER ICON ─────────────────────── */
+/* ─── HAMBURGER MENU (Mobile Only) ────────────── */
 .hamburger {
   cursor: pointer;
   width: 30px;
   height: 22px;
   position: relative;
-  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease;
 }
 
 .hamburger span {
-  position: relative;
   height: 3px;
   width: 100%;
   background: black;
@@ -44,29 +39,23 @@ body {
   transition: all 0.3s ease;
 }
 
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-.hamburger span:nth-child(2) {
-  top: 0;
-}
-.hamburger span:nth-child(3) {
-  top: 0;
-}
-
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg);
+  position: absolute;
   top: 9px;
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg);
-  top: -9px;
+  position: absolute;
+  top: 9px;
 }
 
-/* ─── FULLSCREEN OVERLAY ─────────────────── */
+/* ─── FULLSCREEN OVERLAY ─────────────────────── */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -92,7 +81,7 @@ body {
   pointer-events: all;
 }
 
-/* ─── CLOSE (X) BUTTON ───────────────────── */
+/* ─── CLOSE (X) BUTTON ───────────────────────── */
 .close-btn {
   position: absolute;
   top: 1.5rem;
@@ -110,12 +99,13 @@ body {
   opacity: 0.6;
 }
 
-/* ─── MENU LINKS ─────────────────────────── */
+/* ─── OVERLAY MENU LINKS ─────────────────────── */
 .menu-links {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-left: 0.5rem;
+  margin-top: 2rem;
 }
 
 .menu-links a {
@@ -130,15 +120,33 @@ body {
   opacity: 0.6;
 }
 
-/* ─── RESPONSIVE: Show desktop nav if screen ≥ 900px ─ */
+/* ─── DESKTOP MENU ───────────────────────────── */
+.desktop-menu {
+  display: none; /* hidden by default, shown via media query */
+}
+
+/* ─── DESKTOP NAVBAR: Apple Look ─────────────── */
 @media screen and (min-width: 900px) {
   .desktop-menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
     align-items: center;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #333;
+  }
+
+  .desktop-menu a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .desktop-menu a:hover {
+    opacity: 0.6;
   }
 
   .hamburger {
-    display: none;
+    display: none; /* hide hamburger on large screens */
   }
 }
