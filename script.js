@@ -9,12 +9,10 @@ function toggleDropdown(event) {
   dropdown.classList.toggle("open");
 }
 
-// Attach dropdown click handler only on mobile
+// Attach dropdown toggle only for mobile screens
 document.addEventListener('DOMContentLoaded', () => {
   const dropdownLabel = document.querySelector('.dropdown-label');
-
-  // Only attach toggle if screen is small
-  if (window.innerWidth <= 767) {
+  if (window.innerWidth <= 767 && dropdownLabel) {
     dropdownLabel.addEventListener('click', toggleDropdown);
   }
 });
