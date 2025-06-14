@@ -81,6 +81,18 @@ body {
   pointer-events: all;
 }
 
+
+/* On large screens, hide the fullscreen overlay visually and functionally */
+@media screen and (min-width: 900px) {
+  .menu-overlay {
+    visibility: hidden;
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translateY(-10px);
+  }
+}
+
+
 /* ─── CLOSE (X) BUTTON ───────────────────────── */
 .close-btn {
   position: absolute;
