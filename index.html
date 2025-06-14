@@ -136,21 +136,37 @@
         display: flex;
       }
 
-      .nav-links a, .dropdown-label {
+      .nav-links a,
+      .dropdown-label {
         padding: 0.75rem 1rem;
         text-align: center;
+      }
+
+      .dropdown-label {
+        background: none;
+        border: none;
+        font: inherit;
+        color: white;
+        cursor: pointer;
       }
 
       .dropdown-content {
         position: static;
         background: none;
         box-shadow: none;
-        padding: 0;
+        padding-left: 1.5rem;
         display: none;
       }
 
       .dropdown.open .dropdown-content {
         display: block;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 0.4rem 0;
+        font-size: 0.95rem;
+        text-align: left;
       }
 
       .dropdown:hover .dropdown-content {
@@ -246,7 +262,7 @@
       <a href="manifesto.html">Manifesto</a>
       <a href="lexicon.html">Lexicon</a>
       <div class="dropdown">
-        <span class="dropdown-label">Exhibitions ▾</span>
+        <button class="dropdown-label" type="button">Exhibitions</button>
         <div class="dropdown-content">
           <a href="sovereign-path-photovogue.html">PhotoVogue</a>
           <a href="marrakech-arles2025.html">Arles 2025</a>
