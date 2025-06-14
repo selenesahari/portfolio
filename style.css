@@ -310,4 +310,8 @@ ul.timeline li::before {
   background-color: var(--accent);
   border-radius: 50%;
 }
+.term {
+  margin-bottom: 2.5rem;
+}
+
 
