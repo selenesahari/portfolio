@@ -37,81 +37,72 @@
     .navbar {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      justify-content: space-between;
       padding: 16px 32px;
       background-color: #111;
       color: white;
       position: relative;
       z-index: 1000;
+      overflow: visible;
     }
+
     .site-icon {
       font-size: 1.2rem;
     }
-  
-    .navbar {
-    position: relative; /* enable stacking context */
-    z-index: 1000;       /* make sure it stays on top */
-    overflow: visible;   /* allow dropdown to show */
-  }
 
-    
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 32px;
-      background-color: #111;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      z-index: 999;
+    .nav-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
     }
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      margin: 0.5rem 0;
-    }
-    .nav-links.active {
-      display: flex;
     }
 
     .dropdown {
       position: relative;
     }
+
     .dropdown-label {
       color: white;
       font-weight: 500;
       cursor: pointer;
-      margin: 0.5rem 0;
     }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: calc(100% + 0.25rem);
-  left: 0;
-  background-color: #111;
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
-  z-index: 1001;
-  min-width: 200px;           /* widen the dropdown */
-}
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.25rem);
+      left: 0;
+      background-color: #111;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      white-space: nowrap;
+      z-index: 1001;
+      min-width: 200px;
+    }
 
-.dropdown-content a {
-  display: block;
-  margin: 0.4rem 0;
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-  line-height: 1.6;            /* improve spacing between lines */
-  padding: 0.25rem 0;          /* optional: vertical padding per item */
-}
+    .dropdown-content a {
+      display: block;
+      margin: 0.4rem 0;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding: 0.25rem 0;
+    }
 
-  
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -122,6 +113,7 @@
       cursor: pointer;
       z-index: 1001;
     }
+
     .hamburger div {
       width: 25px;
       height: 3px;
@@ -129,21 +121,34 @@
       margin: 4px 0;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 767px) {
+      .nav-center {
+        display: none;
+      }
+
       .nav-links {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        gap: 2rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 32px;
+        background-color: #111;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        z-index: 999;
       }
 
-      .nav-links a {
-        margin: 0;
+      .nav-links.active {
+        display: flex;
       }
 
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
       .hamburger {
         display: none;
       }
@@ -160,16 +165,19 @@
       text-align: center;
       padding: 2rem;
     }
+
     .hero h1, .hero p {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1s ease forwards;
     }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       animation-delay: 0.2s;
     }
+
     .hero p {
       font-size: 1.2rem;
       color: #ccc;
@@ -177,6 +185,7 @@
       line-height: 1.6;
       animation-delay: 0.5s;
     }
+
     .cta-buttons {
       display: flex;
       flex-direction: column;
@@ -184,6 +193,7 @@
       gap: 1rem;
       margin-top: 2rem;
     }
+
     .cta-button {
       text-decoration: none;
       padding: 0.75rem 1.5rem;
@@ -196,10 +206,12 @@
       width: 100%;
       max-width: 320px;
     }
+
     .cta-button:hover {
       background: var(--text);
       color: var(--bg);
     }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -212,26 +224,30 @@
 
   <div class="navbar">
     <div class="site-icon">☀️</div>
+
+    <div class="nav-center">
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="dreamweaver.html">DreamWeaver AI</a>
+        <a href="ssp.html">Sovereign Systems Psychology</a>
+        <a href="lexicon.html">Lexicon</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+          <span class="dropdown-label">Exhibitions ▾</span>
+          <div class="dropdown-content">
+            <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+            <a href="marrakech-arles2025.html">Arles 2025</a>
+            <a href="the-sovereign-path.html">Women Grant</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="dreamweaver.html">DreamWeaver AI</a>
-      <a href="ssp.html">Sovereign Systems Psychology</a>
-      <a href="lexicon.html">Lexicon</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="about.html">About</a>
-      <div class="dropdown">
-        <span class="dropdown-label">Exhibitions ▾</span>
-        <div class="dropdown-content">
-          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
-          <a href="marrakech-arles2025.html">Arles 2025</a>
-          <a href="the-sovereign-path.html">Women Grant</a>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -251,5 +267,6 @@
       nav.classList.toggle("active");
     }
   </script>
+
 </body>
 </html>
