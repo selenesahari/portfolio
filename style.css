@@ -170,8 +170,9 @@ body {
   }
 }
 
+/* ✅ Updated to leave space for footer */
 .hero {
-  height: 100vh;
+  min-height: calc(100vh - 100px);
   background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.9)),
               url('images/3_Selene_Sovereign_Path_Threshold.jpg') center/cover no-repeat;
   display: flex;
