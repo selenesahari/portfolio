@@ -8,6 +8,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <script defer src="script.js"></script>
+  <style>
+      .portfolio-description {
+      text-align: center;
+      max-width: 800px;
+      margin: 6rem auto 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .centered-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .centered-link a {
+      font-weight: bold;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .centered-link a:hover {
+      text-decoration: underline;
+    }
+
+    .folio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .folio-grid img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,19 +85,19 @@
     </div>
   </div>
 
-<main class="content-left" style="padding-top: 6rem;">
-  <h1>The Sovereign Path</h1>
-  <p>
-    This series unfolds in three arcs — Root & Refusal, Power & Poise, and Transcendence & Signal — 
-    tracing how sovereignty is enacted through real spaces shaped by empire, architecture, and code. 
-    Each image forms a visual stanza in a living documentary of presence.
-  </p>
-  <div class="centered-link">
-    <a class="lexicon-link" href="lexicon.html">Explore the Sovereign Lexicon →</a>
-  </div>
 
-  <div class="portfolio-grid">
+   <section class="portfolio-description">
+    <h1>The Sovereign Path</h1>
+    <p>
+      This series unfolds in three acts: Awakening & Ancestral Memory, Crossing & Refusal, and Liminality & Completion. 
+      Each image is a visual stanza — together, they trace how sovereignty moves through memory, space, and silence.
+    </p>
+    <div class="centered-link">
+      <a href="lexicon.html">Explore the Sovereign Lexicon →</a>
+    </div>
+  </section>
 
+  <section class="folio-grid">
     <!-- Start of image blocks -->
     <div class="photo-card" tabindex="0">
       <img src="images/1_Selene_Sovereign_Path_Garden.jpg" alt="Marrakesh Garden Arrival">
@@ -287,13 +326,9 @@ In AI halls, she exceeds prediction — her presence is code-less.
         </p>
        </div>
     </div>
-
-
-
     <!-- End of image blocks -->
-
-  </div>
-</main>
+  </section>
+  
   <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
     <p>
       <em>Sovereign Systems Psychology™</em> is intellectual property of DreamWeaver AI Initiative.<br>
