@@ -1,499 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-<title>The Sovereign Path – A Cinematic Visual Narrative by Selene Sahari</title>
-  <!-- Basic Metadata -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Selene Sahari is the creator of DreamWeaver AI and Sovereign Systems Psychology™ — a visual and psychological design framework for authorship, presence, and signal clarity.">
-<meta name="keywords" content="Selene Sahari, Sovereign Systems Psychology, DreamWeaver AI, visual narrative, symbolic architecture, feminine authorship, signal over spectacle, sovereign design, psychological clarity">
-<meta name="author" content="Selene Sahari">
-<meta name="copyright" content="Sovereign Systems Psychology™ – a registered trademark of DreamWeaver AI.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhotoVogue – The Sovereign Path</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script defer src="script.js"></script>
+  <style>
+    .portfolio-description {
+      text-align: center;
+      max-width: 800px;
+      margin: 6rem auto 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
 
-<!-- Open Graph Metadata (for rich previews) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Selene Sahari – The Sovereign Path | DreamWeaver AI">
-<meta property="og:description" content="Explore the Sovereign Path — a cinematic visual journey through space, silence, and symbolic authorship. A project of DreamWeaver AI.">
-<meta property="og:url" content="https://selenesahari.github.io/portfolio/">
-<meta property="og:image" content="https://selenesahari.github.io/portfolio/3_Selene_Sovereign_Path_Threshold.jpg">
-<meta property="og:site_name" content="Selene Sahari Portfolio">
+    .centered-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
 
+    .centered-link a {
+      font-weight: bold;
+      color: #f4c542;
+      font-size: 1.15rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    
+    .centered-link a:hover {
+      color: #ffe97f;
+      text-shadow: 0 0 6px rgba(255, 235, 150, 0.5);
+    }
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    .folio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-<style>
-  :root {
-    --bg-light: #ffffff;
-    --text-light: #1c1c1e;
-    --bg-dark: #1c1c1e;
-    --text-dark: #f2f2f7;
-    --caption-light: #3a3a3c;
-    --caption-dark: #e0e0e0;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    margin: 0;
-    background-color: var(--bg-light);
-    color: var(--text-light);
-    opacity: 0;
-    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.6s ease;
-  }
-
-  body.fade-in {
-    opacity: 1;
-  }
-
-  body.dark {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  h1 {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-top: 2.5rem;
-    font-weight: 500;
-    letter-spacing: -0.3px;
-    color: inherit;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  /* Theme toggle button */
-  .toggle-theme {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background-color: #f2f2f7;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-    border-radius: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    cursor: pointer;
-    z-index: 100;
-    font-weight: 500;
-  }
-
-  .toggle-theme:hover {
-    background-color: #e5e5ea;
-  }
-
-  /* Submission description styling */
-  .submission-description {
-    padding: 3rem 1.5rem;
-    max-width: 960px;
-    margin: auto;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text-light);
-  }
-
-  body.dark .submission-description {
-    color: var(--text-dark);
-  }
-
-  /* Image gallery styles */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1280px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-  }
-
-  .photo-card {
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-    background-color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .photo-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  }
-
-  body.dark .photo-card {
-    background-color: #2c2c2e;
-  }
-
-  .photo-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .caption {
-    padding: 1rem 1.2rem;
-  }
-
-  .caption h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    color: inherit;
-  }
-
-  .caption .meta {
-    font-size: 0.82rem;
-    color: #888;
-  }
-
-  body.dark .caption .meta {
-    color: #ccc;
-  }
-
-  .caption .quote {
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--caption-light);
-  }
-
-  body.dark .caption .quote {
-    color: var(--caption-dark);
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    padding: 3rem 1rem;
-    border-top: 1px solid #eee;
-  }
-
-  body.dark footer {
-    color: #aaa;
-    border-top: 1px solid #444;
-  }
-
-  .centered-link {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .lexicon-link {
-    color: #ffe066;
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .lexicon-link:hover {
-    text-decoration: underline;
-  }
-
-  /* 🔻 Minimalist Hamburger Menu */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 32px;
-    background-color: #111;
-    color: white;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .site-icon {
-    font-size: 1.2rem;
-  }
-
-  .nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 32px; /* aligns under hamburger */
-  background-color: #111;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
-
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    margin: 0.5rem 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-  }
-
-  .hamburger {
-  display: flex;
-}
-
-</style>
-
+    .folio-grid img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  </style>
 </head>
+
 <body>
-  <button id="modeToggle" class="toggle-theme" onclick="toggleDarkMode()">🌙</button>
-
-
-<div class="navbar">
-  <div class="site-icon">☀️</div>
-
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="dreamweaver.html">DreamWeaver AI</a>
-    <a href="ssp.html">Sovereign Systems Psychology</a>
-    <a href="lexicon.html">Lexicon</a>
-    <a href="manifesto.html">Manifesto</a>
-    <a href="about.html">About</a>
-
-    <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
-    <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-    <a href="marrakech-arles2025.html">• Arles 2025</a>
-    <a href="the-sovereign-path.html">• Women Grant</a>
-  </div>
-</div>
-
-  
-   <h1>The Sovereign Path</h1>
-  <h2>PhotoVogue 2025: East & Southeast Asian Panorama Submission</h2>
-    <section class="submission-description">
-    This series unfolds in three acts: Awakening & Ancestral Memory, Crossing & Refusal, and Liminality & Completion. Each image is a visual stanza — together, they trace how sovereignty moves through memory, space, and silence.
-<div class="centered-link">
-  <a class="lexicon-link" href="lexicon.html">Explore the Sovereign Lexicon →</a>
-</div>
-
-    </section>
-
-
-
-  <!-- Gallery content remains unchanged below -->
-<div id="folio" class="gallery">
-
-    <!-- Start of image blocks -->
-    <div class="photo-card" tabindex="0">
-      <img src="images/1_Selene_Sovereign_Path_Garden.jpg" alt="Marrakesh Garden Arrival">
-      <div class="caption">
-        <h3>Act I: Awakening & Ancestral Memory - Marrakesh Garden Arrival</h3>
-        <p class="meta">Jardin Majorelle, Morocco · March 2025</p>
-        <p class="quote">
-          She does not arrive to be seen — she arrives to remember. And the field answers not with noise, but with light.
-         </p>
-      </div>
+  <div class="navbar">
+    <div class="site-icon">
+      <a href="index.html" class="site-icon">
+        <img src="images/dreamweaver-logo.png" alt="DreamWeaver AI Logo" class="logo-img" />
+      </a>
     </div>
 
-    <div class="photo-card" tabindex="0">
-      <img src="images/2_Selene_Sovereign_Path_Mosaic.jpg" alt="Fountain of Lineage">
-      <div class="caption">
-        <h3>- Fountain of Lineage</h3>
-        <p class="meta">Hassan II Mosque, Morocco · March 2025</p>
-        <p class="quote">
-         Bathed in red, she becomes a vessel — where memory flows without translation, and lineage awakens.
-      </p>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label" onclick="toggleDropdown(event)">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
+        </div>
       </div>
+      <a href="about.html">About</a>
+    </div>
+
+    <button id="themeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text);">
+      🦁 / 🌙
+    </button>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <section class="portfolio-description">
+    <h1>The Sovereign Path: PhotoVogue Edition</h1>
+    <p>
+      This edition was curated for the PhotoVogue grant — celebrating authored presence through spatial composition. 
+      Each frame resists spectacle, reclaiming photography as sovereign authorship.
+    </p>
+    <div class="centered-link">
+      <a href="lexicon.html">Explore the Sovereign Lexicon →</a>
+    </div>
+  </section>
+
+  <section class="folio-grid">
+    <!-- Replace these with your actual PhotoVogue-selected images -->
+    <div class="photo-card" tabindex="0">
+      <img src="images/1_Selene_Sovereign_Path_Garden.jpg" alt="Marrakesh Garden Arrival">
     </div>
 
     <div class="photo-card" tabindex="0">
       <img src="images/4_Selene_Sovereign_Path_Vastness.jpg" alt="Desert Invocation">
-      <div class="caption">
-        <h3>- Desert Invocation</h3>
-        <p class="meta">Sahara, Morocco · March 2025</p>
-        <p class="quote">
-Her arms open not in surrender, but in signal. The land does not echo — it listens.
-        </p>
-      </div>
-    </div>
-
-    <div class="photo-card" tabindex="0">
-      <img src="images/5_Selene_Sovereign_Path_Liberation.jpg" alt="Camel Lineage">
-      <div class="caption">
-        <h3>- Stillness Beyond the Caravan</h3>
-        <p class="meta">Merzouga, Morocco · March 2025</p>
-        <p class="quote">
-Among desert routes and wind, she becomes the axis — unmoved by spectacle, anchored by presence.
-        </p>
-      </div>
-    </div>
-
-      <div class="photo-card" tabindex="0">
-      <img src="images/3_Selene_Sovereign_Path_Threshold.jpg" alt="Threshold of Knowledge">
-      <div class="caption">
-        <h3>- Threshold of Knowledge</h3>
-        <p class="meta">Al Quaraouiyine, Fez, Morocco · March 2025</p>
-        <p class="quote">
-At the gate of the world’s oldest university, she crosses without permission — only presence.
-        </p>
-      </div>
-    </div>
-
-
-    <div class="photo-card" tabindex="0">
-      <img src="images/6_Selene_Sovereign_Path_Coastline.jpg" alt="Rabat Coastline">
-      <div class="caption">
-        <h3>Act II: Crossing & Refusal - Rabat Coastline</h3>
-        <p class="meta">Rabat, Morocco · March 2025</p>
-        <p class="quote">
-At the boundary of land and sea, she claims silence as signal — a message written in stillness.
-        </p>
-      </div>
     </div>
 
     <div class="photo-card" tabindex="0">
       <img src="images/7_Selene_Sovereign_Path_Arles.jpg" alt="Sovereign Alley">
-      <div class="caption">
-        <h3>- Sovereign Alley</h3>
-        <p class="meta">Arles, France · May 2024</p>
-        <p class="quote">
-Where foreign walls once confined, she becomes architecture — fluid, unmapped, whole.
-        </p>
-      </div>
     </div>
-
-    <div class="photo-card" tabindex="0">
-      <img src="images/8_Chambord_Pause.jpg" alt="Chambord Pause">
-      <div class="caption">
-        <h3>- Chambord Pause</h3>
-        <p class="meta">Loire Valley, France · May 2024</p>
-        <p class="quote">   
-In a castle built for kings, she pauses. This rest — unearned by lineage — is now hers.
-        </p>
-      </div>
-    </div>
-
-    <div class="photo-card" tabindex="0">
-      <img src="images/9_Selene_Sovereign_Path_Lyon.jpg" alt="View from Lyon">
-      <div class="caption">
-        <h3>- View from Lyon</h3>
-        <p class="meta">Lyon, France · May 2024</p>
-        <p class="quote">
-Framed by city and symmetry, she embodies difference — not as rebellion, but as unspoken certainty.
-        </p>
-      </div>
-    </div>
-
-      <div class="photo-card" tabindex="0">
-      <img src="images/15_Seattle_Ferry.jpg" alt="Seattle Ferry">
-      <div class="caption">
-        <h3>- Seattle Ferry</h3>
-        <p class="meta">Seattle, Washington, Sept 2023</p>
-        <p class="quote">
-Amid lines and uniform, she carries her own frequency. Presence, undiluted.
-        </p> 
-      </div>
-    </div>
-  
-    <div class="photo-card" tabindex="0">
-      <img src="images/10_Summit_Watcher.jpg" alt="Summit Watcher">
-      <div class="caption">
-        <h3>Act III: Liminality & Completion - Summit Watcher</h3>
-        <p class="meta">Mount Rainier · May 2023</p>
-        <p class="quote">
-On the mountain’s breath, she becomes untethered — needing no audience to rise.
-        </p>
-        </div>
-    </div>
-
-     <div class="photo-card" tabindex="0">
-      <img src="images/11_MistWalker.jpg" alt="Mistwalker">
-      <div class="caption">
-        <h3>- Mist Walker</h3>
-        <p class="meta">Grouse Mountain, Canada, Dec 2024</p>
-        <p class="quote">
-She walks not to escape, but to integrate. In winter’s hush, she meets the quiet within.
-        </p>
-      </div>
-    </div>
-
-
-
 
     <div class="photo-card" tabindex="0">
       <img src="images/13_Water_Pavilion.jpg" alt="Water Pavilion">
-      <div class="caption">
-        <h3>- Water Pavilion</h3>
-        <p class="meta">Hangzhou, China, Feb 2025</p>
-        <p class="quote">
-          Glass and reflection. East and West. She walks the liminal — not torn, but whole.
-      </div>
     </div>
-
-
-    <div class="photo-card" tabindex="0">
-      <img src="images/14_CodeOfNothing.jpg" alt="Code of Nothing">
-      <div class="caption">
-        <h3>- Code of Nothing</h3>
-        <p class="meta">San Jose (GTC Conference), California, March 2025</p>
-        <p class="quote">
-In logic’s domain, her softness recalibrates the gaze. Signal, not spectacle.
-        </p>
-      </div>
-    </div>
-
-
-
-
 
     <div class="photo-card" tabindex="0">
       <img src="images/19_Ink_Gallary_Walk.jpg" alt="Ink Gallery Walk">
-      <div class="caption">
-        <h3>- Ink Gallery Walk</h3>
-        <p class="meta">China Academy of Art, Hangzhou · May 2024<br>
-        </p>
-        <p class="quote"> 
-Where her parents once taught, she walks. The lens now held by her daughter — sovereignty completes the arc.
-        </p>
-      </div>
     </div>
-    <!-- End of image blocks -->
 
-  </div>
-  
-  <footer>
-    &copy; 2025 Selene Sahari · A Sovereign Portfolio · All rights reserved
+    <div class="photo-card" tabindex="0">
+      <img src="images/10_Summit_Watcher.jpg" alt="Summit Watcher">
+    </div>
+
+    <div class="photo-card" tabindex="0">
+      <img src="images/11_MistWalker.jpg" alt="Mistwalker">
+    </div>
+
+    <div class="photo-card" tabindex="0">
+      <img src="images/18_Bay_Horizon.jpg" alt="Bay Horizon">
+    </div>
+  </section>
+
+  <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
+    <p>
+      <em>Sovereign Systems Psychology™</em> is intellectual property of DreamWeaver AI Initiative.<br>
+      All content on this website is © 2025 DreamWeaver AI Initiative. All rights reserved.
+    </p>
   </footer>
-
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("dark", "fade-in");
-  document.getElementById("modeToggle").textContent = "☀️";
-});
-
-    function toggleDarkMode() {
-      const isDark = document.body.classList.toggle("dark");
-      document.getElementById("modeToggle").textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("darkMode", isDark);
-    }
-
-
-      function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-  }
-  </script>
 </body>
 </html>
