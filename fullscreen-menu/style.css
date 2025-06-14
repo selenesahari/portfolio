@@ -149,4 +149,13 @@ body {
   .hamburger {
     display: none; /* hide hamburger on large screens */
   }
+  .desktop-menu {
+    display: flex;
+  }
+
+  /* Optional: Also hide the fullscreen menu overlay just in case */
+  .menu-overlay {
+    display: none !important;
+  }
 }
+
