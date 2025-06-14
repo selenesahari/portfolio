@@ -5,7 +5,7 @@ function toggleMenu() {
   hamburger.classList.toggle("active");
 }
 
-// Close menu with ESC key
+// Close with ESC key
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     const menu = document.getElementById("fullscreenMenu");
@@ -14,5 +14,13 @@ document.addEventListener("keydown", function (event) {
       menu.classList.remove("show");
       hamburger.classList.remove("active");
     }
+  }
+});
+
+// Close overlay if resized to desktop
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 900) {
+    document.getElementById("fullscreenMenu").classList.remove("show");
+    document.getElementById("hamburger").classList.remove("active");
   }
 });
