@@ -235,12 +235,14 @@ body {
 }
 
 /* ✅ Dark/light mode logo switching */
+
 .logo-img {
-  content: url('images/dreamweaver-logo.png'); /* Replace this with transparent PNG if available */
+  content: url('images/dreamweaver-dark-logo.png'); /* used in light mode */
   height: 32px;
   transition: opacity 0.4s ease;
 }
 
 html[data-theme="dark"] .logo-img {
-  content: url('images/dreamweaver-transparent-logo.png');
+  content: url('images/dreamweaver-transparent-logo.png'); /* white text for dark mode */
 }
+
