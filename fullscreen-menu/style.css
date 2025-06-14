@@ -1,11 +1,9 @@
-/* ─── BASE STYLES ─────────────────────────────── */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #f9f9f9;
 }
 
-/* ─── NAVBAR ───────────────────────────────────── */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,7 +17,6 @@ body {
   font-size: 1.5rem;
 }
 
-/* ─── HAMBURGER MENU (Mobile Only) ────────────── */
 .hamburger {
   cursor: pointer;
   width: 30px;
@@ -55,7 +52,7 @@ body {
   top: 9px;
 }
 
-/* ─── FULLSCREEN OVERLAY ─────────────────────── */
+/* FULLSCREEN OVERLAY */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -81,19 +78,6 @@ body {
   pointer-events: all;
 }
 
-
-/* On large screens, hide the fullscreen overlay visually and functionally */
-@media screen and (min-width: 900px) {
-  .menu-overlay {
-    visibility: hidden;
-    opacity: 0 !important;
-    pointer-events: none;
-    transform: translateY(-10px);
-  }
-}
-
-
-/* ─── CLOSE (X) BUTTON ───────────────────────── */
 .close-btn {
   position: absolute;
   top: 1.5rem;
@@ -103,7 +87,7 @@ body {
   line-height: 1;
   color: #000;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1001; /* Ensure it appears above the overlay */
   transition: opacity 0.2s ease;
 }
 
@@ -111,7 +95,6 @@ body {
   opacity: 0.6;
 }
 
-/* ─── OVERLAY MENU LINKS ─────────────────────── */
 .menu-links {
   display: flex;
   flex-direction: column;
@@ -132,12 +115,11 @@ body {
   opacity: 0.6;
 }
 
-/* ─── DESKTOP MENU ───────────────────────────── */
 .desktop-menu {
-  display: none; /* hidden by default, shown via media query */
+  display: none;
 }
 
-/* ─── DESKTOP NAVBAR: Apple Look ─────────────── */
+/* DESKTOP STYLING */
 @media screen and (min-width: 900px) {
   .desktop-menu {
     display: flex;
@@ -159,15 +141,13 @@ body {
   }
 
   .hamburger {
-    display: none; /* hide hamburger on large screens */
-  }
-  .desktop-menu {
-    display: flex;
+    display: none;
   }
 
-  /* Optional: Also hide the fullscreen menu overlay just in case */
   .menu-overlay {
-    display: none !important;
+    visibility: hidden;
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translateY(-10px);
   }
 }
-
