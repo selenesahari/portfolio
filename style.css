@@ -236,3 +236,10 @@ body {
     transform: translateY(0);
   }
 }
+
+.site-icon img {
+  vertical-align: middle;
+  height: 32px; /* adjust as needed */
+  margin-right: 12px;
+}
+
