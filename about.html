@@ -9,24 +9,41 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- ✅ Unified Navbar -->
   <div class="navbar">
-    <div class="site-icon">☀️</div>
+    <div class="site-icon">
+      <a href="index.html" class="site-icon">
+        <img src="images/dreamweaver-logo.png" alt="DreamWeaver AI Logo" class="logo-img" />
+      </a>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="dreamweaver.html">DreamWeaver AI</a>
+      <a href="ssp.html">Sovereign Systems Psychology</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="lexicon.html">Lexicon</a>
+      <div class="dropdown">
+        <span class="dropdown-label" onclick="toggleDropdown(event)">Exhibitions ▾</span>
+        <div class="dropdown-content">
+          <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+          <a href="marrakech-arles2025.html">Arles 2025</a>
+          <a href="the-sovereign-path.html">Women Grant</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </div>
+
+    <!-- 🌞 / 🌙 Toggle Button -->
+    <button id="themeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text);">
+      🦁 / 🌙
+    </button>
+
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="dreamweaver.html">DreamWeaver AI</a>
-      <a href="ssp.html">SSP</a>
-      <a href="lexicon.html">Lexicon</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="about.html">About</a>
-      <span style="color: #aaa; font-size: 0.85rem; padding-left: 0.2rem;">Exhibitions</span>
-      <a href="sovereign-path-photovogue.html">• PhotoVogue</a>
-      <a href="marrakech-arles2025.html">• Arles 2025</a>
-      <a href="the-sovereign-path.html">• Women Grant</a>
     </div>
   </div>
 
@@ -46,17 +63,17 @@
         <li><strong>2025:</strong> Forthcoming presentation at SciDataCon 2025 (part of International Data Week, Brisbane)</li>
       </ul>
 
-     <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Ongoing Focus</h2>
+      <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">Ongoing Focus</h2>
       <p>Selene continues to explore how women reclaim narrative space — not through spectacle, but through structure, design, and deliberate authorship. She believes sovereignty is a design system, and clarity is a form of power.</p>
     </div>
   </section>
 
-<footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
-  <p>
-    <em>Sovereign Systems Psychology™</em> is intellectual property of DreamWeaver AI Initiative.<br>
-    All content on this website is © 2025 DreamWeaver AI Initiative. All rights reserved.
-  </p>
-</footer>
+  <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--text); background: transparent;">
+    <p>
+      <em>Sovereign Systems Psychology™</em> is intellectual property of DreamWeaver AI Initiative.<br>
+      All content on this website is © 2025 DreamWeaver AI Initiative. All rights reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
