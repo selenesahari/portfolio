@@ -287,3 +287,27 @@ html[data-theme="dark"] .logo-img {
 .tool {
   margin-bottom: 2rem;
 }
+
+ul.timeline {
+  list-style: none;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+}
+
+ul.timeline li {
+  margin-bottom: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+ul.timeline li::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -8px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
