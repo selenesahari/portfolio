@@ -84,17 +84,22 @@ body {
 }
 
 .close-btn {
-  font-size: 2.5rem;
-  align-self: flex-end;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #000;
   cursor: pointer;
-  margin-bottom: 2rem;
-  color: #333;
-  transition: opacity 0.2s;
+  z-index: 1000;
+  transition: opacity 0.2s ease;
 }
 
 .close-btn:hover {
   opacity: 0.6;
 }
+
 
 .menu-links {
   display: flex;
