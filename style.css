@@ -455,3 +455,26 @@ ul.timeline li::before {
   background: var(--text);
   color: var(--bg);
 }
+
+.triform-sigil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.triform-sigil img {
+  width: 64px;
+  height: auto;
+}
+
+.sigil-caption {
+  color: var(--text);
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.4;
+  font-style: italic;
+}
+
