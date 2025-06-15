@@ -30,60 +30,39 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const dropdownLabel = document.querySelector('.dropdown-label');
-  if (dropdownLabel) {
-    dropdownLabel.addEventListener('click', toggleDropdown);
-  }
+  // Load navbar dynamically
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
 
-  // ✅ Dark mode toggle logic
-  const themeToggle = document.getElementById('themeToggle');
-  const currentTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', currentTheme);
+      // Attach hamburger click after navbar is loaded
+      const hamburger = document.querySelector('.hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+      }
 
-  themeToggle.addEventListener('click', () => {
-    const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-});
+      // Attach dropdown toggle for mobile
+      const dropdownLabel = document.querySelector('.dropdown-label');
+      if (dropdownLabel) {
+        dropdownLabel.addEventListener('click', toggleDropdown);
+      }
 
-// ✅ Load navbar and bind events only after it's inserted
-fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('navbar-container').innerHTML = data;
+      // Dark mode toggle setup
+      const themeToggle = document.getElementById('themeToggle');
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', currentTheme);
 
-    // ✅ Attach dropdown event using delegation
-    document.addEventListener('click', function (e) {
-      if (e.target.matches('.dropdown-label')) {
-        e.preventDefault();
-        const dropdown = e.target.closest('.dropdown');
-        dropdown.classList.toggle('open');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
       }
     });
 
-    // ✅ Hamburger toggle
-    const hamburger = document.querySelector('.hamburger');
-    if (hamburger) {
-      hamburger.addEventListener('click', toggleMenu);
-    }
-
-    // ✅ Dark mode toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
-  });
-
-// Load footer.html dynamically into #footer-container
-document.addEventListener("DOMContentLoaded", () => {
+  // Load footer dynamically
   const footerContainer = document.getElementById("footer-container");
   if (footerContainer) {
     fetch("footer.html")
@@ -93,4 +72,3 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 });
-
