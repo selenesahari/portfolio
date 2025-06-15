@@ -389,39 +389,32 @@ Bras ouverts au désert, elle disparaît dans la présence — sans scène, sans
   </footer>
 
   
-  
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Hide English, Show French
-    const englishQuotes = document.querySelectorAll('.quote-en');
-    const frenchQuotes = document.querySelectorAll('.quote-fr');
+document.addEventListener('DOMContentLoaded', () => {
+  const frButton = document.getElementById('btn-fr');
+  const enButton = document.getElementById('btn-en');
 
-    englishQuotes.forEach(el => el.style.display = 'none');
-    frenchQuotes.forEach(el => el.style.display = 'block');
-  });
+  const frElements = document.querySelectorAll('.fr');
+  const enElements = document.querySelectorAll('.en');
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    const frEls = document.querySelectorAll('.quote-fr');
-    const enEls = document.querySelectorAll('.quote-en');
+  function showLanguage(lang) {
+    if (lang === 'fr') {
+      frElements.forEach(el => el.style.display = '');
+      enElements.forEach(el => el.style.display = 'none');
+    } else {
+      frElements.forEach(el => el.style.display = 'none');
+      enElements.forEach(el => el.style.display = '');
+    }
+  }
 
-    // Default to French
-    frEls.forEach(el => el.style.display = 'block');
-    enEls.forEach(el => el.style.display = 'none');
+  frButton.addEventListener('click', () => showLanguage('fr'));
+  enButton.addEventListener('click', () => showLanguage('en'));
 
-    btnFr.addEventListener('click', () => {
-      frEls.forEach(el => el.style.display = 'block');
-      enEls.forEach(el => el.style.display = 'none');
-    });
+  // Default to FR on page load
+  showLanguage('fr');
+});
 
-    btnEn.addEventListener('click', () => {
-      enEls.forEach(el => el.style.display = 'block');
-      frEls.forEach(el => el.style.display = 'none');
-    });
-  });
-</script>
-
+  </script>
 
 </body>
 </html>
