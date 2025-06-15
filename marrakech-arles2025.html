@@ -8,6 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <script defer src="script.js"></script>
+    <script>
+    fetch("meta.html")
+      .then(response => response.text())
+      .then(data => document.head.insertAdjacentHTML("beforeend", data));
+  </script>
   <style>
 
     .caption {
