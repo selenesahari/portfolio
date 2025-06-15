@@ -434,3 +434,24 @@ ul.timeline li::before {
       object-fit: cover;
     }
 
+.lang-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.lang-buttons button {
+  margin: 0 6px;
+  padding: 6px 14px;
+  font-weight: bold;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.lang-buttons button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
