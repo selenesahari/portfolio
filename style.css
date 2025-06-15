@@ -523,4 +523,15 @@ ul.timeline li::before {
   color: var(--text);
 }
 
+/* Global link style for dark mode */
+body[data-theme="dark"] a {
+  color: #4ea8ff; /* or any other bright, readable color */
+  text-decoration: underline;
+}
+
+body[data-theme="dark"] a:hover {
+  color: #82cfff; /* lighter hover effect */
+}
+
+
 
