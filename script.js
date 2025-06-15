@@ -55,3 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+  // Load navbar into #navbar-container
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    });
+
