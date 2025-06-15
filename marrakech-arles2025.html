@@ -56,6 +56,9 @@
 </head>
 
 <body>
+
+
+
   <div class="navbar">
     <div class="site-icon">
       <a href="index.html" class="site-icon">
@@ -91,6 +94,11 @@
     </div>
   </div>
 
+    <div style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+  <button id="btn-fr" style="margin-right: 4px;">FR</button>
+  <button id="btn-en">EN</button>
+</div>
+  
   <section class="portfolio-description">
     <h1>Marrakech to Arles</h1>
     <p class="quote quote-en">
@@ -384,7 +392,29 @@ Bras ouverts au désert, elle disparaît dans la présence — sans scène, sans
     englishQuotes.forEach(el => el.style.display = 'none');
     frenchQuotes.forEach(el => el.style.display = 'block');
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    const frEls = document.querySelectorAll('.quote-fr');
+    const enEls = document.querySelectorAll('.quote-en');
+
+    // Default to French
+    frEls.forEach(el => el.style.display = 'block');
+    enEls.forEach(el => el.style.display = 'none');
+
+    btnFr.addEventListener('click', () => {
+      frEls.forEach(el => el.style.display = 'block');
+      enEls.forEach(el => el.style.display = 'none');
+    });
+
+    btnEn.addEventListener('click', () => {
+      enEls.forEach(el => el.style.display = 'block');
+      frEls.forEach(el => el.style.display = 'none');
+    });
+  });
 </script>
+
 
 </body>
 </html>
