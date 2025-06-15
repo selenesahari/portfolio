@@ -81,3 +81,16 @@ fetch('navbar.html')
       });
     }
   });
+
+// Load footer.html dynamically into #footer-container
+document.addEventListener("DOMContentLoaded", () => {
+  const footerContainer = document.getElementById("footer-container");
+  if (footerContainer) {
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(html => {
+        footerContainer.innerHTML = html;
+      });
+  }
+});
+
