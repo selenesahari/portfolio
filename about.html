@@ -7,6 +7,13 @@
   <link href="style.css" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <script src="script.js" defer></script>
+  <!-- Placeholder for shared metadata -->
+  <script>
+    fetch("meta.html")
+      .then(response => response.text())
+      .then(data => document.head.insertAdjacentHTML("beforeend", data));
+  </script>
+
 </head>
 <body>
   <div id="navbar-container"></div>
