@@ -19,14 +19,6 @@ function toggleDropdown(event) {
   }
 }
 
-// ✅ Attach listener once DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  const dropdownLabel = document.querySelector('.dropdown-label');
-  if (dropdownLabel) {
-    dropdownLabel.addEventListener('click', toggleDropdown);
-  }
-});
-
 // Optional enhancement: close dropdown if clicked outside (on mobile)
 document.addEventListener('click', (e) => {
   if (window.innerWidth < 768) {
