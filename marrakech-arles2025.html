@@ -349,8 +349,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const frButton = document.getElementById('btn-fr');
   const enButton = document.getElementById('btn-en');
 
-  const frElements = document.querySelectorAll('.fr');
-  const enElements = document.querySelectorAll('.en');
+  const frElements = document.querySelectorAll('.quote-fr');
+  const enElements = document.querySelectorAll('.quote-en');
 
   function showLanguage(lang) {
     if (lang === 'fr') {
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
   frButton.addEventListener('click', () => showLanguage('fr'));
   enButton.addEventListener('click', () => showLanguage('en'));
 
-  // Default to FR on page load
+  // Default to French
   showLanguage('fr');
 });
 
