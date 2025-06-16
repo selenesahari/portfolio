@@ -4,13 +4,20 @@ window.toggleMenu = function () {
   const hamburger = document.getElementById("hamburger");
   const closeIcon = document.getElementById("closeIcon");
 
+  const isOpening = !nav.classList.contains("active");
   nav.classList.toggle("active");
 
-  const isActive = nav.classList.contains("active");
-  if (hamburger) hamburger.style.display = isActive ? "none" : "flex";
-  if (closeIcon) closeIcon.style.display = isActive ? "flex" : "none";
+  if (isOpening) {
+    nav.style.display = "flex";
+    if (hamburger) hamburger.style.display = "none";
+    if (closeIcon) closeIcon.style.display = "flex";
+  } else {
+    nav.style.display = "none";
+    if (hamburger) hamburger.style.display = "flex";
+    if (closeIcon) closeIcon.style.display = "none";
+  }
 
-  if (!isActive) {
+  if (!isOpening) {
     const dropdown = document.querySelector('.dropdown');
     if (dropdown) dropdown.classList.remove('open');
   }
@@ -45,10 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Re-attach event listeners after navbar loads
       const hamburger = document.querySelector('.hamburger');
-      
-if (hamburger) hamburger.addEventListener('click', window.toggleMenu);
-if (closeIcon) closeIcon.addEventListener('click', window.toggleMenu);
+      const closeIcon = document.querySelector('#closeIcon');
 
+      if (hamburger) hamburger.addEventListener('click', window.toggleMenu);
+      if (closeIcon) closeIcon.addEventListener('click', window.toggleMenu);
 
       const dropdownLabel = document.querySelector('.dropdown-label');
       if (dropdownLabel) {
@@ -97,4 +104,3 @@ window.addEventListener("resize", () => {
     if (closeIcon) closeIcon.style.display = "none";
   }
 });
-
