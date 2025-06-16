@@ -582,3 +582,13 @@ body[data-theme="dark"] a:hover {
   color: #888;
 }
 
+/* Fixed navbar support for theme awareness */
+html[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+html[data-theme="dark"] .navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
