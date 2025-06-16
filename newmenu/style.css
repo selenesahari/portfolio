@@ -567,3 +567,30 @@ body[data-theme="dark"] a:hover {
   }
 }
 
+
+
+@media screen and (max-width: 767px) {
+  .nav-links {
+    align-items: flex-start;
+  }
+
+  .nav-links a,
+  .dropdown-label {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.8;
+    padding: 0.75rem 1rem;
+    text-shadow: none;
+  }
+
+  .dropdown-label {
+    width: 100%;
+  }
+
+  .dropdown-content a {
+    font-weight: 500;
+    padding-left: 2rem;
+    text-align: left;
+  }
+}
