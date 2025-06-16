@@ -78,3 +78,18 @@ if (closeIcon) closeIcon.addEventListener('click', window.toggleMenu);
       });
   }
 });
+
+window.addEventListener("resize", () => {
+  const navLinks = document.getElementById("navLinks");
+  const closeIcon = document.querySelector(".close-icon");
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 768) {
+    navLinks.style.display = "flex";
+    if (closeIcon) closeIcon.style.display = "none";
+  } else {
+    navLinks.style.display = "none";
+    if (closeIcon) closeIcon.style.display = "block";
+  }
+});
+
