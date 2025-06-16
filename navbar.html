@@ -6,32 +6,36 @@
     </a>
   </div>
 
-  <!-- Right: Theme toggle + Hamburger -->
-  <div class="navbar-controls">
-    <button id="themeToggle" aria-label="Toggle dark mode">
-      <img src="images/triform_sigil_lion_bear_eagle.png" alt="Triform Icon" style="height: 1.2em; margin-right: 0.3em;" />
-      / 🌙
-    </button>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-  </div>
-</div>
-
-<!-- Fullscreen Menu Panel -->
-<div id="fullscreenMenu" class="fullscreen-menu">
-  <div class="close-btn" onclick="toggleMenu()">×</div>
-  <nav class="menu-links">
+  <!-- Center: Nav Links -->
+  <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="dreamweaver.html">DreamWeaver AI</a>
     <a href="ssp.html">Sovereign Systems Psychology</a>
     <a href="manifesto.html">Manifesto</a>
     <a href="lexicon.html">Lexicon</a>
-    <a href="sovereign-path-photovogue.html">PhotoVogue</a>
-    <a href="marrakech-arles2025.html">Arles 2025</a>
-    <a href="the-sovereign-path.html">Women Grant</a>
-    <a href="sovereign-path-nature-series.html">SUGixNAVA</a>
+    <div class="dropdown">
+      <span class="dropdown-label">Exhibitions ▾</span>
+      <div class="dropdown-content">
+        <a href="sovereign-path-photovogue.html">PhotoVogue</a>
+        <a href="marrakech-arles2025.html">Arles 2025</a>
+        <a href="the-sovereign-path.html">Women Grant</a>
+        <a href="sovereign-path-nature-series.html">SUGixNAVA</a>
+      </div>
+    </div>
     <a href="about.html">About</a>
-  </nav>
+  </div>
+
+  <!-- Right: Theme toggle + Hamburger -->
+  <div class="navbar-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: auto;">
+    <button id="themeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text); display: flex; align-items: center;">
+      <img src="images/triform_sigil_lion_bear_eagle.png" alt="Triform Icon" style="height: 1.2em; margin-right: 0.3em;" />
+      / 🌙
+    </button>
+
+<div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 </div>
