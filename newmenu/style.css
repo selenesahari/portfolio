@@ -594,3 +594,31 @@ body[data-theme="dark"] a:hover {
     text-align: left;
   }
 }
+
+
+@media screen and (max-width: 767px) {
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid var(--text);
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown-content a {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.4rem 0;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .dropdown {
+    margin-bottom: 1rem;
+  }
+}
