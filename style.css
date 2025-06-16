@@ -532,3 +532,89 @@ body[data-theme="dark"] a {
 body[data-theme="dark"] a:hover {
   color: #82cfff; /* lighter hover effect */
 }
+
+/* Apple UI Styling Additions */
+
+:root {
+  --bg-light: #ffffff;
+  --text-light: #1c1c1e;
+  --bg-dark: #000000;
+  --text-dark: #f2f2f7;
+  --accent: #007aff;
+  --text-muted: #8e8e93;
+  --border-color: #d1d1d6;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.content-left {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: transparent;
+}
+
+.content-left h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+.content-left h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.content-left p,
+.content-left li {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.8rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 3rem 0;
+}
+
+a.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+a.back-link:hover {
+  opacity: 0.7;
+}
+
+img {
+  border-radius: 16px;
+  max-width: 100%;
+  height: auto;
+}
