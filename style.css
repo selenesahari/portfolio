@@ -3,7 +3,7 @@
   --text-light: #111;
   --bg-dark: #0c0c0c;
   --text-dark: #eeeeee;
-  --accent: #f4c542;
+  --accent: #dfb237;
 }
 
 html[data-theme="dark"] {
@@ -540,7 +540,7 @@ body[data-theme="dark"] a:hover {
   --text-light: #1c1c1e;
   --bg-dark: #000000;
   --text-dark: #f2f2f7;
-  --accent: #007aff;
+  --accent: #dfb237;
   --text-muted: #8e8e93;
   --border-color: #d1d1d6;
 }
