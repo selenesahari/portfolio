@@ -553,3 +553,14 @@ body[data-theme="dark"] a:hover {
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (min-width: 768px) {
+  .close-icon {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+}
+
