@@ -1,22 +1,26 @@
-// ✅ Fullscreen Hamburger Menu Toggle
+// Expose toggleMenu globally so it works with inline onclick
 window.toggleMenu = function () {
-  const menu = document.getElementById("fullscreenMenu");
-  if (menu) {
-    menu.classList.toggle("active");
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+
+  // Close any open dropdown when menu closes
+  if (!nav.classList.contains("active")) {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown) dropdown.classList.remove('open');
   }
 };
 
-// ✅ Dropdown Toggle (Mobile)
 window.toggleDropdown = function (event) {
   event.preventDefault();
 
+  // Only toggle dropdown in mobile view
   if (window.innerWidth < 768) {
     const dropdown = event.target.closest('.dropdown');
     if (dropdown) dropdown.classList.toggle('open');
   }
 };
 
-// ✅ Close dropdown if clicking outside (on mobile)
+// Optional: close dropdowns if clicking outside (on mobile)
 document.addEventListener('click', (e) => {
   if (window.innerWidth < 768) {
     const isDropdown = e.target.closest(".dropdown");
@@ -27,21 +31,16 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ✅ Load navbar dynamically
+  // Load navbar dynamically
   fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('navbar-container').innerHTML = data;
 
-      // Re-attach event listeners
+      // Re-attach event listeners after navbar loads
       const hamburger = document.querySelector('.hamburger');
       if (hamburger) {
         hamburger.addEventListener('click', window.toggleMenu);
-      }
-
-      const closeBtn = document.querySelector('.close-btn');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', window.toggleMenu);
       }
 
       const dropdownLabel = document.querySelector('.dropdown-label');
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-  // ✅ Load footer dynamically
+  // Load footer dynamically
   const footerContainer = document.getElementById("footer-container");
   if (footerContainer) {
     fetch("footer.html")
