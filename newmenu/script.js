@@ -81,15 +81,20 @@ if (closeIcon) closeIcon.addEventListener('click', window.toggleMenu);
 
 window.addEventListener("resize", () => {
   const navLinks = document.getElementById("navLinks");
-  const closeIcon = document.querySelector(".close-icon");
+  const hamburger = document.getElementById("hamburger");
+  const closeIcon = document.getElementById("closeIcon");
   const screenWidth = window.innerWidth;
 
   if (screenWidth >= 768) {
+    navLinks.classList.remove("active");
     navLinks.style.display = "flex";
+    if (hamburger) hamburger.style.display = "none";
     if (closeIcon) closeIcon.style.display = "none";
   } else {
+    navLinks.classList.remove("active");
     navLinks.style.display = "none";
-    if (closeIcon) closeIcon.style.display = "block";
+    if (hamburger) hamburger.style.display = "flex";
+    if (closeIcon) closeIcon.style.display = "none";
   }
 });
 
