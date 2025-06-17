@@ -7,63 +7,81 @@
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
   <style>
-    /* Universal link styling */
-a {
-  color: var(--accent);
-  text-decoration: underline;
-  transition: opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-/* Optional: fallback if you don’t use --accent */
-:root[data-theme='dark'] a {
-  color: #dfb237; /* sovereign gold */
-}
-.accent-link {
-  color: var(--accent);
-  font-weight: 500;
-}
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      transition: opacity 0.2s ease;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    :root[data-theme='dark'] a {
+      color: #dfb237; /* sovereign gold */
+    }
+    .accent-link {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    main.terms-section h2 {
+      margin-top: 2.5rem;
+    }
+    main.terms-section p {
+      margin-bottom: 1.25rem;
+    }
+    main.terms-section {
+      max-width: 800px;
+      margin: 6rem auto 4rem;
+      padding: 0 1.5rem;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
   </style>
 </head>
 <body>
   <div id="navbar-container"></div>
 
-<main style="max-width: 800px; margin: 6rem auto 4rem; padding: 0 1.5rem; font-size: 1rem; line-height: 1.6;">
-
+  <main class="terms-section">
     <h1>Terms of Use</h1>
 
     <p><strong>Effective Date:</strong> Feb 28, 2025</p>
 
     <p>
-      All content featured on this website — including but not limited to visual works, narrative frameworks, psychological models, designs, and original language — is the intellectual property of the DreamWeaver AI Initiative and protected under applicable copyright, trademark, and intellectual property laws.
+      All content featured on this website — including but not limited to visual works, narrative frameworks,
+      psychological models, designs, and original language — is the intellectual property of the DreamWeaver AI
+      Initiative and protected under applicable copyright, trademark, and intellectual property laws.
     </p>
 
     <h2>Use of Content</h2>
     <p>
-      No part of this site may be reproduced, copied, modified, distributed, displayed, or transmitted in any form without prior written permission from DreamWeaver AI. This includes but is not limited to text, images, logos, design layouts, and frameworks under <em>Sovereign Systems Psychology™</em>.
+      No part of this site may be reproduced, copied, modified, distributed, displayed, or transmitted in any form
+      without prior written permission from DreamWeaver AI. This includes but is not limited to text, images,
+      logos, design layouts, and frameworks under <em>Sovereign Systems Psychology™</em>.
     </p>
 
     <h2>Respect for Original Work</h2>
     <p>
-      This site represents years of philosophical development, creative practice, and interdisciplinary research. We ask that you respect the integrity of this work and do not attempt to extract, mimic, or adapt its components without proper credit and permission.
+      This site represents years of philosophical development, creative practice, and interdisciplinary research.
+      We ask that you respect the integrity of this work and do not attempt to extract, mimic, or adapt its
+      components without proper credit and permission.
     </p>
 
     <h2>Personal Use</h2>
     <p>
-      You may view, bookmark, and privately share this content for non-commercial purposes only. Educational use may be permitted with attribution — please <a href="mailto:contact@dreamweaverai.org"  class="accent-link">contact us</a> for permission.
+      You may view, bookmark, and privately share this content for non-commercial purposes only. Educational
+      use may be permitted with attribution — please
+      <a href="mailto:contact@dreamweaverai.org" class="accent-link">contact us</a> for permission.
     </p>
 
     <h2>Trademarks</h2>
     <p>
-      <em>DreamWeaver AI</em>, <em>Sovereign Systems Psychology™</em>, and associated logos and names are proprietary marks and may not be used without explicit authorization.
+      <em>DreamWeaver AI</em>, <em>Sovereign Systems Psychology™</em>, and associated logos and names are proprietary
+      marks and may not be used without explicit authorization.
     </p>
 
     <h2>Contact</h2>
-    <p>
-      For inquiries about licensing, collaborations, or permitted uses, please email: <a href="mailto:contact@dreamweaverai.org"  class="accent-link">contact@dreamweaverai.org</a>.
+    <p style="font-size: 0.95rem;">
+      For inquiries about licensing, collaborations, or permitted uses, please email:
+      <a href="mailto:contact@dreamweaverai.org" class="accent-link">contact@dreamweaverai.org</a>.
     </p>
   </main>
 
