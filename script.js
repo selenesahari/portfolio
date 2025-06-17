@@ -75,20 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function openModal() {
   const modal = document.getElementById("statementModal");
-  const isFrench = document.querySelector(".quote-fr").style.display !== "none";
-
-  document.getElementById("statement-fr").style.display = isFrench ? "block" : "none";
-  document.getElementById("statement-en").style.display = isFrench ? "none" : "block";
-
+  const isFR = document.body.classList.contains("fr");
   modal.style.display = "block";
+  document.getElementById("statement-en").style.display = isFR ? "none" : "block";
+  document.getElementById("statement-fr").style.display = isFR ? "block" : "none";
 }
 
 function closeModal() {
-  const modal = document.getElementById("statementModal");
-  modal.style.display = "none";
+  document.getElementById("statementModal").style.display = "none";
 }
-
-
 
 window.onclick = function(event) {
   const modal = document.getElementById("statementModal");
