@@ -7,8 +7,24 @@
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
   <style>
-    body[data-theme='dark'] a {
-  color: #dfb237; /* DreamWeaver gold */
+    /* Universal link styling */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Optional: fallback if you don’t use --accent */
+:root[data-theme='dark'] a {
+  color: #dfb237; /* sovereign gold */
+}
+.accent-link {
+  color: var(--accent);
+  font-weight: 500;
 }
   </style>
 </head>
@@ -37,7 +53,7 @@
 
     <h2>Personal Use</h2>
     <p>
-      You may view, bookmark, and privately share this content for non-commercial purposes only. Educational use may be permitted with attribution — please <a href="mailto:contact@dreamweaverai.org">contact us</a> for permission.
+      You may view, bookmark, and privately share this content for non-commercial purposes only. Educational use may be permitted with attribution — please <a href="mailto:contact@dreamweaverai.org"  class="accent-link">contact us</a> for permission.
     </p>
 
     <h2>Trademarks</h2>
@@ -47,7 +63,7 @@
 
     <h2>Contact</h2>
     <p>
-      For inquiries about licensing, collaborations, or permitted uses, please email: <a href="mailto:contact@dreamweaverai.org">contact@dreamweaverai.org</a>.
+      For inquiries about licensing, collaborations, or permitted uses, please email: <a href="mailto:contact@dreamweaverai.org"  class="accent-link">contact@dreamweaverai.org</a>.
     </p>
   </main>
 
