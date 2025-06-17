@@ -71,3 +71,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 });
+
+
+function openModal() {
+  const modal = document.getElementById("statementModal");
+  const isFR = document.body.classList.contains("fr");
+  modal.style.display = "block";
+  document.getElementById("statement-en").style.display = isFR ? "none" : "block";
+  document.getElementById("statement-fr").style.display = isFR ? "block" : "none";
+}
+
+function closeModal() {
+  document.getElementById("statementModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("statementModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
