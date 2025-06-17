@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,63 +8,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <script defer src="script.js"></script>
-    <script>
+  <script>
     fetch("meta.html")
       .then(response => response.text())
       .then(data => document.head.insertAdjacentHTML("beforeend", data));
   </script>
-  <style>
-
-    .portfolio-description h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Inter", sans-serif;
-}
-    
-    .caption {
-      margin-top: 0.5rem;
-    }
-        .closing-line {
-      margin-top: 2.5rem;
-      font-style: italic;
-    }
-  </style>
 </head>
 
 <body>
-
   <div id="navbar-container"></div>
-
-  
   <section class="portfolio-description">
-        <h1 class="quote quote-en">Her Cartography of Crossing</h1>
-      <h2 class="quote quote-en">A visual narrative in four arcs</h2>
-<h1 class="quote quote-fr" style="display: none;"> Sa Cartographie du Franchissement</h1>
-<h2 class="quote quote-fr" style="display: none;">Un récit visuel en quatre arcs</h2>
-     <div class="lang-buttons">
-    <button id="btn-fr">FR</button>
-    <button id="btn-en">EN</button>
-  </div>
-    <p class="quote quote-en">
-  <p>Across gardens, fortresses, deserts, corridors, and shores, a woman moves — not as subject, muse, or traveler, but as inscription.</p>
-  <p>Photographed in Morocco, France, China, and North America, this series traces a sovereign passage through thresholds of memory, space, and self. The work unfolds in four arcs: <strong>Ancestral Signal</strong>, <strong>Poised Territory</strong>, <strong>Immaterial Command</strong>, and <strong>Atmospheric Sovereignty</strong> — each marking a shift in presence, from lineage to authorship.</p>
-  <p>She does not perform. She does not explain. Her gestures write across landscapes shaped by empire, expectation, and absence.</p>
-  <p class="closing-line">There is no return.<br>
-  She ascends — not to arrive, but to remain.</p>
-    </p>
-<p class="quote quote-fr" style="display:none;">
-<p>À travers jardins, forteresses, déserts, couloirs et rivages, une femme avance — non comme sujet, muse ou voyageuse, mais comme une inscription.</p>
-<p>Photographiée au Maroc, en France, en Chine et en Amérique du Nord, cette série trace un passage souverain entre mémoire, espace et soi. L’œuvre se déploie en quatre arcs : Signal Ancestral, Territoire Posé, Commandement Immatériel et Souveraineté Atmosphérique — chacun marquant un basculement de la filiation vers l’autorité.</p>
-<p>Elle ne performe pas. Elle n’explique pas. Ses gestes écrivent sur des paysages façonnés par l’empire, l’attente et l’absence.</p>
-<p class="closing-line">Il n’y a pas de retour.</p>
-Elle s’élève — non pour arriver, mais pour demeurer.
-</p>
-  </p>
-    <div class="centered-link">
-<a href="lexicon.html" class="quote-en">Explore the Sovereign Lexicon →</a>
-<a href="lexicon.html" class="quote-fr" style="display: none;">Explorer le Lexique Souverain →</a>
+    <h1 class="quote quote-en" style="display: none;">Her Cartography of Crossing</h1>
+    <h2 class="quote quote-en" style="display: none;">A visual narrative in four arcs</h2>
+    <h1 class="quote quote-fr">Sa Cartographie du Franchissement</h1>
+    <h2 class="quote quote-fr">Un récit visuel en quatre arcs</h2>
 
+    <div class="lang-buttons">
+      <button id="btn-fr">FR</button>
+      <button id="btn-en">EN</button>
+    </div>
+
+    <div class="quote quote-en" style="display: none;">
+      <p>Across gardens, fortresses, deserts, corridors, and shores, a woman moves — not as subject, muse, or traveler, but as inscription.</p>
+      <p>Photographed in Morocco, France, China, and North America, this series traces a sovereign passage through thresholds of memory, space, and self. The work unfolds in four arcs: <strong>Ancestral Signal</strong>, <strong>Poised Territory</strong>, <strong>Immaterial Command</strong>, and <strong>Atmospheric Sovereignty</strong> — each marking a shift in presence, from lineage to authorship.</p>
+      <p>She does not perform. She does not explain. Her gestures write across landscapes shaped by empire, expectation, and absence.</p>
+      <p class="closing-line">There is no return.<br>She ascends — not to arrive, but to remain.</p>
+    </div>
+
+    <div class="quote quote-fr">
+      <p>À travers jardins, forteresses, déserts, couloirs et rivages, une femme avance — non comme sujet, muse ou voyageuse, mais comme une inscription.</p>
+      <p>Photographiée au Maroc, en France, en Chine et en Amérique du Nord, cette série trace un passage souverain entre mémoire, espace et soi. L’œuvre se déploie en quatre arcs : <strong>Signal Ancestral</strong>, <strong>Territoire Posé</strong>, <strong>Commandement Immatériel</strong> et <strong>Souveraineté Atmosphérique</strong> — chacun marquant un basculement de la filiation vers l’autorité.</p>
+      <p>Elle ne performe pas. Elle n’explique pas. Ses gestes écrivent sur des paysages façonnés par l’empire, l’attente et l’absence.</p>
+      <p class="closing-line">Il n’y a pas de retour.<br>Elle s’élève — non pour arriver, mais pour demeurer.</p>
+    </div>
+
+    <div class="centered-link">
+      <a href="lexicon.html" class="quote-en" style="display: none;">Explore the Sovereign Lexicon →</a>
+      <a href="lexicon.html" class="quote-fr">Explorer le Lexique Souverain →</a>
     </div>
   </section>
 
