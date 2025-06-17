@@ -12,6 +12,28 @@
       .then(response => response.text())
       .then(data => document.head.insertAdjacentHTML("beforeend", data));
   </script>
+  <style>
+    /* Universal link styling */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Optional: fallback if you don’t use --accent */
+:root[data-theme='dark'] a {
+  color: #dfb237; /* sovereign gold */
+}
+.accent-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+  </style>
 </head>
 <body>
   <div id="navbar-container"></div>
@@ -150,13 +172,18 @@
   <div class="term">
   <h2>🔮 Dependency Fog</h2>
 
-  <p><strong>Dependency Fog</strong> <em>(n.)</em><br>
+  <p><strong>Dependency Fog</strong><br>
   A psychic haze caused by emotional entanglement with those who weaponize need.<br>
   It arises when loyalty, guilt, or identity are hijacked under the illusion of duty.<br>
   The sovereign mind learns to distinguish true care from emotional capture —
   and exits the fog by choosing peace over performance, and clarity over obligation.</p>
 
-<p><a href="sigils/dependency-fog.html" class="accent-link">Explore the full Dependency Fog Sigil →</a></p>
+<p>
+
+<a href="sigils/dependency-fog.html" class="accent-link">
+  Explore the full Dependency Fog Sigil →
+</a>
+</p>
 </div>
   </main>
 
