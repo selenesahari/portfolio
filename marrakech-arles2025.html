@@ -387,31 +387,43 @@ Elle s’élève. Non pour arriver — mais pour demeurer.
 <div id="footer-container"></div>
   
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const frButton = document.getElementById('btn-fr');
-  const enButton = document.getElementById('btn-en');
+    document.addEventListener('DOMContentLoaded', () => {
+      const frButton = document.getElementById('btn-fr');
+      const enButton = document.getElementById('btn-en');
 
-  const frElements = document.querySelectorAll('.quote-fr');
-  const enElements = document.querySelectorAll('.quote-en');
+      const frElements = document.querySelectorAll('.quote-fr');
+      const enElements = document.querySelectorAll('.quote-en');
+      const frModals = document.querySelectorAll('.modal-statement.quote-fr');
+      const enModals = document.querySelectorAll('.modal-statement.quote-en');
 
-  function showLanguage(lang) {
-    if (lang === 'fr') {
-      frElements.forEach(el => el.style.display = '');
-      enElements.forEach(el => el.style.display = 'none');
-    } else {
-      frElements.forEach(el => el.style.display = 'none');
-      enElements.forEach(el => el.style.display = '');
+      function showLanguage(lang) {
+        if (lang === 'fr') {
+          frElements.forEach(el => el.style.display = '');
+          enElements.forEach(el => el.style.display = 'none');
+          frModals.forEach(el => el.style.display = '');
+          enModals.forEach(el => el.style.display = 'none');
+        } else {
+          frElements.forEach(el => el.style.display = 'none');
+          enElements.forEach(el => el.style.display = '');
+          frModals.forEach(el => el.style.display = 'none');
+          enModals.forEach(el => el.style.display = '');
+        }
+      }
+
+      frButton.addEventListener('click', () => showLanguage('fr'));
+      enButton.addEventListener('click', () => showLanguage('en'));
+
+      // Default to French
+      showLanguage('fr');
+    });
+
+    function openModal() {
+      document.getElementById('statementModal').style.display = 'block';
     }
-  }
 
-  frButton.addEventListener('click', () => showLanguage('fr'));
-  enButton.addEventListener('click', () => showLanguage('en'));
-
-  // Default to French
-  showLanguage('fr');
-});
-
+    function closeModal() {
+      document.getElementById('statementModal').style.display = 'none';
+    }
   </script>
-
 </body>
 </html>
