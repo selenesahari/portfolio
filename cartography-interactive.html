@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Interactive Image Reorder</title>
+  <title>Narrative Arc Selector + Drag & Drop Gallery</title>
   <style>
     body {
       font-family: sans-serif;
@@ -12,9 +12,23 @@
       padding: 2rem;
     }
 
-    h2 {
+    h2, h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .controls {
       text-align: center;
       margin-bottom: 2rem;
+    }
+
+    select {
+      padding: 0.5rem;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 4px;
     }
 
     .image-grid {
@@ -52,16 +66,55 @@
       font-size: 14px;
       color: #ccc;
     }
+
+    .export-buttons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .export-buttons button {
+      padding: 0.7rem 1.2rem;
+      margin: 0.5rem;
+      font-size: 14px;
+      background: #facc15;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #000;
+    }
   </style>
 </head>
 <body>
 
-  <h2>🖼️ Drag to Reorder</h2>
-  <div class="image-grid" id="imageGrid">
-    <!-- Images dynamically loaded -->
+  <h2>🧭 Narrative Arc Selector</h2>
+  <div class="controls">
+    <label for="arcSelector">Choose a narrative arc: </label>
+    <select id="arcSelector" onchange="applyArcTheme()">
+      <option value="ancestral">Ancestral Signal</option>
+      <option value="poised">Poised Territory</option>
+      <option value="immaterial">Immaterial Command</option>
+      <option value="atmospheric">Atmospheric Sovereignty</option>
+    </select>
+  </div>
+
+  <h3>🖼️ Drag to Reorder</h3>
+  <div class="image-grid" id="imageGrid"></div>
+
+  <div class="export-buttons">
+    <button onclick="downloadPDF()">📄 Export PDF</button>
+    <button onclick="generateLink()">🔗 Generate Web Link</button>
   </div>
 
   <script>
+    const arcCaptions = {
+      ancestral: "Memory held in form. Silence becomes script.",
+      poised: "The body holds ground without motion.",
+      immaterial: "Erasure becomes its own presence.",
+      atmospheric: "Gesture as signal. Return is not required."
+    };
+
+    let currentArc = 'ancestral';
+
     const images = [
       { src: "images/1_Selene_Sovereign_Path_Garden.jpg", title: "Vault of Palms" },
       { src: "images/2_Selene_Sovereign_Path_Mosaic.jpg", title: "Inheritance Unfolded" },
@@ -81,6 +134,11 @@
 
     const grid = document.getElementById("imageGrid");
 
+    function applyArcTheme() {
+      currentArc = document.getElementById("arcSelector").value;
+      renderImages();
+    }
+
     function renderImages() {
       grid.innerHTML = '';
       images.forEach((img, index) => {
@@ -91,7 +149,7 @@
 
         card.innerHTML = `
           <img src="${img.src}" alt="${img.title}" />
-          <div class="caption">${img.title}</div>
+          <div class="caption">${img.title}<br><em>${arcCaptions[currentArc]}</em></div>
         `;
 
         addDragEvents(card);
@@ -129,6 +187,14 @@
           renderImages();
         }
       });
+    }
+
+    function downloadPDF() {
+      alert("PDF export coming soon — placeholder.");
+    }
+
+    function generateLink() {
+      alert("Shareable web link functionality coming soon — placeholder.");
     }
 
     renderImages();
