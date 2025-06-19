@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Her Cartography of Crossing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #faf9f6;
+      color: #222;
+    }
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .lang-toggle {
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section img {
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+    .fade-text {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .footer-line {
+      text-align: center;
+      margin-top: 4rem;
+      padding-bottom: 2rem;
+      font-style: italic;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Her Cartography of Crossing</h1>
+    <div class="lang-toggle" onclick="toggleLanguage()">FR / EN</div>
+  </header>
+
+  <div class="section" id="arc1">
+    <p class="fade-text en">Ancestral Signal reclaims memory through architectural stillness and ceremonial stance.</p>
+    <p class="fade-text fr" style="display:none">Signal Ancestral réclame la mémoire par l'immobilité architecturale et la posture cérémonielle.</p>
+    <img src="images/1_Selene_Sovereign_Path_Garden.jpg" alt="Ancestral Signal">
+  </div>
+
+  <div class="section" id="arc2">
+    <p class="fade-text en">Poised Territory holds space not by motion, but by still presence.</p>
+    <p class="fade-text fr" style="display:none">Territoire Posé tient l'espace non par le mouvement, mais par la présence immobile.</p>
+    <img src="images/3_Selene_Sovereign_Path_Threshold.jpg" alt="Poised Territory">
+  </div>
+
+  <div class="section" id="arc3">
+    <p class="fade-text en">Immaterial Command moves beyond visibility into the logic of erasure and power.</p>
+    <p class="fade-text fr" style="display:none">Commandement Immatériel dépasse la visibilité vers la logique de l'effacement et du pouvoir.</p>
+    <img src="images/5_Selene_Sovereign_Path_Liberation.jpg" alt="Immaterial Command">
+  </div>
+
+  <div class="section" id="arc4">
+    <p class="fade-text en">Atmospheric Sovereignty concludes with lucid gestures that seek no return — only presence.</p>
+    <p class="fade-text fr" style="display:none">Souveraineté Atmosphérique se termine par des gestes lucides ne cherchant aucun retour — seulement la présence.</p>
+    <img src="images/2_Selene_Sovereign_Path_Mosaic.jpg" alt="Atmospheric Sovereignty">
+  </div>
+
+  <div class="footer-line fade-text en">This work does not ask to be chosen. It asks to be seen.</div>
+  <div class="footer-line fade-text fr" style="display:none">Cette œuvre ne demande pas à être choisie. Elle demande à être vue.</div>
+
+  <script>
+    function toggleLanguage() {
+      const isEnVisible = document.querySelector('.en').style.display !== 'none';
+      document.querySelectorAll('.en').forEach(e => e.style.display = isEnVisible ? 'none' : 'block');
+      document.querySelectorAll('.fr').forEach(e => e.style.display = isEnVisible ? 'block' : 'none');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-text').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
