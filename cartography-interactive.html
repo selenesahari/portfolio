@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Interactive Cartography Tool</title>
+  <title>Interactive Image Reorder + Captions</title>
   <style>
     body {
       font-family: sans-serif;
@@ -14,20 +14,7 @@
 
     h2 {
       text-align: center;
-    }
-
-    .upload-zone {
-      border: 2px dashed #888;
-      border-radius: 10px;
-      padding: 2rem;
-      margin: 2rem auto;
-      width: 80%;
-      text-align: center;
-      background-color: #1a1a1a;
-    }
-
-    .upload-zone.dragover {
-      border-color: #facc15;
+      margin-bottom: 2rem;
     }
 
     .image-grid {
@@ -41,8 +28,8 @@
       width: 180px;
       background: #222;
       padding: 10px;
-      border-radius: 10px;
       border: 2px solid transparent;
+      border-radius: 10px;
       cursor: grab;
     }
 
@@ -59,68 +46,48 @@
       border-radius: 6px;
     }
 
-    .caption {
+    .caption-title {
       text-align: center;
       margin-top: 0.5rem;
       font-size: 14px;
       color: #ccc;
     }
 
-    .caption input {
+    .caption-input {
+      margin-top: 0.25rem;
       width: 100%;
-      background: #333;
-      color: #fff;
-      border: 1px solid #555;
+      font-size: 13px;
       padding: 4px;
       border-radius: 4px;
+      border: none;
+      background: #333;
+      color: #eee;
     }
   </style>
 </head>
 <body>
-
-  <h2>🖼️ Narrative Arc Image Builder</h2>
-  <div class="upload-zone" id="uploadZone">
-    <p>📁 Choose files or drag them here</p>
-    <input type="file" id="fileInput" multiple accept="image/*">
-  </div>
-
+  <h2>🖼️ Drag to Reorder + Add Captions</h2>
   <div class="image-grid" id="imageGrid"></div>
 
   <script>
-    const uploadZone = document.getElementById("uploadZone");
-    const fileInput = document.getElementById("fileInput");
+    const images = [
+      { src: "images/1_Selene_Sovereign_Path_Garden.jpg", title: "Vault of Palms", caption: "" },
+      { src: "images/2_Selene_Sovereign_Path_Mosaic.jpg", title: "Inheritance Unfolded", caption: "" },
+      { src: "images/3_Selene_Sovereign_Path_Threshold.jpg", title: "Threshold of Knowledge", caption: "" },
+      { src: "images/4_Selene_Sovereign_Path_Vastness.jpg", title: "Vastness", caption: "" },
+      { src: "images/5_Selene_Sovereign_Path_Liberation.jpg", title: "Declaration in the Desert", caption: "" },
+      { src: "images/6_Selene_Sovereign_Path_Coastline.jpg", title: "Ivory Stillness", caption: "" },
+      { src: "images/7_Selene_Sovereign_Path_Arles.jpg", title: "Arles Ascent", caption: "" },
+      { src: "images/11_MistWalker.jpg", title: "Descent from the Fogline", caption: "" },
+      { src: "images/13_Water_Pavilion.jpg", title: "Water Pavilion", caption: "" },
+      { src: "images/15_Seattle_Ferry.jpg", title: "Ferry at the Edge", caption: "" },
+      { src: "images/17_Tulip_Matrix.jpg", title: "Tulip Matrix", caption: "" },
+      { src: "images/18_Bay_Horizon.jpg", title: "Bay Horizon", caption: "" },
+      { src: "images/19_Ink_Gallary_Walk.jpg", title: "Ink Corridor Walk", caption: "" },
+      { src: "images/20_Carcassonne_Citadel.jpg", title: "Fortress Gaze", caption: "" }
+    ];
+
     const grid = document.getElementById("imageGrid");
-    let images = [];
-
-    uploadZone.addEventListener("dragover", e => {
-      e.preventDefault();
-      uploadZone.classList.add("dragover");
-    });
-
-    uploadZone.addEventListener("dragleave", () => {
-      uploadZone.classList.remove("dragover");
-    });
-
-    uploadZone.addEventListener("drop", e => {
-      e.preventDefault();
-      uploadZone.classList.remove("dragover");
-      handleFiles(e.dataTransfer.files);
-    });
-
-    fileInput.addEventListener("change", e => {
-      handleFiles(e.target.files);
-    });
-
-    function handleFiles(fileList) {
-      for (const file of fileList) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          images.push({ src: e.target.result, title: "" });
-          renderImages();
-        };
-        reader.readAsDataURL(file);
-      }
-    }
 
     function renderImages() {
       grid.innerHTML = '';
@@ -131,9 +98,16 @@
         card.dataset.index = index;
 
         card.innerHTML = `
-          <img src="${img.src}" alt="User image">
-          <div class="caption"><input type="text" placeholder="Add caption..." value="${img.title}" onchange="images[${index}].title = this.value"></div>
+          <img src="${img.src}" alt="${img.title}" />
+          <div class="caption-title">${img.title}</div>
+          <input class="caption-input" type="text" placeholder="Enter caption..." value="${img.caption || ''}" />
         `;
+
+        // Live update to the images array
+        const input = card.querySelector(".caption-input");
+        input.addEventListener("input", () => {
+          img.caption = input.value;
+        });
 
         addDragEvents(card);
         grid.appendChild(card);
@@ -171,7 +145,8 @@
         }
       });
     }
-  </script>
 
+    renderImages();
+  </script>
 </body>
 </html>
