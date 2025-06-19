@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Narrative Arc Selector + Drag & Drop Gallery</title>
+  <title>Interactive Cartography Tool</title>
   <style>
     body {
       font-family: sans-serif;
@@ -12,23 +12,22 @@
       padding: 2rem;
     }
 
-    h2, h3 {
+    h2 {
       text-align: center;
-      margin-bottom: 1rem;
     }
 
-    .controls {
+    .upload-zone {
+      border: 2px dashed #888;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem auto;
+      width: 80%;
       text-align: center;
-      margin-bottom: 2rem;
+      background-color: #1a1a1a;
     }
 
-    select {
-      padding: 0.5rem;
-      font-size: 16px;
-      background: #222;
-      color: #fff;
-      border: 1px solid #555;
-      border-radius: 4px;
+    .upload-zone.dragover {
+      border-color: #facc15;
     }
 
     .image-grid {
@@ -42,8 +41,8 @@
       width: 180px;
       background: #222;
       padding: 10px;
-      border: 2px solid transparent;
       border-radius: 10px;
+      border: 2px solid transparent;
       cursor: grab;
     }
 
@@ -67,76 +66,60 @@
       color: #ccc;
     }
 
-    .export-buttons {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .export-buttons button {
-      padding: 0.7rem 1.2rem;
-      margin: 0.5rem;
-      font-size: 14px;
-      background: #facc15;
-      border: none;
+    .caption input {
+      width: 100%;
+      background: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 4px;
       border-radius: 4px;
-      cursor: pointer;
-      color: #000;
     }
   </style>
 </head>
 <body>
 
-  <h2>🧭 Narrative Arc Selector</h2>
-  <div class="controls">
-    <label for="arcSelector">Choose a narrative arc: </label>
-    <select id="arcSelector" onchange="applyArcTheme()">
-      <option value="ancestral">Ancestral Signal</option>
-      <option value="poised">Poised Territory</option>
-      <option value="immaterial">Immaterial Command</option>
-      <option value="atmospheric">Atmospheric Sovereignty</option>
-    </select>
+  <h2>🖼️ Narrative Arc Image Builder</h2>
+  <div class="upload-zone" id="uploadZone">
+    <p>📁 Choose files or drag them here</p>
+    <input type="file" id="fileInput" multiple accept="image/*">
   </div>
 
-  <h3>🖼️ Drag to Reorder</h3>
   <div class="image-grid" id="imageGrid"></div>
 
-  <div class="export-buttons">
-    <button onclick="downloadPDF()">📄 Export PDF</button>
-    <button onclick="generateLink()">🔗 Generate Web Link</button>
-  </div>
-
   <script>
-    const arcCaptions = {
-      ancestral: "Memory held in form. Silence becomes script.",
-      poised: "The body holds ground without motion.",
-      immaterial: "Erasure becomes its own presence.",
-      atmospheric: "Gesture as signal. Return is not required."
-    };
-
-    let currentArc = 'ancestral';
-
-    const images = [
-      { src: "images/1_Selene_Sovereign_Path_Garden.jpg", title: "Vault of Palms" },
-      { src: "images/2_Selene_Sovereign_Path_Mosaic.jpg", title: "Inheritance Unfolded" },
-      { src: "images/3_Selene_Sovereign_Path_Threshold.jpg", title: "Threshold of Knowledge" },
-      { src: "images/4_Selene_Sovereign_Path_Vastness.jpg", title: "Vastness" },
-      { src: "images/5_Selene_Sovereign_Path_Liberation.jpg", title: "Declaration in the Desert" },
-      { src: "images/6_Selene_Sovereign_Path_Coastline.jpg", title: "Ivory Stillness" },
-      { src: "images/7_Selene_Sovereign_Path_Arles.jpg", title: "Arles Ascent" },
-      { src: "images/11_MistWalker.jpg", title: "Descent from the Fogline" },
-      { src: "images/13_Water_Pavilion.jpg", title: "Water Pavilion" },
-      { src: "images/15_Seattle_Ferry.jpg", title: "Ferry at the Edge" },
-      { src: "images/17_Tulip_Matrix.jpg", title: "Tulip Matrix" },
-      { src: "images/18_Bay_Horizon.jpg", title: "Bay Horizon" },
-      { src: "images/19_Ink_Gallary_Walk.jpg", title: "Ink Corridor Walk" },
-      { src: "images/20_Carcassonne_Citadel.jpg", title: "Fortress Gaze" }
-    ];
-
+    const uploadZone = document.getElementById("uploadZone");
+    const fileInput = document.getElementById("fileInput");
     const grid = document.getElementById("imageGrid");
+    let images = [];
 
-    function applyArcTheme() {
-      currentArc = document.getElementById("arcSelector").value;
-      renderImages();
+    uploadZone.addEventListener("dragover", e => {
+      e.preventDefault();
+      uploadZone.classList.add("dragover");
+    });
+
+    uploadZone.addEventListener("dragleave", () => {
+      uploadZone.classList.remove("dragover");
+    });
+
+    uploadZone.addEventListener("drop", e => {
+      e.preventDefault();
+      uploadZone.classList.remove("dragover");
+      handleFiles(e.dataTransfer.files);
+    });
+
+    fileInput.addEventListener("change", e => {
+      handleFiles(e.target.files);
+    });
+
+    function handleFiles(fileList) {
+      for (const file of fileList) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          images.push({ src: e.target.result, title: "" });
+          renderImages();
+        };
+        reader.readAsDataURL(file);
+      }
     }
 
     function renderImages() {
@@ -148,8 +131,8 @@
         card.dataset.index = index;
 
         card.innerHTML = `
-          <img src="${img.src}" alt="${img.title}" />
-          <div class="caption">${img.title}<br><em>${arcCaptions[currentArc]}</em></div>
+          <img src="${img.src}" alt="User image">
+          <div class="caption"><input type="text" placeholder="Add caption..." value="${img.title}" onchange="images[${index}].title = this.value"></div>
         `;
 
         addDragEvents(card);
@@ -188,16 +171,7 @@
         }
       });
     }
-
-    function downloadPDF() {
-      alert("PDF export coming soon — placeholder.");
-    }
-
-    function generateLink() {
-      alert("Shareable web link functionality coming soon — placeholder.");
-    }
-
-    renderImages();
   </script>
+
 </body>
 </html>
