@@ -416,19 +416,24 @@ Elle s’élève. Non pour arriver — mais pour demeurer.
       const frModals = document.querySelectorAll('.modal-statement.quote-fr');
       const enModals = document.querySelectorAll('.modal-statement.quote-en');
 
-      function showLanguage(lang) {
-        if (lang === 'fr') {
-          frElements.forEach(el => el.style.display = '');
-          enElements.forEach(el => el.style.display = 'none');
-          frModals.forEach(el => el.style.display = '');
-          enModals.forEach(el => el.style.display = 'none');
-        } else {
-          frElements.forEach(el => el.style.display = 'none');
-          enElements.forEach(el => el.style.display = '');
-          frModals.forEach(el => el.style.display = 'none');
-          enModals.forEach(el => el.style.display = '');
-        }
-      }
+ function showLanguage(lang) {
+  if (lang === 'fr') {
+    frElements.forEach(el => el.style.display = '');
+    enElements.forEach(el => el.style.display = 'none');
+    frModals.forEach(el => el.style.display = '');
+    enModals.forEach(el => el.style.display = 'none');
+    frButton.classList.add('active');
+    enButton.classList.remove('active');
+  } else {
+    frElements.forEach(el => el.style.display = 'none');
+    enElements.forEach(el => el.style.display = '');
+    frModals.forEach(el => el.style.display = 'none');
+    enModals.forEach(el => el.style.display = '');
+    enButton.classList.add('active');
+    frButton.classList.remove('active');
+  }
+}
+
 
       frButton.addEventListener('click', () => showLanguage('fr'));
       enButton.addEventListener('click', () => showLanguage('en'));
