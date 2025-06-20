@@ -673,3 +673,9 @@ img {
 .close:hover {
   color: #f3c97b;
 }
+
+.lang-buttons button.active {
+  background-color: #ffffff20;
+  border: 1px solid white;
+  color: white;
+}
