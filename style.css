@@ -679,3 +679,16 @@ img {
   border: 1px solid white;
   color: white;
 }
+
+html[data-theme="light"] .lang-buttons button.active {
+  background-color: #111;
+  border: 1px solid #111;
+  color: #fff;
+}
+
+html[data-theme="dark"] .lang-buttons button.active {
+  background-color: #ffffff20;
+  border: 1px solid #f2f2f2;
+  color: #f2f2f2;
+}
+
