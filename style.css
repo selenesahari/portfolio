@@ -721,5 +721,11 @@ html[data-theme="dark"] .lang-buttons button.active {
   font-weight: bold;
   cursor: pointer;
 }
+.caption-block .theme {
+  margin-top: -0.5em;
+  font-size: 0.9em;
+  color: #bbbbbb;
+  font-style: italic;
+}
 
 
