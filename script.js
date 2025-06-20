@@ -91,3 +91,15 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+function openLightbox(src) {
+  const modal = document.getElementById("lightboxModal");
+  const img = document.getElementById("lightboxImage");
+  modal.style.display = "block";
+  img.src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightboxModal").style.display = "none";
+}
