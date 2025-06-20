@@ -729,17 +729,18 @@ html[data-theme="dark"] .lang-buttons button.active {
 }
 
 .artist-note {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
-  padding: 1.25rem 1.5rem;
-  font-size: 1rem;
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 600px;
   font-style: italic;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #cccccc;
-  background-color: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid #facc15;
-  max-width: 720px;
+  color: #444;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 2rem 1rem;
 }
+
 .artist-note strong {
   font-style: normal;
   font-weight: 600;
