@@ -131,7 +131,7 @@
   
 <section class="folio-grid">
 <div class="photo-card">
-<img alt="Selene in the Garden" src="images/1_Selene_Sovereign_Path_Garden.jpg"/>
+<img alt="Selene in the Garden" src="images/1_Selene_Sovereign_Path_Garden.jpg" onclick="openLightbox(this.src)"/>
 <div class="caption">
 <h3 class="quote-en">ARC I: Ancestral Signal – Vault of Palms</h3>
 <h3 class="quote-fr" style="display: none;">ARC I : Signal Ancestral – Voûte de Palmiers</h3>
@@ -405,6 +405,13 @@ Elle s’élève. Non pour arriver — mais pour demeurer.
   </section>
 
 <div id="footer-container"></div>
+
+  <!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-content" id="lightboxImage">
+</div>
+
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
