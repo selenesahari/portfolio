@@ -592,12 +592,15 @@ comme la lumière à travers la pierre.
 <div id="footer-container"></div>
 
   <!-- Lightbox Modal -->
-<!-- Lightbox Modal -->
-<div id="lightboxModal" class="lightbox-modal">
+  <div id="lightboxModal" class="lightbox-modal">
   <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
   <span class="arrow left-arrow" onclick="showPrevImage()">&#10094;</span>
   <span class="arrow right-arrow" onclick="showNextImage()">&#10095;</span>
-  <img class="lightbox-content" id="lightboxImage">
+  
+  <!-- ✅ Wrap image in a container -->
+  <div id="lightboxPanzoom" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <img class="lightbox-content" id="lightboxImage" style="max-width: 100%; max-height: 80vh;"/>
+  </div>
 </div>
 
 
@@ -646,5 +649,8 @@ comme la lumière à travers la pierre.
       document.getElementById('statementModal').style.display = 'none';
     }
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
+
 </body>
 </html>
