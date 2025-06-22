@@ -103,3 +103,58 @@ function openLightbox(src) {
 function closeLightbox() {
   document.getElementById("lightboxModal").style.display = "none";
 }
+
+
+let currentImageIndex = 0;
+let imageSources = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Collect all image sources in page order
+  imageSources = Array.from(document.querySelectorAll('.photo-card img')).map(img => img.src);
+
+  // Add keyboard arrow support
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById("lightboxModal");
+    if (modal.style.display === "block") {
+      if (e.key === 'ArrowRight') showNextImage();
+      else if (e.key === 'ArrowLeft') showPrevImage();
+    }
+  });
+
+  // Add swipe support (touch)
+  const modal = document.getElementById("lightboxModal");
+  let startX = 0;
+
+  modal.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  modal.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) showNextImage();
+    else if (endX - startX > 50) showPrevImage();
+  });
+});
+
+function openLightbox(src) {
+  const modal = document.getElementById("lightboxModal");
+  const img = document.getElementById("lightboxImage");
+  modal.style.display = "block";
+  img.src = src;
+  currentImageIndex = imageSources.indexOf(src);
+}
+
+function showNextImage() {
+  if (currentImageIndex < imageSources.length - 1) {
+    currentImageIndex++;
+    document.getElementById("lightboxImage").src = imageSources[currentImageIndex];
+  }
+}
+
+function showPrevImage() {
+  if (currentImageIndex > 0) {
+    currentImageIndex--;
+    document.getElementById("lightboxImage").src = imageSources[currentImageIndex];
+  }
+}
+
