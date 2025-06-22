@@ -142,7 +142,28 @@ function openLightbox(src) {
   modal.style.display = "block";
   img.src = src;
   currentImageIndex = imageSources.indexOf(src);
+
+  // Wait for image to load before applying panzoom
+  img.onload = () => {
+    // Destroy any previous panzoom instance
+    if (window.currentPanzoom) {
+      window.currentPanzoom.destroy();
+    }
+
+    // Initialize Panzoom on the container
+    const panzoomEl = document.getElementById("lightboxPanzoom");
+    window.currentPanzoom = Panzoom(panzoomEl, {
+      contain: 'outside',
+      maxScale: 5,
+      minScale: 1,
+      startScale: 1
+    });
+
+    // Enable zooming with mouse wheel
+    panzoomEl.parentElement.addEventListener('wheel', window.currentPanzoom.zoomWithWheel);
+  };
 }
+
 
 function showNextImage() {
   if (currentImageIndex < imageSources.length - 1) {
@@ -157,4 +178,6 @@ function showPrevImage() {
     document.getElementById("lightboxImage").src = imageSources[currentImageIndex];
   }
 }
+
+
 
