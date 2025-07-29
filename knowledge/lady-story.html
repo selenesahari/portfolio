@@ -12,14 +12,30 @@
         padding: 0;
         line-height: 1.65;
     }
+    /* Cinematic hero image */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+    }
     .hero img {
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: block;
     }
     .container {
         max-width: 760px;
         margin: auto;
         padding: 40px 24px 80px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    }
+    .container.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
     h1 {
         text-align: center;
@@ -52,7 +68,7 @@
 <div class="hero">
     <img src="lady-of-the-golden-hall.png" alt="Lady of the Golden Hall">
 </div>
-<div class="container">
+<div class="container" id="content">
     <h1>The Woman and the Queen – Forever Together</h1>
 
     <p>The first time she came, she was young and unsure,
@@ -113,5 +129,17 @@
     in her 90s, in her 100s,
     and now forever.</em></p>
 </div>
+
+<script>
+// Fade-in effect when scrolling
+window.addEventListener('scroll', function() {
+  const content = document.getElementById('content');
+  const rect = content.getBoundingClientRect();
+  if (rect.top < window.innerHeight - 100) {
+    content.classList.add('visible');
+  }
+});
+</script>
+
 </body>
 </html>
