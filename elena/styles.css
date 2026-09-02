@@ -1,0 +1,125 @@
+:root {
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #272724;
+  background: #f8f7f4;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f8f7f4;
+}
+
+body {
+  margin: 0;
+  min-width: 18rem;
+  background: #f8f7f4;
+}
+
+.page-header {
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.035em;
+}
+
+.subtitle {
+  margin: 1rem 0 0;
+  color: #77736c;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+main {
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 4.5rem) clamp(4rem, 9vw, 8rem);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: clamp(2.75rem, 6vw, 5.5rem) clamp(1.5rem, 3.5vw, 3.75rem);
+  align-items: start;
+}
+
+.photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.photo-link {
+  display: flex;
+  min-height: 10rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #efede8;
+  outline-offset: 0.35rem;
+}
+
+.photo-link:focus-visible {
+  outline: 2px solid #47443f;
+}
+
+.photo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 72vh;
+  transition: opacity 180ms ease;
+}
+
+.photo-link:hover img {
+  opacity: 0.92;
+}
+
+figcaption {
+  margin-top: 0.9rem;
+  padding-inline: 0.15rem;
+  color: #55514b;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+@media (max-width: 40rem) {
+  .page-header {
+    padding-top: 3rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .photo-link {
+    min-height: 0;
+  }
+
+  .photo img {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo img {
+    transition: none;
+  }
+}
